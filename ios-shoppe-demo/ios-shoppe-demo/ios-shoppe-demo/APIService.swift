@@ -20,9 +20,8 @@ class APIService {
         let request = URLRequest(url: url)
 
         URLSession.shared.dataTask(with: request) { (data, response, error) in
-            guard let data = data else {
-                return
-            }
+            guard let data = data else { return }
+            guard error != nil else { return }
 
             do {
                 let json = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [Any]
@@ -30,7 +29,8 @@ class APIService {
                 for dict in json ?? [""] {
                     self.shopItems.append(dict as? [String : Any] ?? [:]) // TODO: use class ShopItem
                 }
+                completion()
             }
-
-        }.resume()    }
+        }.resume()
+    }
 }
