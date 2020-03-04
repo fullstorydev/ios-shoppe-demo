@@ -15,6 +15,9 @@
 		F25D20A9240EB5A600CF89C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F25D20A7240EB5A600CF89C3 /* LaunchScreen.storyboard */; };
 		F25D20B4240EB5A600CF89C3 /* ios_shoppe_demoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D20B3240EB5A600CF89C3 /* ios_shoppe_demoTests.swift */; };
 		F25D20BF240EB5A600CF89C3 /* ios_shoppe_demoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D20BE240EB5A600CF89C3 /* ios_shoppe_demoUITests.swift */; };
+		F25D20D12410186200CF89C3 /* ShoppeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D20D02410186200CF89C3 /* ShoppeItem.swift */; };
+		F25D20D22410186200CF89C3 /* ShoppeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D20D02410186200CF89C3 /* ShoppeItem.swift */; };
+		F25D20D32410186200CF89C3 /* ShoppeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D20D02410186200CF89C3 /* ShoppeItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,7 @@
 		F25D20BA240EB5A600CF89C3 /* ios-shoppe-demoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-shoppe-demoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F25D20BE240EB5A600CF89C3 /* ios_shoppe_demoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_shoppe_demoUITests.swift; sourceTree = "<group>"; };
 		F25D20C0240EB5A600CF89C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F25D20D02410186200CF89C3 /* ShoppeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppeItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,7 @@
 				F25D20A5240EB5A600CF89C3 /* Assets.xcassets */,
 				F25D20A7240EB5A600CF89C3 /* LaunchScreen.storyboard */,
 				F25D20AA240EB5A600CF89C3 /* Info.plist */,
+				F25D20D02410186200CF89C3 /* ShoppeItem.swift */,
 			);
 			path = "ios-shoppe-demo";
 			sourceTree = "<group>";
@@ -260,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F25D20A1240EB5A300CF89C3 /* ViewController.swift in Sources */,
+				F25D20D12410186200CF89C3 /* ShoppeItem.swift in Sources */,
 				F25D209D240EB5A300CF89C3 /* AppDelegate.swift in Sources */,
 				F25D209F240EB5A300CF89C3 /* SceneDelegate.swift in Sources */,
 			);
@@ -270,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F25D20B4240EB5A600CF89C3 /* ios_shoppe_demoTests.swift in Sources */,
+				F25D20D22410186200CF89C3 /* ShoppeItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F25D20BF240EB5A600CF89C3 /* ios_shoppe_demoUITests.swift in Sources */,
+				F25D20D32410186200CF89C3 /* ShoppeItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
