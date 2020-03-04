@@ -106,11 +106,11 @@
 				F25D209C240EB5A300CF89C3 /* AppDelegate.swift */,
 				F25D209E240EB5A300CF89C3 /* SceneDelegate.swift */,
 				F25D20A0240EB5A300CF89C3 /* ViewController.swift */,
+				F25D20D02410186200CF89C3 /* ShoppeItem.swift */,
 				F25D20A2240EB5A300CF89C3 /* Main.storyboard */,
 				F25D20A5240EB5A600CF89C3 /* Assets.xcassets */,
 				F25D20A7240EB5A600CF89C3 /* LaunchScreen.storyboard */,
 				F25D20AA240EB5A600CF89C3 /* Info.plist */,
-				F25D20D02410186200CF89C3 /* ShoppeItem.swift */,
 			);
 			path = "ios-shoppe-demo";
 			sourceTree = "<group>";
