@@ -15,6 +15,7 @@
 		F25D20A9240EB5A600CF89C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F25D20A7240EB5A600CF89C3 /* LaunchScreen.storyboard */; };
 		F25D20B4240EB5A600CF89C3 /* ios_shoppe_demoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D20B3240EB5A600CF89C3 /* ios_shoppe_demoTests.swift */; };
 		F25D20BF240EB5A600CF89C3 /* ios_shoppe_demoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D20BE240EB5A600CF89C3 /* ios_shoppe_demoUITests.swift */; };
+<<<<<<< HEAD:swift/ios-shoppe-demo/ios-shoppe-demo.xcodeproj/project.pbxproj
 		F25D20CD24100B2700CF89C3 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D20CC24100B2700CF89C3 /* APIService.swift */; };
 		F2C804DA24168C8B0098418D /* Preferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2C804D924168C8B0098418D /* Preferences.plist */; };
 		F2C804DB24168C8B0098418D /* Preferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2C804D924168C8B0098418D /* Preferences.plist */; };
@@ -22,6 +23,11 @@
 		F2C804DE24168D390098418D /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C804DD24168D390098418D /* Utilities.swift */; };
 		F2C804DF24168D390098418D /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C804DD24168D390098418D /* Utilities.swift */; };
 		F2C804E024168D390098418D /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C804DD24168D390098418D /* Utilities.swift */; };
+=======
+		F25D20D12410186200CF89C3 /* ShoppeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D20D02410186200CF89C3 /* ShoppeItem.swift */; };
+		F25D20D22410186200CF89C3 /* ShoppeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D20D02410186200CF89C3 /* ShoppeItem.swift */; };
+		F25D20D32410186200CF89C3 /* ShoppeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D20D02410186200CF89C3 /* ShoppeItem.swift */; };
+>>>>>>> master:ios-shoppe-demo/ios-shoppe-demo/ios-shoppe-demo.xcodeproj/project.pbxproj
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,9 +62,13 @@
 		F25D20BA240EB5A600CF89C3 /* ios-shoppe-demoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-shoppe-demoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F25D20BE240EB5A600CF89C3 /* ios_shoppe_demoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_shoppe_demoUITests.swift; sourceTree = "<group>"; };
 		F25D20C0240EB5A600CF89C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+<<<<<<< HEAD:swift/ios-shoppe-demo/ios-shoppe-demo.xcodeproj/project.pbxproj
 		F25D20CC24100B2700CF89C3 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		F2C804D924168C8B0098418D /* Preferences.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Preferences.plist; sourceTree = "<group>"; };
 		F2C804DD24168D390098418D /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+=======
+		F25D20D02410186200CF89C3 /* ShoppeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppeItem.swift; sourceTree = "<group>"; };
+>>>>>>> master:ios-shoppe-demo/ios-shoppe-demo/ios-shoppe-demo.xcodeproj/project.pbxproj
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +122,11 @@
 				F25D209C240EB5A300CF89C3 /* AppDelegate.swift */,
 				F25D209E240EB5A300CF89C3 /* SceneDelegate.swift */,
 				F25D20A0240EB5A300CF89C3 /* ViewController.swift */,
+<<<<<<< HEAD:swift/ios-shoppe-demo/ios-shoppe-demo.xcodeproj/project.pbxproj
 				F25D20CC24100B2700CF89C3 /* APIService.swift */,
+=======
+				F25D20D02410186200CF89C3 /* ShoppeItem.swift */,
+>>>>>>> master:ios-shoppe-demo/ios-shoppe-demo/ios-shoppe-demo.xcodeproj/project.pbxproj
 				F25D20A2240EB5A300CF89C3 /* Main.storyboard */,
 				F25D20A5240EB5A600CF89C3 /* Assets.xcassets */,
 				F25D20A7240EB5A600CF89C3 /* LaunchScreen.storyboard */,
@@ -276,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F25D20A1240EB5A300CF89C3 /* ViewController.swift in Sources */,
+				F25D20D12410186200CF89C3 /* ShoppeItem.swift in Sources */,
 				F25D209D240EB5A300CF89C3 /* AppDelegate.swift in Sources */,
 				F25D20CD24100B2700CF89C3 /* APIService.swift in Sources */,
 				F2C804DE24168D390098418D /* Utilities.swift in Sources */,
@@ -289,6 +304,7 @@
 			files = (
 				F2C804DF24168D390098418D /* Utilities.swift in Sources */,
 				F25D20B4240EB5A600CF89C3 /* ios_shoppe_demoTests.swift in Sources */,
+				F25D20D22410186200CF89C3 /* ShoppeItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +314,7 @@
 			files = (
 				F2C804E024168D390098418D /* Utilities.swift in Sources */,
 				F25D20BF240EB5A600CF89C3 /* ios_shoppe_demoUITests.swift in Sources */,
+				F25D20D32410186200CF89C3 /* ShoppeItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
