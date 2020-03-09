@@ -22,16 +22,16 @@ class APIService {
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let data = data else { return }
 
-            if let error = error {
-                print("\(error.localizedDescription)") // TODO: Add proper error handling
-            }
-
             do {
-                let json = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [Any]
+                let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [Any]
 
                 for dict in json ?? [""] {
                     self.products.append(dict as? [String : Any] ?? [:]) // TODO: use class Product
                 }
+                completion()
+            }
+            catch {
+                print("\(error.localizedDescription)") // TODO: Add proper error handling
                 completion()
             }
         }.resume()
