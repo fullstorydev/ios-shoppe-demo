@@ -11,7 +11,14 @@ import Foundation
 class APIService {
     static var sharedInstance = APIService()
 
-    var baseURL: String = "http://reactshoppe.s3-website-us-east-1.amazonaws.com/data/products.json"
+    var baseURL: String {
+        guard let webserviceURL = getPlist(withName: "Preferences") else {
+            print("No web services URL found")
+            return ""
+        }
+        return webserviceURL[0]
+    }
+    
     var products: [[String : Any]] = [] // TODO: Change this to be an array of class Product
 
     func getShoppeItem(completion: @escaping()->()) {
