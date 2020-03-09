@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        print(APIService.sharedInstance.webURL)
+        print(APIService.sharedInstance.baseURL)
     }
 
 
