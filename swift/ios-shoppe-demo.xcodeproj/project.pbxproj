@@ -43,8 +43,8 @@
 
 /* Begin PBXFileReference section */
 		F25D2099240EB5A300CF89C3 /* ios-shoppe-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-shoppe-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F25D209C240EB5A300CF89C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F25D209E240EB5A300CF89C3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F25D209C240EB5A300CF89C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Resources/AppDelegate.swift; sourceTree = "<group>"; };
+		F25D209E240EB5A300CF89C3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = Resources/SceneDelegate.swift; sourceTree = "<group>"; };
 		F25D20A0240EB5A300CF89C3 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 		F25D20A5240EB5A600CF89C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F25D20A8240EB5A600CF89C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -109,6 +109,8 @@
 		F25D209B240EB5A300CF89C3 /* ios-shoppe-demo */ = {
 			isa = PBXGroup;
 			children = (
+				F25D209C240EB5A300CF89C3 /* AppDelegate.swift */,
+				F25D209E240EB5A300CF89C3 /* SceneDelegate.swift */,
 				F26DD8562417DCF700504A3F /* ServiceManagers */,
 				F26DD8572417DD0900504A3F /* Model */,
 				F25D20A0240EB5A300CF89C3 /* StoreViewController.swift */,
@@ -138,8 +140,6 @@
 		F26DD8532417DB4900504A3F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F25D209C240EB5A300CF89C3 /* AppDelegate.swift */,
-				F25D209E240EB5A300CF89C3 /* SceneDelegate.swift */,
 				F25D20A5240EB5A600CF89C3 /* Assets.xcassets */,
 				F25D20A7240EB5A600CF89C3 /* LaunchScreen.storyboard */,
 				F25D20AA240EB5A600CF89C3 /* Info.plist */,
