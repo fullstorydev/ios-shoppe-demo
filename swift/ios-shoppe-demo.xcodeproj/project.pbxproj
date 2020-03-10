@@ -16,7 +16,6 @@
 		F25D20BF240EB5A600CF89C3 /* ios_shoppe_demoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D20BE240EB5A600CF89C3 /* ios_shoppe_demoUITests.swift */; };
 		F25D20CD24100B2700CF89C3 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D20CC24100B2700CF89C3 /* APIService.swift */; };
 		F26DD85224175B7400504A3F /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26DD85124175B7400504A3F /* Product.swift */; };
-		F26DD8552417DBFE00504A3F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F26DD8542417DBFE00504A3F /* Default-568h@2x.png */; };
 		F2C804DA24168C8B0098418D /* Preferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2C804D924168C8B0098418D /* Preferences.plist */; };
 		F2C804DB24168C8B0098418D /* Preferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2C804D924168C8B0098418D /* Preferences.plist */; };
 		F2C804DC24168C8B0098418D /* Preferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2C804D924168C8B0098418D /* Preferences.plist */; };
@@ -58,7 +57,6 @@
 		F25D20C0240EB5A600CF89C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F25D20CC24100B2700CF89C3 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		F26DD85124175B7400504A3F /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
-		F26DD8542417DBFE00504A3F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		F2C804D924168C8B0098418D /* Preferences.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Preferences.plist; sourceTree = "<group>"; };
 		F2C804DD24168D390098418D /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,7 +89,6 @@
 		F25D2090240EB5A300CF89C3 = {
 			isa = PBXGroup;
 			children = (
-				F26DD8542417DBFE00504A3F /* Default-568h@2x.png */,
 				F25D209B240EB5A300CF89C3 /* ios-shoppe-demo */,
 				F25D20B2240EB5A600CF89C3 /* ios-shoppe-demoTests */,
 				F25D20BD240EB5A600CF89C3 /* ios-shoppe-demoUITests */,
@@ -275,7 +272,6 @@
 				F25D20A9240EB5A600CF89C3 /* LaunchScreen.storyboard in Resources */,
 				F25D20A6240EB5A600CF89C3 /* Assets.xcassets in Resources */,
 				F2C804DA24168C8B0098418D /* Preferences.plist in Resources */,
-				F26DD8552417DBFE00504A3F /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
