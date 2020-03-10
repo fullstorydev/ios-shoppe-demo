@@ -8,8 +8,7 @@
 
 import Foundation
 
-func getPlist(withName name: String) -> [String]?
-{
+func getPlist(withName name: String) -> [String]? {
     if  let path = Bundle.main.path(forResource: name, ofType: "plist"),
         let xml = FileManager.default.contents(atPath: path)
     {

@@ -1,5 +1,5 @@
 //
-//  ShoppeItem.swift
+//  Product.swift
 //  ios-shoppe-demo
 //
 //  Created on 3/4/20.
