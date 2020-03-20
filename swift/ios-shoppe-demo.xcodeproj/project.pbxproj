@@ -7,10 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F25D209D240EB5A300CF89C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D209C240EB5A300CF89C3 /* AppDelegate.swift */; };
-		F25D209F240EB5A300CF89C3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D209E240EB5A300CF89C3 /* SceneDelegate.swift */; };
-		F25D20A1240EB5A300CF89C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D20A0240EB5A300CF89C3 /* ViewController.swift */; };
-		F25D20A4240EB5A300CF89C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F25D20A2240EB5A300CF89C3 /* Main.storyboard */; };
+		F25D20A1240EB5A300CF89C3 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D20A0240EB5A300CF89C3 /* StoreViewController.swift */; };
 		F25D20A6240EB5A600CF89C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F25D20A5240EB5A600CF89C3 /* Assets.xcassets */; };
 		F25D20A9240EB5A600CF89C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F25D20A7240EB5A600CF89C3 /* LaunchScreen.storyboard */; };
 		F25D20B4240EB5A600CF89C3 /* ios_shoppe_demoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D20B3240EB5A600CF89C3 /* ios_shoppe_demoTests.swift */; };
@@ -20,9 +17,9 @@
 		F2C804DA24168C8B0098418D /* Preferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2C804D924168C8B0098418D /* Preferences.plist */; };
 		F2C804DB24168C8B0098418D /* Preferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2C804D924168C8B0098418D /* Preferences.plist */; };
 		F2C804DC24168C8B0098418D /* Preferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2C804D924168C8B0098418D /* Preferences.plist */; };
-		F2C804DE24168D390098418D /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C804DD24168D390098418D /* Utilities.swift */; };
-		F2C804DF24168D390098418D /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C804DD24168D390098418D /* Utilities.swift */; };
-		F2C804E024168D390098418D /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C804DD24168D390098418D /* Utilities.swift */; };
+		F2E5A512241934B9005DFBFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E5A511241934B9005DFBFE /* AppDelegate.swift */; };
+		F2E5A51624193501005DFBFE /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E5A51524193501005DFBFE /* Utilities.swift */; };
+		F2E5A51824193637005DFBFE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E5A51724193637005DFBFE /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,10 +41,7 @@
 
 /* Begin PBXFileReference section */
 		F25D2099240EB5A300CF89C3 /* ios-shoppe-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-shoppe-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F25D209C240EB5A300CF89C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F25D209E240EB5A300CF89C3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F25D20A0240EB5A300CF89C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F25D20A3240EB5A300CF89C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F25D20A0240EB5A300CF89C3 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 		F25D20A5240EB5A600CF89C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F25D20A8240EB5A600CF89C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F25D20AA240EB5A600CF89C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,7 +54,9 @@
 		F25D20CC24100B2700CF89C3 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		F26DD85124175B7400504A3F /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		F2C804D924168C8B0098418D /* Preferences.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Preferences.plist; sourceTree = "<group>"; };
-		F2C804DD24168D390098418D /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		F2E5A511241934B9005DFBFE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F2E5A51524193501005DFBFE /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		F2E5A51724193637005DFBFE /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,17 +107,12 @@
 		F25D209B240EB5A300CF89C3 /* ios-shoppe-demo */ = {
 			isa = PBXGroup;
 			children = (
-				F25D209C240EB5A300CF89C3 /* AppDelegate.swift */,
-				F25D209E240EB5A300CF89C3 /* SceneDelegate.swift */,
-				F25D20A0240EB5A300CF89C3 /* ViewController.swift */,
-				F26DD85124175B7400504A3F /* Product.swift */,
-				F25D20CC24100B2700CF89C3 /* APIService.swift */,
-				F25D20A2240EB5A300CF89C3 /* Main.storyboard */,
-				F25D20A5240EB5A600CF89C3 /* Assets.xcassets */,
-				F25D20A7240EB5A600CF89C3 /* LaunchScreen.storyboard */,
-				F25D20AA240EB5A600CF89C3 /* Info.plist */,
-				F2C804D924168C8B0098418D /* Preferences.plist */,
-				F2C804DD24168D390098418D /* Utilities.swift */,
+				F2E5A511241934B9005DFBFE /* AppDelegate.swift */,
+				F2E5A51724193637005DFBFE /* SceneDelegate.swift */,
+				F26DD8562417DCF700504A3F /* ServiceManagers */,
+				F26DD8572417DD0900504A3F /* Model */,
+				F25D20A0240EB5A300CF89C3 /* StoreViewController.swift */,
+				F26DD8532417DB4900504A3F /* Resources */,
 			);
 			path = "ios-shoppe-demo";
 			sourceTree = "<group>";
@@ -142,6 +133,34 @@
 				F25D20C0240EB5A600CF89C3 /* Info.plist */,
 			);
 			path = "ios-shoppe-demoUITests";
+			sourceTree = "<group>";
+		};
+		F26DD8532417DB4900504A3F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F25D20A5240EB5A600CF89C3 /* Assets.xcassets */,
+				F25D20A7240EB5A600CF89C3 /* LaunchScreen.storyboard */,
+				F25D20AA240EB5A600CF89C3 /* Info.plist */,
+				F2C804D924168C8B0098418D /* Preferences.plist */,
+				F2E5A51524193501005DFBFE /* Utilities.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F26DD8562417DCF700504A3F /* ServiceManagers */ = {
+			isa = PBXGroup;
+			children = (
+				F25D20CC24100B2700CF89C3 /* APIService.swift */,
+			);
+			path = ServiceManagers;
+			sourceTree = "<group>";
+		};
+		F26DD8572417DD0900504A3F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F26DD85124175B7400504A3F /* Product.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,7 +270,6 @@
 				F25D20A9240EB5A600CF89C3 /* LaunchScreen.storyboard in Resources */,
 				F25D20A6240EB5A600CF89C3 /* Assets.xcassets in Resources */,
 				F2C804DA24168C8B0098418D /* Preferences.plist in Resources */,
-				F25D20A4240EB5A300CF89C3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,11 +296,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F25D20A1240EB5A300CF89C3 /* ViewController.swift in Sources */,
-				F25D209D240EB5A300CF89C3 /* AppDelegate.swift in Sources */,
+				F25D20A1240EB5A300CF89C3 /* StoreViewController.swift in Sources */,
+				F2E5A51824193637005DFBFE /* SceneDelegate.swift in Sources */,
 				F25D20CD24100B2700CF89C3 /* APIService.swift in Sources */,
-				F2C804DE24168D390098418D /* Utilities.swift in Sources */,
-				F25D209F240EB5A300CF89C3 /* SceneDelegate.swift in Sources */,
+				F2E5A512241934B9005DFBFE /* AppDelegate.swift in Sources */,
+				F2E5A51624193501005DFBFE /* Utilities.swift in Sources */,
 				F26DD85224175B7400504A3F /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,7 +309,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2C804DF24168D390098418D /* Utilities.swift in Sources */,
 				F25D20B4240EB5A600CF89C3 /* ios_shoppe_demoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,7 +317,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2C804E024168D390098418D /* Utilities.swift in Sources */,
 				F25D20BF240EB5A600CF89C3 /* ios_shoppe_demoUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,14 +337,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F25D20A2240EB5A300CF89C3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F25D20A3240EB5A300CF89C3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F25D20A7240EB5A600CF89C3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -459,7 +467,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "ios-shoppe-demo/Info.plist";
+				INFOPLIST_FILE = "ios-shoppe-demo/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -476,7 +484,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "ios-shoppe-demo/Info.plist";
+				INFOPLIST_FILE = "ios-shoppe-demo/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
