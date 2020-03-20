@@ -19,7 +19,7 @@ class APIService {
         return webserviceURL[0]
     }
     
-    var products: [[String : Any]] = [] // TODO: Change this to be an array of class Product
+    var products = [Product]()
 
     func getShoppeItem(completion: @escaping()->()) {
         guard let url = URL(string: baseURL) else { return }
@@ -33,7 +33,7 @@ class APIService {
                 let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [Any]
 
                 for dict in json ?? [""] {
-                    self.products.append(dict as? [String : Any] ?? [:]) // TODO: use class Product
+                    self.products.append(Product(dict as? [String : Any] ?? [:]))
                 }
                 completion()
             }
