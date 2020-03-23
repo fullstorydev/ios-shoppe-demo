@@ -47,7 +47,7 @@ class APIService {
     func getProductsFromFile(completion: (_ :[Product])->()) {
         var products = [Product]()
 
-        if let path = Bundle.main.path(forResource: "ShoppeItems", ofType: "js") {
+        if let path = Bundle.main.path(forResource: "Products", ofType: "json") {
             do {
                   let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
                   let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves) as? [Any]
