@@ -19,12 +19,12 @@ class APIService {
         return webserviceURL[0]
     }
     
-    var products = [Product]()
 
-    func getShoppeItem(completion: @escaping()->()) {
+    func getShoppeItem(completion: @escaping(_:[Product]?)->()) {
         guard let url = URL(string: baseURL) else { return }
 
         let request = URLRequest(url: url)
+        var products = [Product]()
 
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let data = data else { return }
@@ -33,14 +33,32 @@ class APIService {
                 let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [Any]
 
                 for dict in json ?? [""] {
-                    self.products.append(Product(dict as? [String : Any] ?? [:]))
+                    products.append(Product(dict as? [String : Any] ?? [:]))
                 }
-                completion()
+                completion(products)
             }
             catch {
                 print("\(error.localizedDescription)") // TODO: Add proper error handling
-                completion()
+                completion(nil)
             }
         }.resume()
+    }
+
+    func getProductsFromFile(completion: (_ :[Product])->()) {
+        var products = [Product]()
+
+        if let path = Bundle.main.path(forResource: "Products", ofType: "json") {
+            do {
+                  let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                  let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves) as? [Any]
+                for dict in jsonResult ?? [] {
+                    products.append(Product(dict as? [String : Any] ?? [:]))
+                }
+              } catch {
+                   // TODO: Add proper error handling
+              }
+        }
+
+        completion(products)
     }
 }
