@@ -3,5 +3,6 @@
 <plist version="1.0">
 <array>
 	<string>http://reactshoppe.s3-website-us-east-1.amazonaws.com/data/products.json</string>
+	<string>https://fruitshoppe.firebaseapp.com/images/</string>
 </array>
 </plist>
