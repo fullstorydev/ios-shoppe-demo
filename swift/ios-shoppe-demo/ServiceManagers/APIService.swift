@@ -13,11 +13,23 @@ class APIService {
     static var sharedInstance = APIService()
 
     var baseURL: String {
-        return getPreferencesArray()[0]
+        if let url = getPreferencesArray()["baseURL"] {
+            return url
+        }
+        else {
+            print("No url found from Preferences file!")
+            return ""
+        }
     }
 
     var baseImageURL: String {
-        return getPreferencesArray()[1]
+        if let url = getPreferencesArray()["baseImageURL"] {
+            return url
+        }
+        else {
+            print("No url found from Preferences file!")
+            return ""
+        }
     }
 
     func getShoppeItem(completion: @escaping(_:[Product]?)->()) {
@@ -77,10 +89,10 @@ class APIService {
         completion(products)
     }
 
-    func getPreferencesArray() -> [String] {
+    func getPreferencesArray() -> [String: String] {
         guard let webserviceURL = getPlist(withName: "Preferences") else {
             print("No web services URL found")
-            return []
+            return [:]
         }
 
         return webserviceURL
