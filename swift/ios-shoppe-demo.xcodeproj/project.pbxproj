@@ -86,6 +86,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F21E1451242A36D9005D4C76 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F25D20A0240EB5A300CF89C3 /* StoreViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		F25D2090240EB5A300CF89C3 = {
 			isa = PBXGroup;
 			children = (
@@ -113,7 +121,7 @@
 				F2E5A51724193637005DFBFE /* SceneDelegate.swift */,
 				F26DD8562417DCF700504A3F /* ServiceManagers */,
 				F26DD8572417DD0900504A3F /* Model */,
-				F25D20A0240EB5A300CF89C3 /* StoreViewController.swift */,
+				F21E1451242A36D9005D4C76 /* Views */,
 				F26DD8532417DB4900504A3F /* Resources */,
 			);
 			path = "ios-shoppe-demo";

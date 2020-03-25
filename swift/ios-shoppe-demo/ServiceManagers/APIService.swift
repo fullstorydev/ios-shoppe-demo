@@ -7,18 +7,30 @@
 //
 
 import Foundation
+import UIKit
 
 class APIService {
     static var sharedInstance = APIService()
 
     var baseURL: String {
-        guard let webserviceURL = getPlist(withName: "Preferences") else {
-            print("No web services URL found")
+        if let url = getPreferencesArray()["baseURL"] {
+            return url
+        }
+        else {
+            print("No url found from Preferences file!")
             return ""
         }
-        return webserviceURL[0]
     }
-    
+
+    var baseImageURL: String {
+        if let url = getPreferencesArray()["baseImageURL"] {
+            return url
+        }
+        else {
+            print("No url found from Preferences file!")
+            return ""
+        }
+    }
 
     func getShoppeItem(completion: @escaping(_:[Product]?)->()) {
         guard let url = URL(string: baseURL) else { return }
@@ -44,6 +56,21 @@ class APIService {
         }.resume()
     }
 
+    func getImageFor(_ productName: String, completion: @escaping(_ image: UIImage?, _ error: NSError?)->()) {
+        guard let url = URL(string: baseImageURL) else { return }
+
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            if let data = data {
+                completion(UIImage(data: data), nil)
+            }
+            else {
+                if let error = error {
+                    completion(nil, error as NSError)
+                }
+            }
+        }.resume()
+    }
+
     func getProductsFromFile(completion: (_ :[Product])->()) {
         var products = [Product]()
 
@@ -60,5 +87,14 @@ class APIService {
         }
 
         completion(products)
+    }
+
+    func getPreferencesArray() -> [String: String] {
+        guard let webserviceURL = getPlist(withName: "Preferences") else {
+            print("No web services URL found")
+            return [:]
+        }
+
+        return webserviceURL
     }
 }
