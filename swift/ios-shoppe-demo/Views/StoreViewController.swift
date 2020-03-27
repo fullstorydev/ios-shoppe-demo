@@ -15,12 +15,26 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.navigationController?.navigationBar.barTintColor = .systemIndigo
         collectionView.backgroundColor = .white
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.register(UINib(nibName: "ProductCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cell")
+
         APIService.sharedInstance.getProductsFromFile { (productsRecieved) in
             if !productsRecieved.isEmpty {
                 self.products = productsRecieved
-                self.collectionView.reloadData()
+                self.products.forEach { (item) in
+                    APIService.sharedInstance.getImageFor(item.imageName) { (image, error) in
+                        if let error = error {
+                            print(error.description)
+                        }
+                        else if let image = image {
+                            item.image = image
+                            DispatchQueue.main.async {
+                                self.collectionView.reloadData()
+                            }
+                        }
+                    }
+                }
             }
         }
     }
@@ -34,28 +48,14 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        let product = products[indexPath.row]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? ProductCollectionViewCell
+        cell?.product = products[indexPath.row]
 
-        let productTextLabel = UILabel()
-        productTextLabel.text = product.title
-        productTextLabel.contentMode = .left
-        productTextLabel.lineBreakMode = .byTruncatingHead
-        productTextLabel.translatesAutoresizingMaskIntoConstraints = false
-
-        cell.addSubview(productTextLabel)
-        // TODO: Make an extension off of UIView that can accept a dictionary of [UIView : anchor multiplier valus] to clean up this implementation.
-        productTextLabel.leadingAnchor.constraint(equalToSystemSpacingAfter: cell.leadingAnchor, multiplier: 0).isActive = true
-        productTextLabel.trailingAnchor.constraint(greaterThanOrEqualToSystemSpacingAfter: cell.trailingAnchor, multiplier: 0).isActive = true
-        productTextLabel.superview?.topAnchor.constraint(equalToSystemSpacingBelow: cell.topAnchor, multiplier: 0).isActive = true
-        productTextLabel.superview?.bottomAnchor.constraint(greaterThanOrEqualToSystemSpacingBelow: cell.bottomAnchor, multiplier: 0).isActive = true
-
-        cell.backgroundColor = .systemGray2
-
-        return cell
+        return cell ?? UICollectionViewCell()
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 350, height: 200)
+        
+        return CGSize(width: 375, height: 300)
     }
 }
