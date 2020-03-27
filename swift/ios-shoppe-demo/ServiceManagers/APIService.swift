@@ -57,18 +57,20 @@ class APIService {
     }
 
     func getImageFor(_ productName: String, completion: @escaping(_ image: UIImage?, _ error: NSError?)->()) {
-        guard let url = URL(string: baseImageURL) else { return }
+        guard let url = URL(string: baseImageURL + productName) else { return }
 
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            if let data = data {
-                completion(UIImage(data: data), nil)
-            }
-            else {
-                if let error = error {
-                    completion(nil, error as NSError)
+        DispatchQueue.main.async {
+            URLSession.shared.dataTask(with: url) { data, response, error in
+                if let data = data {
+                    completion(UIImage(data: data), nil)
                 }
-            }
-        }.resume()
+                else {
+                    if let error = error {
+                        completion(nil, error as NSError)
+                    }
+                }
+            }.resume()
+        }
     }
 
     func getProductsFromFile(completion: (_ :[Product])->()) {

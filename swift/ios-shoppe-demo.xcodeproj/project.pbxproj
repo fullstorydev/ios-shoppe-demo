@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F20C9029242D08D300113086 /* ProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F20C9028242D08D300113086 /* ProductCollectionViewCell.xib */; };
 		F21E144C2428DA82005D4C76 /* Products.json in Resources */ = {isa = PBXBuildFile; fileRef = F21E144B2428DA82005D4C76 /* Products.json */; };
+		F21E1454242BBD60005D4C76 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21E1453242BBD60005D4C76 /* ProductCollectionViewCell.swift */; };
 		F25D20A1240EB5A300CF89C3 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D20A0240EB5A300CF89C3 /* StoreViewController.swift */; };
 		F25D20A6240EB5A600CF89C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F25D20A5240EB5A600CF89C3 /* Assets.xcassets */; };
 		F25D20A9240EB5A600CF89C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F25D20A7240EB5A600CF89C3 /* LaunchScreen.storyboard */; };
@@ -41,7 +43,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F20C9028242D08D300113086 /* ProductCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCollectionViewCell.xib; sourceTree = "<group>"; };
 		F21E144B2428DA82005D4C76 /* Products.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Products.json; sourceTree = "<group>"; };
+		F21E1453242BBD60005D4C76 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		F25D2099240EB5A300CF89C3 /* ios-shoppe-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-shoppe-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F25D20A0240EB5A300CF89C3 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 		F25D20A5240EB5A600CF89C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -90,8 +94,18 @@
 			isa = PBXGroup;
 			children = (
 				F25D20A0240EB5A300CF89C3 /* StoreViewController.swift */,
+				F21E1452242BBBDE005D4C76 /* ViewCells */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F21E1452242BBBDE005D4C76 /* ViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				F21E1453242BBD60005D4C76 /* ProductCollectionViewCell.swift */,
+				F20C9028242D08D300113086 /* ProductCollectionViewCell.xib */,
+			);
+			name = ViewCells;
 			sourceTree = "<group>";
 		};
 		F25D2090240EB5A300CF89C3 = {
@@ -280,6 +294,7 @@
 			files = (
 				F25D20A9240EB5A600CF89C3 /* LaunchScreen.storyboard in Resources */,
 				F25D20A6240EB5A600CF89C3 /* Assets.xcassets in Resources */,
+				F20C9029242D08D300113086 /* ProductCollectionViewCell.xib in Resources */,
 				F21E144C2428DA82005D4C76 /* Products.json in Resources */,
 				F2C804DA24168C8B0098418D /* Preferences.plist in Resources */,
 			);
@@ -310,6 +325,7 @@
 			files = (
 				F25D20A1240EB5A300CF89C3 /* StoreViewController.swift in Sources */,
 				F2E5A51824193637005DFBFE /* SceneDelegate.swift in Sources */,
+				F21E1454242BBD60005D4C76 /* ProductCollectionViewCell.swift in Sources */,
 				F25D20CD24100B2700CF89C3 /* APIService.swift in Sources */,
 				F2E5A512241934B9005DFBFE /* AppDelegate.swift in Sources */,
 				F2E5A51624193501005DFBFE /* Utilities.swift in Sources */,
@@ -479,6 +495,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "ios-shoppe-demo/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -496,6 +513,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "ios-shoppe-demo/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
