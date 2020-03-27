@@ -19,7 +19,6 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
         collectionView.backgroundColor = .white
         collectionView.register(UINib(nibName: "ProductCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cell")
 
-
         APIService.sharedInstance.getProductsFromFile { (productsRecieved) in
             if !productsRecieved.isEmpty {
                 self.products = productsRecieved
@@ -49,7 +48,6 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? ProductCollectionViewCell
         cell?.product = products[indexPath.row]
 
