@@ -2,8 +2,8 @@
 //  ProductCollectionViewCell.swift
 //  ios-shoppe-demo
 //
-//  Created by Harold Davis Jr. on 3/25/20.
-//  Copyright © 2020 Harold Davis Jr. All rights reserved.
+//  Created by on 3/25/20.
+//  Copyright © 2020 All rights reserved.
 //
 
 import Foundation
