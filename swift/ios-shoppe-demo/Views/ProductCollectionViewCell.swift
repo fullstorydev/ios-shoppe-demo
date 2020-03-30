@@ -26,8 +26,8 @@ class ProductCollectionViewCell: UICollectionViewCell {
 
     func setup() {
         DispatchQueue.main.async {
-            self.smallCurve()
-            self.addToCartButton.smallCurve()
+            self.curve()
+            self.addToCartButton.curve()
             self.productTitleLabel.text = self.product.title
             self.productPriceLabel.text = "Price: \(self.product.price)"
             self.productDescriptionLabel.text = self.product.description
