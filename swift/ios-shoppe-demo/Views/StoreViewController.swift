@@ -46,7 +46,7 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
         navigationController?.navigationBar.titleTextAttributes = textAttributes
         navigationController?.navigationBar.barTintColor = .systemIndigo
 
-        navigationItem.title = "Shoppee"
+        navigationItem.title = "iOS Shoppe"
         navigationItem.rightBarButtonItem = barCartButton
 
         collectionView.backgroundColor = .white
