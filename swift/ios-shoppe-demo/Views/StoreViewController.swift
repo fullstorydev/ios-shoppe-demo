@@ -38,7 +38,7 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
     }
 
     func setupNavigationBar() {
-        let barCartButton = UIBarButtonItem(image: UIImage(named: "Cart"), style: .done, target: self, action: #selector(openCart))
+        let barCartButton = UIBarButtonItem(image: UIImage(named: "shopping_cart"), style: .done, target: self, action: #selector(openCart))
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
 
         barCartButton.tintColor = .white
