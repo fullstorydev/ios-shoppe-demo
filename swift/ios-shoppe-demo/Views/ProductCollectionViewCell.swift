@@ -2,8 +2,8 @@
 //  ProductCollectionViewCell.swift
 //  ios-shoppe-demo
 //
-//  Created by on 3/25/20.
-//  Copyright © 2020 All rights reserved.
+//  Created on 3/25/20.
+//  Copyright © 2020 FullStory All rights reserved.
 //
 
 import Foundation
