@@ -15,22 +15,24 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationController?.navigationBar.barTintColor = .systemIndigo
+        navigationController?.navigationBar.barTintColor = .systemIndigo
         collectionView.backgroundColor = .white
         collectionView.register(UINib(nibName: "ProductCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cell")
 
-        APIService.sharedInstance.getProductsFromFile { (productsRecieved) in
-            if !productsRecieved.isEmpty {
-                self.products = productsRecieved
-                self.products.forEach { (item) in
-                    APIService.sharedInstance.getImageFor(item.imageName) { (image, error) in
-                        if let error = error {
-                            print(error.description)
-                        }
-                        else if let image = image {
-                            item.image = image
-                            DispatchQueue.main.async {
-                                self.collectionView.reloadData()
+        AppStateController.sharedInstance.displayAlert(view: self) {
+            APIService.sharedInstance.getProductsFromFile { (productsRecieved) in
+                if !productsRecieved.isEmpty {
+                    self.products = productsRecieved
+                    self.products.forEach { (item) in
+                        APIService.sharedInstance.getImageFor(item.imageName) { (image, error) in
+                            if let error = error {
+                                print(error.description)
+                            }
+                            else if let image = image {
+                                item.image = image
+                                DispatchQueue.main.async {
+                                    self.collectionView.reloadData()
+                                }
                             }
                         }
                     }
