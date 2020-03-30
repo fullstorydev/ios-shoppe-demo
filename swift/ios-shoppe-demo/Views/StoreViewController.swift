@@ -15,9 +15,7 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationController?.navigationBar.barTintColor = .systemIndigo
-        collectionView.backgroundColor = .white
-        collectionView.register(UINib(nibName: "ProductCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cell")
+        setupNavigationBar()
 
         AppStateController.sharedInstance.displayAlert(view: self) {
             APIService.sharedInstance.getProductsFromFile { (productsRecieved) in
@@ -39,6 +37,26 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
                 }
             }
         }
+    }
+
+    func setupNavigationBar() {
+        let barCartButton = UIBarButtonItem(image: UIImage(named: "shopping_cart"), style: .done, target: self, action: #selector(openCart))
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+
+        barCartButton.tintColor = .white
+
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+        navigationController?.navigationBar.barTintColor = .systemIndigo
+
+        navigationItem.title = "iOS Shoppe"
+        navigationItem.rightBarButtonItem = barCartButton
+
+        collectionView.backgroundColor = .white
+        collectionView.register(UINib(nibName: "ProductCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cell")
+    }
+
+    @objc func openCart() {
+        // TODO: Present Cart View controller
     }
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
