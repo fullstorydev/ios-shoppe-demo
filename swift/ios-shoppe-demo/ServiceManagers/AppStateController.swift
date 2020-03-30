@@ -23,17 +23,19 @@ class AppStateController {
             self.usernameTextField = textField
         }
 
-        let okAction = UIAlertAction(title: "Ok", style: .default) { (action) in
+        let okAction = UIAlertAction(title: "Ok", style: .default) { (_) in
             self.confirmUser()
+            completion()
         }
 
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in
+            completion()
+        }
 
         createUserAlert.addAction(okAction)
         createUserAlert.addAction(cancelAction)
 
         view.present(createUserAlert, animated: true)
-        completion()
     }
 
     func userField(textField: UITextField!) {
