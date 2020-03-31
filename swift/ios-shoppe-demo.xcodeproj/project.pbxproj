@@ -11,6 +11,7 @@
 		F21E144C2428DA82005D4C76 /* Products.json in Resources */ = {isa = PBXBuildFile; fileRef = F21E144B2428DA82005D4C76 /* Products.json */; };
 		F21E1454242BBD60005D4C76 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21E1453242BBD60005D4C76 /* ProductCollectionViewCell.swift */; };
 		F2441D7E24322B26006BEFF3 /* EX+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2441D7D24322B26006BEFF3 /* EX+UIView.swift */; };
+		F2441D872433900C006BEFF3 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2441D862433900C006BEFF3 /* Order.swift */; };
 		F25D20A1240EB5A300CF89C3 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D20A0240EB5A300CF89C3 /* StoreViewController.swift */; };
 		F25D20A6240EB5A600CF89C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F25D20A5240EB5A600CF89C3 /* Assets.xcassets */; };
 		F25D20A9240EB5A600CF89C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F25D20A7240EB5A600CF89C3 /* LaunchScreen.storyboard */; };
@@ -48,6 +49,7 @@
 		F21E144B2428DA82005D4C76 /* Products.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Products.json; sourceTree = "<group>"; };
 		F21E1453242BBD60005D4C76 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		F2441D7D24322B26006BEFF3 /* EX+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EX+UIView.swift"; sourceTree = "<group>"; };
+		F2441D862433900C006BEFF3 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		F25D2099240EB5A300CF89C3 /* ios-shoppe-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-shoppe-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F25D20A0240EB5A300CF89C3 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 		F25D20A5240EB5A600CF89C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				F26DD85124175B7400504A3F /* Product.swift */,
+				F2441D862433900C006BEFF3 /* Order.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				F25D20A1240EB5A300CF89C3 /* StoreViewController.swift in Sources */,
 				F2E5A51824193637005DFBFE /* SceneDelegate.swift in Sources */,
 				F21E1454242BBD60005D4C76 /* ProductCollectionViewCell.swift in Sources */,
+				F2441D872433900C006BEFF3 /* Order.swift in Sources */,
 				F2441D7E24322B26006BEFF3 /* EX+UIView.swift in Sources */,
 				F25D20CD24100B2700CF89C3 /* APIService.swift in Sources */,
 				F2E5A512241934B9005DFBFE /* AppDelegate.swift in Sources */,
