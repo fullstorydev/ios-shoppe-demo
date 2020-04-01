@@ -8,6 +8,8 @@
 
 import UIKit
 
+public var username: String?
+
 class StoreViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     var products: [Product] = []
