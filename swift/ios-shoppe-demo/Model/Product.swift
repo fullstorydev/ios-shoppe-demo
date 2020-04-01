@@ -20,7 +20,7 @@ class Product {
     init(_ dict: [String: Any]) {
         self.title = dict["title"] as? String ?? ""
         self.description = dict["description"] as? String ?? ""
-        self.price = dict["price"] as? Double ?? 1.0
+        self.price = dict["price"] as? Double ?? -1.0
         self.imageName = dict["image"] as? String ?? ""
         self.unit = dict["unit"] as? String ?? ""
     }
