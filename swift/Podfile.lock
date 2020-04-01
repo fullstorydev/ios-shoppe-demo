@@ -1,3 +1,20 @@
-PODFILE CHECKSUM: 30c577b93722a1650fabed0f3e8ad4263e9cab89
+PODS:
+  - FullStory (1.1.0)
+
+DEPENDENCIES:
+  - "FullStory (from `{:http=>\"https://ios-releases.fullstory.com/fullstory-1.1.0.tar.gz\"}`)"
+
+EXTERNAL SOURCES:
+  FullStory:
+    :http: https://ios-releases.fullstory.com/fullstory-1.1.0.tar.gz
+
+CHECKOUT OPTIONS:
+  FullStory:
+    :http: https://ios-releases.fullstory.com/fullstory-1.1.0.tar.gz
+
+SPEC CHECKSUMS:
+  FullStory: 931387833d819c00ff185a2ce6480de5ea5413dd
+
+PODFILE CHECKSUM: 8c2c3a39ad741ce58f451114bb1d22aef8984d6d
 
 COCOAPODS: 1.9.1
