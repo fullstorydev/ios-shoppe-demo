@@ -5,8 +5,6 @@ iOS Client for the example "Shoppe" app
 
 The iOS Shoppe Demo is a reference application that provides tips and tricks to using [FullStory](https://www.fullstory.com/) on [Native Mobile](https://www.fullstory.com/mobile-apps/) iOS.
 
-![Example](readmeImages/example.png "FullStory Logo")
-
 ## Getting started
 
 To apply the FullStory iOS Plugin, you'll need [Xcode](https://developer.apple.com/xcode). You'll then download or clone this repo to your desired directory.
