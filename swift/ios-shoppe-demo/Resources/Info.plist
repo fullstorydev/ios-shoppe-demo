@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>FSOrgId</key>
-	<string>KWH</string>
+	<string>YOUR_ORG_HERE</string>
 	<key>FSHost</key>
-	<string>staging.fullstory.com</string>
+	<string>fullstory.com</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsLocalNetworking</key>
