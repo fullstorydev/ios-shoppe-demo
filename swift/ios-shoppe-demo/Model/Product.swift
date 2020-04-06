@@ -16,6 +16,7 @@ class Product {
     var imageName: String
     var image: UIImage = UIImage()
     var unit: String
+    var quantity: Int = 0
 
     init(_ dict: [String: Any]) {
         self.title = dict["title"] as? String ?? ""

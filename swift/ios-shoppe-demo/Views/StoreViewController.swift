@@ -8,9 +8,12 @@
 
 import UIKit
 
+public var username: String?
+
 class StoreViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     var products: [Product] = []
+    var order: Order = Order()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +31,7 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
                         else if let image = image {
                             item.image = image
                             DispatchQueue.main.async {
+                                self.order.items = self.products
                                 self.collectionView.reloadData()
                             }
                         }

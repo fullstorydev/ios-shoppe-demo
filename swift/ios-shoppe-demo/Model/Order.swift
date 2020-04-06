@@ -11,4 +11,8 @@ import Foundation
 class Order {
     var items: [Product] = []
     var date: Date = Date()
+
+    func addProduct(_ productName: String ) {
+        items.filter { $0.title == productName }.first?.quantity += 1
+    }
 }
