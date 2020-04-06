@@ -15,6 +15,10 @@ class OrderManager {
     var itemQuantities = [String: Int]()
 
     func addProduct(_ product: Product) {
+        if currentOrder == nil {
+            currentOrder = Order()
+        }
+        
         currentOrder?.items.append(product)
         updateItemQuantity()
     }
@@ -44,5 +48,24 @@ class OrderManager {
                 }
             }
         }
+    }
+
+    func getCostForProduct(_ prodName: String) -> Double? {
+        return currentOrder?.items.filter { $0.title == prodName }.first?.price
+    }
+
+    func cartOrderTotal() -> Double {
+        var cost = Double()
+        updateItemQuantity()
+        self.itemQuantities.forEach { (item, quantity) in
+            if let price = getCostForProduct(item) {
+                print("Adding price for product \(item)")
+                print("num of \(item):\(quantity), price: \(price)")
+                cost += price.multiply(quantity)
+                print("\(cost)")
+            }
+        }
+
+        return cost
     }
 }

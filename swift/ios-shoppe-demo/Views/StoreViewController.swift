@@ -57,6 +57,9 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
 
     @objc func openCart() {
         // TODO: Present Cart View controller
+        let vc = CartTableViewController()
+
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -70,6 +73,7 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? ProductCollectionViewCell
         cell?.product = products[indexPath.row]
+        cell?.collectionView = self
 
         return cell ?? UICollectionViewCell()
     }
@@ -77,5 +81,10 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         return CGSize(width: 375, height: 300)
+    }
+
+    func addToCart(_ product: Product) {
+        OrderManager.sharedInstance.addProduct(product)
+        print("\(OrderManager.sharedInstance.itemQuantities)")
     }
 }
