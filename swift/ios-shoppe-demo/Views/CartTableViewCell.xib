@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="170" id="E77-Ro-tF7" customClass="CartTableViewCell" customModule="ios_shoppe_demo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="170"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="E77-Ro-tF7" id="iFh-od-ovV">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="170"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x04-51-s9K">
+                        <rect key="frame" x="20" y="106" width="374" height="44"/>
+                        <color key="backgroundColor" red="0.80784313730000001" green="0.30588235289999999" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="374" id="MyN-Kl-qcB"/>
+                            <constraint firstAttribute="height" constant="44" id="izQ-tl-7R0"/>
+                        </constraints>
+                        <state key="normal" title="Proceed to Checkout">
+                            <color key="titleColor" red="0.95677810910000005" green="0.96083837750000001" blue="0.97243338820000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="proceedToCheckout:" destination="E77-Ro-tF7" eventType="touchUpInside" id="eBz-Zw-k5g"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order total:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byK-2h-vPc">
+                        <rect key="frame" x="20" y="38" width="201" height="48"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="201" id="aW6-5I-zHm"/>
+                            <constraint firstAttribute="height" constant="48" id="dgv-gX-htn"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="37"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$15.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3F-SG-Y91">
+                        <rect key="frame" x="325" y="50" width="69" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="0yp-dH-Fiw"/>
+                            <constraint firstAttribute="width" constant="69" id="WCC-Se-VcI"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                        <color key="textColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="x04-51-s9K" secondAttribute="bottom" constant="20" id="09E-Yq-N8s"/>
+                    <constraint firstItem="D3F-SG-Y91" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="byK-2h-vPc" secondAttribute="trailing" constant="10" id="EWp-9O-cU3"/>
+                    <constraint firstItem="byK-2h-vPc" firstAttribute="top" secondItem="iFh-od-ovV" secondAttribute="top" constant="38" id="TAb-6y-Fxf"/>
+                    <constraint firstAttribute="trailing" secondItem="D3F-SG-Y91" secondAttribute="trailing" constant="20" id="brI-vB-vXC"/>
+                    <constraint firstItem="D3F-SG-Y91" firstAttribute="top" secondItem="iFh-od-ovV" secondAttribute="top" constant="50" id="e6C-Qt-qyA"/>
+                    <constraint firstAttribute="trailing" secondItem="x04-51-s9K" secondAttribute="trailing" constant="20" id="iDv-9N-S5M"/>
+                    <constraint firstItem="x04-51-s9K" firstAttribute="leading" secondItem="iFh-od-ovV" secondAttribute="leading" constant="20" id="lSO-L7-LO1"/>
+                    <constraint firstItem="byK-2h-vPc" firstAttribute="leading" secondItem="iFh-od-ovV" secondAttribute="leading" constant="20" id="pYU-HP-wEK"/>
+                    <constraint firstItem="x04-51-s9K" firstAttribute="top" relation="greaterThanOrEqual" secondItem="byK-2h-vPc" secondAttribute="bottom" constant="20" id="utL-ik-1XL"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="orderTotalLabel" destination="D3F-SG-Y91" id="FyE-dN-w7P"/>
+            </connections>
+            <point key="canvasLocation" x="211.59420289855075" y="79.6875"/>
+        </tableViewCell>
+    </objects>
+</document>
