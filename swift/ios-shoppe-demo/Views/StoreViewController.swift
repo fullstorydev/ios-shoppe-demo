@@ -75,7 +75,8 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? ProductCollectionViewCell
         cell?.product = products[indexPath.row]
-
+        cell?.collectionView = self
+        
         return cell ?? UICollectionViewCell()
     }
 

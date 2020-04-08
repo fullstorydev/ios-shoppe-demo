@@ -12,6 +12,7 @@ import UIKit
 class CartTableViewController: UITableViewController {
 
     var order: Order = Order()
+    var items = [Product]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,8 @@ class CartTableViewController: UITableViewController {
         navigationController?.navigationBar.tintColor = .white
         tableView.register(UINib(nibName: "CartTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell2")
+
+        items = order.items.filter { $0.quantity > 0 }
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -32,8 +35,8 @@ class CartTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
-        case 3:
-            return 0
+        case 2:
+            return items.count
         default:
             return 1
         }
@@ -58,14 +61,16 @@ class CartTableViewController: UITableViewController {
             cell.textLabel?.text = "Products In Cart:"
 
             return cell
-        default:
-            let product = order.items[indexPath.row]
+        case 2:
+            let product = items[indexPath.row]
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath)
 
             cell.textLabel?.text = product.title
             cell.detailTextLabel?.text = "x\(product.quantity)"
 
             return cell
+        default:
+            return UITableViewCell()
         }
     }
 }
