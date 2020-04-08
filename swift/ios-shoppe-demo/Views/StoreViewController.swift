@@ -83,4 +83,8 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
         
         return CGSize(width: 375, height: 300)
     }
+
+    func addToCart(_ product: String) {
+        order.addProduct(product)
+    }
 }

@@ -36,5 +36,6 @@ class ProductCollectionViewCell: UICollectionViewCell {
     }
 
     @IBAction func addProductToCart(_ sender: Any) {
+        collectionView?.addToCart(product.title)
     }
 }
