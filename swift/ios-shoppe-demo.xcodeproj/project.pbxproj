@@ -14,6 +14,10 @@
 		F21E1454242BBD60005D4C76 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21E1453242BBD60005D4C76 /* ProductCollectionViewCell.swift */; };
 		F2441D7E24322B26006BEFF3 /* EX+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2441D7D24322B26006BEFF3 /* EX+UIView.swift */; };
 		F2441D872433900C006BEFF3 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2441D862433900C006BEFF3 /* Order.swift */; };
+		F25400CF243CCF4D0091668D /* CartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25400CE243CCF4D0091668D /* CartTableViewController.swift */; };
+		F25400D1243CD0520091668D /* EX+Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25400D0243CD0520091668D /* EX+Double.swift */; };
+		F25400D3243CD0A40091668D /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25400D2243CD0A40091668D /* CartTableViewCell.swift */; };
+		F25400D5243CDC970091668D /* CartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F25400D4243CDC970091668D /* CartTableViewCell.xib */; };
 		F25D20A1240EB5A300CF89C3 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D20A0240EB5A300CF89C3 /* StoreViewController.swift */; };
 		F25D20A6240EB5A600CF89C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F25D20A5240EB5A600CF89C3 /* Assets.xcassets */; };
 		F25D20A9240EB5A600CF89C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F25D20A7240EB5A600CF89C3 /* LaunchScreen.storyboard */; };
@@ -62,6 +66,10 @@
 		F21E1453242BBD60005D4C76 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		F2441D7D24322B26006BEFF3 /* EX+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EX+UIView.swift"; sourceTree = "<group>"; };
 		F2441D862433900C006BEFF3 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		F25400CE243CCF4D0091668D /* CartTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewController.swift; sourceTree = "<group>"; };
+		F25400D0243CD0520091668D /* EX+Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EX+Double.swift"; sourceTree = "<group>"; };
+		F25400D2243CD0A40091668D /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
+		F25400D4243CDC970091668D /* CartTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartTableViewCell.xib; sourceTree = "<group>"; };
 		F25D2099240EB5A300CF89C3 /* ios-shoppe-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-shoppe-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F25D20A0240EB5A300CF89C3 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 		F25D20A5240EB5A600CF89C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -136,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				F25D20A0240EB5A300CF89C3 /* StoreViewController.swift */,
+				F25400CE243CCF4D0091668D /* CartTableViewController.swift */,
 				F21E1452242BBBDE005D4C76 /* ViewCells */,
 			);
 			path = Views;
@@ -145,7 +154,9 @@
 			isa = PBXGroup;
 			children = (
 				F21E1453242BBD60005D4C76 /* ProductCollectionViewCell.swift */,
+				F25400D2243CD0A40091668D /* CartTableViewCell.swift */,
 				F20C9028242D08D300113086 /* ProductCollectionViewCell.xib */,
+				F25400D4243CDC970091668D /* CartTableViewCell.xib */,
 			);
 			name = ViewCells;
 			sourceTree = "<group>";
@@ -154,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				F2441D7D24322B26006BEFF3 /* EX+UIView.swift */,
+				F25400D0243CD0520091668D /* EX+Double.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -355,6 +367,7 @@
 				F25D20A9240EB5A600CF89C3 /* LaunchScreen.storyboard in Resources */,
 				F25D20A6240EB5A600CF89C3 /* Assets.xcassets in Resources */,
 				F20C9029242D08D300113086 /* ProductCollectionViewCell.xib in Resources */,
+				F25400D5243CDC970091668D /* CartTableViewCell.xib in Resources */,
 				F21E144C2428DA82005D4C76 /* Products.json in Resources */,
 				F2C804DA24168C8B0098418D /* Preferences.plist in Resources */,
 			);
@@ -506,10 +519,13 @@
 				F25D20A1240EB5A300CF89C3 /* StoreViewController.swift in Sources */,
 				F2E5A51824193637005DFBFE /* SceneDelegate.swift in Sources */,
 				F21E1454242BBD60005D4C76 /* ProductCollectionViewCell.swift in Sources */,
+				F25400D3243CD0A40091668D /* CartTableViewCell.swift in Sources */,
+				F25400CF243CCF4D0091668D /* CartTableViewController.swift in Sources */,
 				F2441D872433900C006BEFF3 /* Order.swift in Sources */,
 				F2441D7E24322B26006BEFF3 /* EX+UIView.swift in Sources */,
 				F25D20CD24100B2700CF89C3 /* APIService.swift in Sources */,
 				F2E5A512241934B9005DFBFE /* AppDelegate.swift in Sources */,
+				F25400D1243CD0520091668D /* EX+Double.swift in Sources */,
 				F2E5A51624193501005DFBFE /* Utilities.swift in Sources */,
 				F26DD85224175B7400504A3F /* Product.swift in Sources */,
 			);
