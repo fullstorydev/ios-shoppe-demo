@@ -63,6 +63,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="checkoutButton" destination="x04-51-s9K" id="W5z-z1-1x2"/>
                 <outlet property="orderTotalLabel" destination="D3F-SG-Y91" id="FyE-dN-w7P"/>
             </connections>
             <point key="canvasLocation" x="211.59420289855075" y="79.6875"/>

@@ -11,6 +11,7 @@ import UIKit
 
 class CartTableViewCell: UITableViewCell {
     @IBOutlet weak var orderTotalLabel: UILabel!
+    @IBOutlet weak var checkoutButton: UIButton!
 
     weak var tableViewController: CartTableViewController?
 
@@ -19,11 +20,13 @@ class CartTableViewCell: UITableViewCell {
             return
         }
 
+        checkoutButton.curveViewCornersWithShadow()
         orderTotalLabel.adjustsFontSizeToFitWidth = true
         orderTotalLabel.text = "$\(abs(cartOrderTotal.distance(to: 0)))"
     }
 
     @IBAction func proceedToCheckout(_ sender: Any) {
-
+        let vc = CheckoutTableViewController()
+        tableViewController?.navigationController?.pushViewController(vc, animated: true)
     }
 }

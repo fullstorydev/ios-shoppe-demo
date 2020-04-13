@@ -58,7 +58,6 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
     }
 
     @objc func openCart() {
-        // TODO: Present Cart View controller
         let vc = CartTableViewController()
         vc.order = order
         self.navigationController?.pushViewController(vc, animated: true)
