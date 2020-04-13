@@ -2,46 +2,75 @@
 //  CheckoutTableViewController.swift
 //  ios-shoppe-demo
 //
-//  Created by Harold Davis Jr. on 4/10/20.
-//  Copyright © 2020 Harold Davis Jr. All rights reserved.
+//  Created on 4/10/20.
+//  Copyright © 2020 FullStory All rights reserved.
 //
 
 import UIKit
 
 class CheckoutTableViewController: UITableViewController {
     
-    var cellItems: [AddressDetail] = [.name, .street, .unit, .city, .state, .zip, .phone]
+    var addressItems: [AddressDetail] = [.name, .street, .unit, .city, .state, .zip, .phone]
+    var cardItems: [CardDetail] = [.name, .cardNumber, .experation, .csv]
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.register(UINib(nibName: "CheckoutTableView", bundle: nil), forCellReuseIdentifier: "textField")
-        tableView.register(UINib(nibName: "CheckoutTableView", bundle: nil), forCellReuseIdentifier: "title")
+        navigationItem.title = "Complete Order"
+        tableView.register(UINib(nibName: "CheckoutTableViewCell", bundle: nil), forCellReuseIdentifier: "textField")
+        tableView.register(UINib(nibName: "LargeLabelTableViewCell", bundle: nil), forCellReuseIdentifier: "title")
+        tableView.register(UINib(nibName: "CartTableViewCell", bundle: nil), forCellReuseIdentifier: "checkout")
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 5
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
-        case 0:
+        case 0, 2, 4:
             return 1
+        case 1:
+            return addressItems.count
+        case 3:
+            return cardItems.count
         default:
-            return cellItems.count
+            return 0
         }
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "title", for: indexPath)
-
-            return cell
-        default:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "title", for: indexPath) as? LargeLabelTableViewCell
+            return cell ?? UITableViewCell()
+        case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "textField", for: indexPath) as? CheckoutTableViewCell
+            cell?.addressDetail = addressItems[indexPath.row]
 
             return cell ?? UITableViewCell()
+        case 2:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "title", for: indexPath) as? LargeLabelTableViewCell
+            cell?.largeTextLabel.text = "Payment Info"
+
+            return cell ?? UITableViewCell()
+        case 3:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "textField", for: indexPath) as? CheckoutTableViewCell
+            cell?.cardDetail = cardItems[indexPath.row]
+
+            return cell ?? UITableViewCell()
+        case 4:
+            let cell =  tableView.dequeueReusableCell(withIdentifier: "checkout") as? CartTableViewCell
+
+            cell?.CheckoutTableViewController = self
+            
+            DispatchQueue.main.async {
+                cell?.setup()
+            }
+            
+            return cell ?? UITableViewCell()
+        default:
+            return UITableViewCell()
         }
     }
 }

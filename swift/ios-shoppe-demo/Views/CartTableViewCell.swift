@@ -13,20 +13,24 @@ class CartTableViewCell: UITableViewCell {
     @IBOutlet weak var orderTotalLabel: UILabel!
     @IBOutlet weak var checkoutButton: UIButton!
 
-    weak var tableViewController: CartTableViewController?
+    weak var CartTableViewController: CartTableViewController?
+    weak var CheckoutTableViewController: CheckoutTableViewController?
+
+    func setup() {
+        setupCartOrder()
+
+        checkoutButton.curveViewCornersWithShadow()
+        checkoutButton.titleLabel?.text = "Place your order"
+    }
 
     func setupCartOrder() {
-        guard let cartOrderTotal = tableViewController?.order.cartOrderTotal() else {
-            return
-        }
 
         checkoutButton.curveViewCornersWithShadow()
         orderTotalLabel.adjustsFontSizeToFitWidth = true
-        orderTotalLabel.text = "$\(abs(cartOrderTotal.distance(to: 0)))"
+        orderTotalLabel.text = "$\(abs(order.cartOrderTotal().distance(to: 0)))"
     }
 
     @IBAction func proceedToCheckout(_ sender: Any) {
-        let vc = CheckoutTableViewController()
-        tableViewController?.navigationController?.pushViewController(vc, animated: true)
+        CartTableViewController?.presentCheckout()
     }
 }

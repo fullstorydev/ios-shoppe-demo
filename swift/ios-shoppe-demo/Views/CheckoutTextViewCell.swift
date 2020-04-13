@@ -2,8 +2,8 @@
 //  CheckoutTextViewCell.swift
 //  ios-shoppe-demo
 //
-//  Created by Harold Davis Jr. on 4/10/20.
-//  Copyright © 2020 Harold Davis Jr. All rights reserved.
+//  Created on 4/10/20.
+//  Copyright © 2020 FullStory All rights reserved.
 //
 
 import Foundation
@@ -19,13 +19,22 @@ class CheckoutTableViewCell: UITableViewCell, UITextFieldDelegate {
         }
     }
 
+    var cardDetail: CardDetail? {
+        didSet {
+            setup()
+        }
+    }
+
     func setup() {
-        guard addressDetail != nil else {
-            return
+        if addressDetail != nil {
+            addressDetailTextField.placeholder = addressDetail?.placeHolder
+        }
+        else {
+            addressDetailTextField.placeholder = cardDetail?.placeHolder
         }
 
         addressDetailTextField.delegate = self
-        addressDetailTextField.placeholder = addressDetail?.placeHolder
+
     }
 
     func textFieldDidEndEditing(_ textField: UITextField) {
