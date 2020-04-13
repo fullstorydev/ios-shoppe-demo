@@ -57,7 +57,7 @@ class CartTableViewController: UITableViewController {
         case 1:
             let cell = UITableViewCell()
 
-            cell.textLabel?.font = UIFont(name: "Halvetica-Bold", size: 30)
+            cell.textLabel?.font = UIFont(name: "Helvetica-Bold", size: 30)
             cell.textLabel?.textAlignment = .left
             cell.backgroundColor = .secondarySystemBackground
 
