@@ -4,8 +4,6 @@
 <dict>
 	<key>FSOrgId</key>
 	<string>YOUR_ORG_HERE</string>
-	<key>FSHost</key>
-	<string>fullstory.com</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsLocalNetworking</key>

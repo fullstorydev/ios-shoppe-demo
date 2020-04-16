@@ -56,7 +56,7 @@ class CartTableViewController: UITableViewController {
         case 0:
             let cell =  tableView.dequeueReusableCell(withIdentifier: "checkout") as? CartTableViewCell
 
-            cell?.CartTableViewController = self
+            cell?.cartTableViewController = self
             cell?.setupCartOrder()
 
             return cell ?? UITableViewCell()

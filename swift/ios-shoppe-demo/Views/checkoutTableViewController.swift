@@ -62,7 +62,7 @@ class CheckoutTableViewController: UITableViewController {
         case 4:
             let cell =  tableView.dequeueReusableCell(withIdentifier: "checkout") as? CartTableViewCell
 
-            cell?.CheckoutTableViewController = self
+            cell?.checkoutTableViewController = self
             
             DispatchQueue.main.async {
                 cell?.setup()

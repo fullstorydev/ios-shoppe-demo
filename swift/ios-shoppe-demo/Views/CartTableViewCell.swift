@@ -13,8 +13,8 @@ class CartTableViewCell: UITableViewCell {
     @IBOutlet weak var orderTotalLabel: UILabel!
     @IBOutlet weak var checkoutButton: UIButton!
 
-    weak var CartTableViewController: CartTableViewController?
-    weak var CheckoutTableViewController: CheckoutTableViewController?
+    weak var cartTableViewController: CartTableViewController?
+    weak var checkoutTableViewController: CheckoutTableViewController?
 
     func setup() {
         setupCartOrder()
@@ -31,6 +31,12 @@ class CartTableViewCell: UITableViewCell {
     }
 
     @IBAction func proceedToCheckout(_ sender: Any) {
-        CartTableViewController?.presentCheckout()
+
+        if cartTableViewController != nil {
+            cartTableViewController?.presentCheckout()
+            }
+        else {
+
+        }
     }
 }
