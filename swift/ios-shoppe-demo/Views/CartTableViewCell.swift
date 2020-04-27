@@ -12,14 +12,15 @@ import UIKit
 class CartTableViewCell: UITableViewCell {
     @IBOutlet weak var orderTotalLabel: UILabel!
 
-    var tableViewController: CartTableViewController?
+    weak var tableViewController: CartTableViewController?
 
     func setupCartOrder() {
         guard let cartOrderTotal = tableViewController?.order.cartOrderTotal() else {
             return
         }
 
-        orderTotalLabel.text = "$\(cartOrderTotal)"
+        orderTotalLabel.adjustsFontSizeToFitWidth = true
+        orderTotalLabel.text = "$\(abs(cartOrderTotal.distance(to: 0)))"
     }
 
     @IBAction func proceedToCheckout(_ sender: Any) {
