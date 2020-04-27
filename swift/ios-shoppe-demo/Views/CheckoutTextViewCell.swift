@@ -15,17 +15,17 @@ class CheckoutTableViewCell: UITableViewCell, UITextFieldDelegate {
     var tableViewController: CheckoutTableViewController?
     var addressDetail: AddressDetail? {
         didSet {
-            setup()
+            showTooltip()
         }
     }
 
     var cardDetail: CardDetail? {
         didSet {
-            setup()
+            showTooltip()
         }
     }
 
-    func setup() {
+    func showTooltip() {
         addressDetailTextField.placeholder = (addressDetail != nil) ? addressDetail?.placeHolder : cardDetail?.placeHolder
         addressDetailTextField.delegate = self
     }
