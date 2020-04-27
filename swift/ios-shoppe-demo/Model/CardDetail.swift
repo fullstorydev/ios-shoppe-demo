@@ -9,7 +9,7 @@
 import Foundation
 
 enum CardDetail {
-    case name, cardNumber, experation, csv
+    case name, cardNumber, expiration, csv
 
     var placeHolder: String {
         switch self {
@@ -17,7 +17,7 @@ enum CardDetail {
             return "Name on card"
         case .cardNumber:
             return "Card number"
-        case .experation:
+        case .expiration:
             return "01/2020"
         case .csv:
             return "000"

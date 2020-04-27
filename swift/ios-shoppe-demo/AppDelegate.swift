@@ -13,7 +13,6 @@ import FullStory
 class AppDelegate: UIResponder, UIApplicationDelegate, FSDelegate {
 
     func fullstoryDidStartSession(_ sessionUrl: String) {
-        print(sessionUrl)
     }
 
     func fullstoryDidStopSession() {

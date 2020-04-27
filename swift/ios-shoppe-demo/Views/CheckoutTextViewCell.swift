@@ -26,15 +26,8 @@ class CheckoutTableViewCell: UITableViewCell, UITextFieldDelegate {
     }
 
     func setup() {
-        if addressDetail != nil {
-            addressDetailTextField.placeholder = addressDetail?.placeHolder
-        }
-        else {
-            addressDetailTextField.placeholder = cardDetail?.placeHolder
-        }
-
+        addressDetailTextField.placeholder = (addressDetail != nil) ? addressDetail?.placeHolder : cardDetail?.placeHolder
         addressDetailTextField.delegate = self
-
     }
 
     func textFieldDidEndEditing(_ textField: UITextField) {

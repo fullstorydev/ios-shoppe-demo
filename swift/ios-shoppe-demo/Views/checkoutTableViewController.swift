@@ -11,7 +11,7 @@ import UIKit
 class CheckoutTableViewController: UITableViewController {
     
     var addressItems: [AddressDetail] = [.name, .street, .unit, .city, .state, .zip, .phone]
-    var cardItems: [CardDetail] = [.name, .cardNumber, .experation, .csv]
+    var cardItems: [CardDetail] = [.name, .cardNumber, .expiration, .csv]
 
     override func viewDidLoad() {
         super.viewDidLoad()

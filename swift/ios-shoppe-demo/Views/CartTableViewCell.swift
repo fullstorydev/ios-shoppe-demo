@@ -11,32 +11,30 @@ import UIKit
 
 class CartTableViewCell: UITableViewCell {
     @IBOutlet weak var orderTotalLabel: UILabel!
-    @IBOutlet weak var checkoutButton: UIButton!
+    @IBOutlet var checkoutButton: UIButton!
 
     weak var cartTableViewController: CartTableViewController?
-    weak var checkoutTableViewController: CheckoutTableViewController?
-
-    func setup() {
-        setupCartOrder()
-
-        checkoutButton.curveViewCornersWithShadow()
-        checkoutButton.titleLabel?.text = "Place your order"
+    weak var checkoutTableViewController: CheckoutTableViewController? {
+        didSet {
+            DispatchQueue.main.async {
+                self.setTextForPlacingOrder()
+            }
+        }
     }
 
-    func setupCartOrder() {
-
+    func setup() {
         checkoutButton.curveViewCornersWithShadow()
         orderTotalLabel.adjustsFontSizeToFitWidth = true
         orderTotalLabel.text = "$\(abs(order.cartOrderTotal().distance(to: 0)))"
     }
 
-    @IBAction func proceedToCheckout(_ sender: Any) {
+    func setTextForPlacingOrder() {
+        self.checkoutButton.titleLabel?.text = "Place your order"
+    }
 
+    @IBAction func proceedToCheckout(_ sender: Any) {
         if cartTableViewController != nil {
             cartTableViewController?.presentCheckout()
-            }
-        else {
-
         }
     }
 }
