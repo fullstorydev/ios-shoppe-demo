@@ -30,8 +30,7 @@ class CartTableViewController: UITableViewController {
     }
 
     func presentCheckout() {
-        let vc = CheckoutTableViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+        self.navigationController?.pushViewController(CheckoutTableViewController(), animated: true)
     }
 
     override func viewWillDisappear(_ animated: Bool) {

@@ -1,0 +1,53 @@
+//
+//  CartTableViewCell.swift
+//  ios-shoppe-demo
+//
+//  Created on 4/7/20.
+//  Copyright © 2020 FullStory All rights reserved.
+//
+
+import Foundation
+import UIKit
+
+class CartTableViewCell: UITableViewCell {
+    @IBOutlet weak var orderTotalLabel: UILabel!
+    @IBOutlet var checkoutButton: UIButton!
+
+<<<<<<< HEAD
+    weak var cartTableViewController: CartTableViewController?
+    weak var checkoutTableViewController: CheckoutTableViewController? {
+        didSet {
+            DispatchQueue.main.async {
+                self.setTextForPlacingOrder()
+            }
+=======
+    weak var tableViewController: CartTableViewController?
+
+    func setupCartOrder() {
+        guard let cartOrderTotal = tableViewController?.order.cartOrderTotal() else {
+            return
+>>>>>>> master
+        }
+    }
+
+<<<<<<< HEAD
+    func setup() {
+        checkoutButton.curveViewCornersWithShadow()
+        orderTotalLabel.adjustsFontSizeToFitWidth = true
+        orderTotalLabel.text = "$\(abs(order.cartOrderTotal().distance(to: 0)))"
+=======
+        orderTotalLabel.adjustsFontSizeToFitWidth = true
+        orderTotalLabel.text = "$\(abs(cartOrderTotal.distance(to: 0)))"
+>>>>>>> master
+    }
+
+    func setTextForPlacingOrder() {
+        self.checkoutButton.titleLabel?.text = "Place your order"
+    }
+
+    @IBAction func proceedToCheckout(_ sender: Any) {
+        if cartTableViewController != nil {
+            cartTableViewController?.presentCheckout()
+        }
+    }
+}

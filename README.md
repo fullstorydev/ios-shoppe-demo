@@ -17,11 +17,9 @@ If you have [signed up](https://www.fullstory.com/plans/) for FullStory, add the
 ```
 <key>FSOrgId</key>
   <string>YOUR_ORG_HERE</string>
-<key>FSHost</key>
-  <string>fullstory.com</string>
 ```
 
-Your orgId can be found on the _Settings_ page once you are logged in to FullStory.  It'll be next to the `window['_fs_org']` variable in the snippet.  For more information, see [Install your recording snippet](https://help.fullstory.com/hc/en-us/articles/360020828233#Install).
+Your orgId can be found on the _Settings_ page once you are logged in to FullStory.  It'll be next to the `window['_fs_org']` variable in the snippet.  For more information, see [Install your recording snippet](https://help.fullstory.com/hc/en-us/articles/360047075853).
 
 For successful recording, please do not change the `server` value. It should always be `https://fullstory.com`.
 
