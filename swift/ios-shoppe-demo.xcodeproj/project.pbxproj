@@ -27,6 +27,10 @@
 		F2C804DA24168C8B0098418D /* Preferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2C804D924168C8B0098418D /* Preferences.plist */; };
 		F2C804DB24168C8B0098418D /* Preferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2C804D924168C8B0098418D /* Preferences.plist */; };
 		F2C804DC24168C8B0098418D /* Preferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2C804D924168C8B0098418D /* Preferences.plist */; };
+		F2CA62B4245B223200772F93 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CA62B3245B223200772F93 /* UserProfile.swift */; };
+		F2D2A84C245B1A620000B4B4 /* ProductSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D2A84B245B1A620000B4B4 /* ProductSummaryView.swift */; };
+		F2D2A84E245B1CB70000B4B4 /* ProductSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D2A84D245B1CB70000B4B4 /* ProductSummaryCell.swift */; };
+		F2D2A850245B1CE00000B4B4 /* ProductSummaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2D2A84F245B1CE00000B4B4 /* ProductSummaryCell.xib */; };
 		F2E5A512241934B9005DFBFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E5A511241934B9005DFBFE /* AppDelegate.swift */; };
 		F2E5A51624193501005DFBFE /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E5A51524193501005DFBFE /* Utilities.swift */; };
 		F2E5A51824193637005DFBFE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E5A51724193637005DFBFE /* SceneDelegate.swift */; };
@@ -102,6 +106,10 @@
 		F25D20CC24100B2700CF89C3 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		F26DD85124175B7400504A3F /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		F2C804D924168C8B0098418D /* Preferences.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Preferences.plist; sourceTree = "<group>"; };
+		F2CA62B3245B223200772F93 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		F2D2A84B245B1A620000B4B4 /* ProductSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSummaryView.swift; sourceTree = "<group>"; };
+		F2D2A84D245B1CB70000B4B4 /* ProductSummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSummaryCell.swift; sourceTree = "<group>"; };
+		F2D2A84F245B1CE00000B4B4 /* ProductSummaryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductSummaryCell.xib; sourceTree = "<group>"; };
 		F2E5A511241934B9005DFBFE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2E5A51524193501005DFBFE /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		F2E5A51724193637005DFBFE /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -164,6 +172,7 @@
 				F25D20A0240EB5A300CF89C3 /* StoreViewController.swift */,
 				F25400CE243CCF4D0091668D /* CartTableViewController.swift */,
 				F25400DD2440C92E0091668D /* CheckoutTableViewController.swift */,
+				F2D2A84B245B1A620000B4B4 /* ProductSummaryView.swift */,
 				F21E1452242BBBDE005D4C76 /* ViewCells */,
 			);
 			path = Views;
@@ -177,6 +186,7 @@
 				F25400D8243F7BB40091668D /* CartQuantityTableViewCell.swift */,
 				F25400DF2440D78A0091668D /* CheckoutTextViewCell.swift */,
 				F25401202444BC710091668D /* LargeLabelTableViewCell.swift */,
+				F2D2A84D245B1CB70000B4B4 /* ProductSummaryCell.swift */,
 				F25400DA2440C5350091668D /* Nibs */,
 			);
 			name = ViewCells;
@@ -199,6 +209,7 @@
 				F25400D6243F78550091668D /* CartQuantityTableViewCell.xib */,
 				F25400DB2440C5780091668D /* CheckoutTableViewCell.xib */,
 				F25401222444C3CF0091668D /* LargeLabelTableViewCell.xib */,
+				F2D2A84F245B1CE00000B4B4 /* ProductSummaryCell.xib */,
 			);
 			name = Nibs;
 			sourceTree = "<group>";
@@ -285,6 +296,7 @@
 				F2441D862433900C006BEFF3 /* Order.swift */,
 				F25400E12440D8910091668D /* AddressDetail.swift */,
 				F25401242444CDF30091668D /* CardDetail.swift */,
+				F2CA62B3245B223200772F93 /* UserProfile.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -401,6 +413,7 @@
 			files = (
 				F25D20A9240EB5A600CF89C3 /* LaunchScreen.storyboard in Resources */,
 				F25D20A6240EB5A600CF89C3 /* Assets.xcassets in Resources */,
+				F2D2A850245B1CE00000B4B4 /* ProductSummaryCell.xib in Resources */,
 				F2F59D2D245736D1008B20AD /* LargeLabelTableViewCell.xib in Resources */,
 				F20C9029242D08D300113086 /* ProductCollectionViewCell.xib in Resources */,
 				F2F59D2C245736D1008B20AD /* CheckoutTableViewCell.xib in Resources */,
@@ -556,6 +569,8 @@
 			files = (
 				F25D20A1240EB5A300CF89C3 /* StoreViewController.swift in Sources */,
 				F2F59D27245736C0008B20AD /* CheckoutTextViewCell.swift in Sources */,
+				F2CA62B4245B223200772F93 /* UserProfile.swift in Sources */,
+				F2D2A84E245B1CB70000B4B4 /* ProductSummaryCell.swift in Sources */,
 				F2E5A51824193637005DFBFE /* SceneDelegate.swift in Sources */,
 				F2F59D24245736C0008B20AD /* ProductCollectionViewCell.swift in Sources */,
 				F2F59D25245736C0008B20AD /* CartTableViewCell.swift in Sources */,
@@ -570,6 +585,7 @@
 				F2F59D2A245736CC008B20AD /* AddressDetail.swift in Sources */,
 				F2E5A512241934B9005DFBFE /* AppDelegate.swift in Sources */,
 				F25400D1243CD0520091668D /* EX+Double.swift in Sources */,
+				F2D2A84C245B1A620000B4B4 /* ProductSummaryView.swift in Sources */,
 				F2E5A51624193501005DFBFE /* Utilities.swift in Sources */,
 				F26DD85224175B7400504A3F /* Product.swift in Sources */,
 			);

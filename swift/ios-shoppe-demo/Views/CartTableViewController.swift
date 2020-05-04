@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 var order: Order = Order()
+var user: UserProfile?
 
 class CartTableViewController: UITableViewController {
 

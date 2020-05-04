@@ -12,6 +12,7 @@ class CheckoutTableViewController: UITableViewController {
     
     var addressItems: [AddressDetail] = [.name, .street, .unit, .city, .state, .zip, .phone]
     var cardItems: [CardDetail] = [.name, .cardNumber, .expiration, .csv]
+    var addressDict = [AddressDetail: String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,5 +73,14 @@ class CheckoutTableViewController: UITableViewController {
         default:
             return UITableViewCell()
         }
+    }
+
+    func presentProductView() {
+        let productView = ProductSummaryView()
+
+        productView.modalPresentationStyle = .formSheet
+        productView.checkoutTableViewController = self
+
+        present(productView, animated: true, completion: nil)
     }
 }

@@ -31,6 +31,19 @@ class CheckoutTableViewCell: UITableViewCell, UITextFieldDelegate {
     }
 
     func textFieldDidEndEditing(_ textField: UITextField) {
+        if let addressDetail = addressDetail {
+            tableViewController?.addressDict[addressDetail] = addressDetailTextField.text
+        }
         tableViewController?.tableView.reloadData()
+        textField.resignFirstResponder()
+    }
+
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+
     }
 }

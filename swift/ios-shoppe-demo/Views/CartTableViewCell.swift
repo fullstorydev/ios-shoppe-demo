@@ -36,5 +36,8 @@ class CartTableViewCell: UITableViewCell {
         if cartTableViewController != nil {
             cartTableViewController?.presentCheckout()
         }
+        else {
+            checkoutTableViewController?.presentProductView()
+        }
     }
 }

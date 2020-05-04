@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="quantity" id="SNo-2F-lsw" customClass="ProductSummaryCell" customModule="ios_shoppe_demo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="256" height="48"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SNo-2F-lsw" id="OLw-cy-QFV">
+                <rect key="frame" x="0.0" y="0.0" width="256" height="48"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cocktail Mix" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dB8-uR-bdF">
+                        <rect key="frame" x="20" y="14" width="93.5" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.80784313730000001" green="0.30588235289999999" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="tyi-oE-EDw">
+                        <rect key="frame" x="225.5" y="14" width="10.5" height="20.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="skX-2X-Vrl">
+                                <rect key="frame" x="0.0" y="0.0" width="10.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="tyi-oE-EDw" secondAttribute="bottom" constant="5" id="7YA-Ic-BgQ"/>
+                    <constraint firstItem="tyi-oE-EDw" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dB8-uR-bdF" secondAttribute="trailing" constant="10" id="Dd1-5f-X6A"/>
+                    <constraint firstItem="dB8-uR-bdF" firstAttribute="leading" secondItem="OLw-cy-QFV" secondAttribute="leading" constant="20" id="LWJ-os-Goh"/>
+                    <constraint firstItem="dB8-uR-bdF" firstAttribute="centerY" secondItem="OLw-cy-QFV" secondAttribute="centerY" id="MSe-tP-ziX"/>
+                    <constraint firstItem="tyi-oE-EDw" firstAttribute="centerY" secondItem="OLw-cy-QFV" secondAttribute="centerY" id="U7O-GE-56i"/>
+                    <constraint firstAttribute="trailing" secondItem="tyi-oE-EDw" secondAttribute="trailing" constant="20" id="fAp-1Q-gMC"/>
+                    <constraint firstItem="tyi-oE-EDw" firstAttribute="top" relation="greaterThanOrEqual" secondItem="OLw-cy-QFV" secondAttribute="top" constant="5" id="raZ-JQ-vhF"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="quantityLabel" destination="skX-2X-Vrl" id="YJM-wV-Czh"/>
+                <outlet property="titleLabel" destination="dB8-uR-bdF" id="eap-Mh-x71"/>
+            </connections>
+            <point key="canvasLocation" x="-28.985507246376812" y="32.8125"/>
+        </tableViewCell>
+    </objects>
+</document>
