@@ -15,15 +15,23 @@
                 <rect key="frame" x="0.0" y="0.0" width="414" height="170"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x04-51-s9K">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x04-51-s9K">
                         <rect key="frame" x="20" y="106" width="374" height="44"/>
                         <color key="backgroundColor" red="0.80784313730000001" green="0.30588235289999999" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="374" id="MyN-Kl-qcB"/>
                             <constraint firstAttribute="height" constant="44" id="izQ-tl-7R0"/>
                         </constraints>
-                        <state key="normal" title="Proceed to Checkout">
-                            <color key="titleColor" red="0.95677810910000005" green="0.96083837750000001" blue="0.97243338820000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <state key="normal">
+                            <attributedString key="attributedTitle">
+                                <fragment content="Proceed to Checkout">
+                                    <attributes>
+                                        <color key="NSColor" red="0.95677810910000005" green="0.96083837750000001" blue="0.97243338820000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <font key="NSFont" metaFont="system" size="15"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
                         </state>
                         <connections>
                             <action selector="proceedToCheckout:" destination="E77-Ro-tF7" eventType="touchUpInside" id="eBz-Zw-k5g"/>
@@ -63,6 +71,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="checkoutButton" destination="x04-51-s9K" id="W5z-z1-1x2"/>
                 <outlet property="orderTotalLabel" destination="D3F-SG-Y91" id="FyE-dN-w7P"/>
             </connections>
             <point key="canvasLocation" x="211.59420289855075" y="79.6875"/>

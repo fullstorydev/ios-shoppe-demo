@@ -9,15 +9,16 @@
 import Foundation
 import UIKit
 
+var order: Order = Order()
+
 class CartTableViewController: UITableViewController {
 
-    var order: Order = Order()
     var items = [Product]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("\(order.cartOrderTotal())")
 
+        navigationItem.title = "Order Cart"
         navigationController?.navigationBar.tintColor = .white
         tableView.register(UINib(nibName: "CartTableViewCell", bundle: nil), forCellReuseIdentifier: "checkout")
         tableView.register(UINib(nibName: "CartQuantityTableViewCell", bundle: nil), forCellReuseIdentifier: "quantity")
@@ -26,6 +27,10 @@ class CartTableViewController: UITableViewController {
 
     func setOrderItemsForCart() {
         items = order.items.filter { $0.quantity > 0 }
+    }
+
+    func presentCheckout() {
+        self.navigationController?.pushViewController(CheckoutTableViewController(), animated: true)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -50,8 +55,8 @@ class CartTableViewController: UITableViewController {
         case 0:
             let cell =  tableView.dequeueReusableCell(withIdentifier: "checkout") as? CartTableViewCell
 
-            cell?.tableViewController = self
-            cell?.setupCartOrder()
+            cell?.cartTableViewController = self
+            cell?.setup()
 
             return cell ?? UITableViewCell()
         case 1:

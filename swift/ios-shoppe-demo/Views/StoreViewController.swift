@@ -13,7 +13,6 @@ public var username: String?
 class StoreViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     var products: [Product] = []
-    var order: Order = Order()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +30,7 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
                         else if let image = image {
                             item.image = image
                             DispatchQueue.main.async {
-                                self.order.items = self.products
+                                order.items = self.products
                                 self.collectionView.reloadData()
                             }
                         }
@@ -58,10 +57,7 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
     }
 
     @objc func openCart() {
-        // TODO: Present Cart View controller
-        let vc = CartTableViewController()
-        vc.order = order
-        self.navigationController?.pushViewController(vc, animated: true)
+        self.navigationController?.pushViewController(CartTableViewController(), animated: true)
     }
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
