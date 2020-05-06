@@ -23,6 +23,8 @@ class CartTableViewController: UITableViewController {
         navigationController?.navigationBar.tintColor = .white
         tableView.register(UINib(nibName: "CartTableViewCell", bundle: nil), forCellReuseIdentifier: "checkout")
         tableView.register(UINib(nibName: "CartQuantityTableViewCell", bundle: nil), forCellReuseIdentifier: "quantity")
+        tableView.register(UINib(nibName: "LargeLabelTableViewCell", bundle: nil), forCellReuseIdentifier: "title")
+
 
         setOrderItemsForCart()
         tableView.separatorStyle = .none
@@ -57,12 +59,11 @@ class CartTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         if (items.count == 0) {
-            let cell = UITableViewCell()
+            let cell = tableView.dequeueReusableCell(withIdentifier: "title", for: indexPath) as? LargeLabelTableViewCell
+            cell?.largeTextLabel.text =  "No items in Cart."
+            cell?.largeTextLabel.textAlignment = .center
 
-            cell.textLabel?.text = "No items in Cart."
-            cell.textLabel?.textAlignment = .center
-
-            return cell
+            return cell ?? UITableViewCell()
         }
         else {
             switch indexPath.section {
@@ -74,13 +75,10 @@ class CartTableViewController: UITableViewController {
 
                 return cell ?? UITableViewCell()
             case 1:
-                let cell = UITableViewCell()
+                let cell = tableView.dequeueReusableCell(withIdentifier: "title", for: indexPath) as? LargeLabelTableViewCell
+                cell?.largeTextLabel.text = "Products In Cart:"
 
-                cell.textLabel?.font = UIFont(name: "Helvetica-Bold", size: 30)
-                cell.textLabel?.textAlignment = .left
-                cell.textLabel?.text = "Products In Cart:"
-
-                return cell
+                return cell ?? UITableViewCell()
             case 2:
                 let product = items[indexPath.row]
                 let cell = tableView.dequeueReusableCell(withIdentifier: "quantity", for: indexPath) as? CartQuantityTableViewCell

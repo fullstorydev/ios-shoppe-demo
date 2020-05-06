@@ -25,4 +25,8 @@ class Product {
         self.imageName = dict["image"] as? String ?? ""
         self.unit = dict["unit"] as? String ?? ""
     }
+
+    func getTotal() -> Decimal {
+        return price.multiply(quantity)
+    }
 }

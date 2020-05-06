@@ -14,10 +14,13 @@ class CheckoutTableViewController: UITableViewController {
     var cardItems: [CardDetail] = [.name, .cardNumber, .expiration, .csv]
     var addressDict = [AddressDetail: String]()
 
+    var autoFillEnabled: Bool = false
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navigationItem.title = "Complete Order"
+
         tableView.register(UINib(nibName: "CheckoutTableViewCell", bundle: nil), forCellReuseIdentifier: "textField")
         tableView.register(UINib(nibName: "LargeLabelTableViewCell", bundle: nil), forCellReuseIdentifier: "title")
         tableView.register(UINib(nibName: "CartTableViewCell", bundle: nil), forCellReuseIdentifier: "checkout")
