@@ -8,8 +8,8 @@
 
 import Foundation
 
-extension Double {
-    func multiply(_ byNumber: Int) -> Double {
-        return self * Double(byNumber)
+extension Decimal {
+    func multiply(_ byNumber: Int) -> Decimal {
+        return self * Decimal(integerLiteral: byNumber)
     }
 }

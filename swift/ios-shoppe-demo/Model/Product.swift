@@ -12,7 +12,7 @@ import UIKit
 class Product {
     var title: String
     var description: String
-    var price: Double
+    var price: Decimal
     var imageName: String
     var image: UIImage = UIImage()
     var unit: String
@@ -21,7 +21,7 @@ class Product {
     init(_ dict: [String: Any]) {
         self.title = dict["title"] as? String ?? ""
         self.description = dict["description"] as? String ?? ""
-        self.price = dict["price"] as? Double ?? -1.0
+        self.price = Decimal(floatLiteral: dict["price"] as? Double ?? -1.0)
         self.imageName = dict["image"] as? String ?? ""
         self.unit = dict["unit"] as? String ?? ""
     }

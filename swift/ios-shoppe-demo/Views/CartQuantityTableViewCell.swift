@@ -48,7 +48,8 @@ class CartQuantityTableViewCell: UITableViewCell {
 
         if product.quantity <= 0 {
             tableViewController?.setOrderItemsForCart()
-            tableViewController?.tableView.reloadData()
         }
+
+        tableViewController?.tableView.reloadData()
     }
 }

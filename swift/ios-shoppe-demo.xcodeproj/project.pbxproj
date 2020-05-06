@@ -24,6 +24,7 @@
 		F25D20BF240EB5A600CF89C3 /* ios_shoppe_demoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D20BE240EB5A600CF89C3 /* ios_shoppe_demoUITests.swift */; };
 		F25D20CD24100B2700CF89C3 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D20CC24100B2700CF89C3 /* APIService.swift */; };
 		F26DD85224175B7400504A3F /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26DD85124175B7400504A3F /* Product.swift */; };
+		F2B80CFA24632229004EECFA /* ProductSummaryTotalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B80CF924632229004EECFA /* ProductSummaryTotalCell.swift */; };
 		F2C804DA24168C8B0098418D /* Preferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2C804D924168C8B0098418D /* Preferences.plist */; };
 		F2C804DB24168C8B0098418D /* Preferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2C804D924168C8B0098418D /* Preferences.plist */; };
 		F2C804DC24168C8B0098418D /* Preferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2C804D924168C8B0098418D /* Preferences.plist */; };
@@ -44,6 +45,10 @@
 		F2F59D2B245736CC008B20AD /* CardDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25401242444CDF30091668D /* CardDetail.swift */; };
 		F2F59D2C245736D1008B20AD /* CheckoutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F25400DB2440C5780091668D /* CheckoutTableViewCell.xib */; };
 		F2F59D2D245736D1008B20AD /* LargeLabelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F25401222444C3CF0091668D /* LargeLabelTableViewCell.xib */; };
+		F2FC7F272462F95B000E46EB /* ProductSummaryTopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2FC7F262462F95B000E46EB /* ProductSummaryTopCell.xib */; };
+		F2FC7F292462FFB4000E46EB /* ThankYouCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FC7F282462FFB4000E46EB /* ThankYouCell.swift */; };
+		F2FC7F2B24630438000E46EB /* ProductSummaryUserDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2FC7F2A24630438000E46EB /* ProductSummaryUserDetailCell.xib */; };
+		F2FC7F2D24631F89000E46EB /* ProductSummaryTotalCost.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2FC7F2C24631F89000E46EB /* ProductSummaryTotalCost.xib */; };
 		F584FA6FCFF911FCE00C41B7 /* Pods_ios_shoppe_demo_ios_shoppe_demoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81439738BD777FCE9509559B /* Pods_ios_shoppe_demo_ios_shoppe_demoUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -105,6 +110,7 @@
 		F25D20C0240EB5A600CF89C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F25D20CC24100B2700CF89C3 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		F26DD85124175B7400504A3F /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		F2B80CF924632229004EECFA /* ProductSummaryTotalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSummaryTotalCell.swift; sourceTree = "<group>"; };
 		F2C804D924168C8B0098418D /* Preferences.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Preferences.plist; sourceTree = "<group>"; };
 		F2CA62B3245B223200772F93 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		F2D2A84B245B1A620000B4B4 /* ProductSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSummaryView.swift; sourceTree = "<group>"; };
@@ -113,6 +119,10 @@
 		F2E5A511241934B9005DFBFE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2E5A51524193501005DFBFE /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		F2E5A51724193637005DFBFE /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F2FC7F262462F95B000E46EB /* ProductSummaryTopCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductSummaryTopCell.xib; sourceTree = "<group>"; };
+		F2FC7F282462FFB4000E46EB /* ThankYouCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankYouCell.swift; sourceTree = "<group>"; };
+		F2FC7F2A24630438000E46EB /* ProductSummaryUserDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductSummaryUserDetailCell.xib; sourceTree = "<group>"; };
+		F2FC7F2C24631F89000E46EB /* ProductSummaryTotalCost.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductSummaryTotalCost.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +197,8 @@
 				F25400DF2440D78A0091668D /* CheckoutTextViewCell.swift */,
 				F25401202444BC710091668D /* LargeLabelTableViewCell.swift */,
 				F2D2A84D245B1CB70000B4B4 /* ProductSummaryCell.swift */,
+				F2FC7F282462FFB4000E46EB /* ThankYouCell.swift */,
+				F2B80CF924632229004EECFA /* ProductSummaryTotalCell.swift */,
 				F25400DA2440C5350091668D /* Nibs */,
 			);
 			name = ViewCells;
@@ -210,6 +222,9 @@
 				F25400DB2440C5780091668D /* CheckoutTableViewCell.xib */,
 				F25401222444C3CF0091668D /* LargeLabelTableViewCell.xib */,
 				F2D2A84F245B1CE00000B4B4 /* ProductSummaryCell.xib */,
+				F2FC7F262462F95B000E46EB /* ProductSummaryTopCell.xib */,
+				F2FC7F2A24630438000E46EB /* ProductSummaryUserDetailCell.xib */,
+				F2FC7F2C24631F89000E46EB /* ProductSummaryTotalCost.xib */,
 			);
 			name = Nibs;
 			sourceTree = "<group>";
@@ -413,7 +428,9 @@
 			files = (
 				F25D20A9240EB5A600CF89C3 /* LaunchScreen.storyboard in Resources */,
 				F25D20A6240EB5A600CF89C3 /* Assets.xcassets in Resources */,
+				F2FC7F272462F95B000E46EB /* ProductSummaryTopCell.xib in Resources */,
 				F2D2A850245B1CE00000B4B4 /* ProductSummaryCell.xib in Resources */,
+				F2FC7F2B24630438000E46EB /* ProductSummaryUserDetailCell.xib in Resources */,
 				F2F59D2D245736D1008B20AD /* LargeLabelTableViewCell.xib in Resources */,
 				F20C9029242D08D300113086 /* ProductCollectionViewCell.xib in Resources */,
 				F2F59D2C245736D1008B20AD /* CheckoutTableViewCell.xib in Resources */,
@@ -421,6 +438,7 @@
 				F21E144C2428DA82005D4C76 /* Products.json in Resources */,
 				F2C804DA24168C8B0098418D /* Preferences.plist in Resources */,
 				F25400D7243F78550091668D /* CartQuantityTableViewCell.xib in Resources */,
+				F2FC7F2D24631F89000E46EB /* ProductSummaryTotalCost.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -580,11 +598,13 @@
 				F2F59D2B245736CC008B20AD /* CardDetail.swift in Sources */,
 				F2441D872433900C006BEFF3 /* Order.swift in Sources */,
 				F2441D7E24322B26006BEFF3 /* EX+UIView.swift in Sources */,
+				F2B80CFA24632229004EECFA /* ProductSummaryTotalCell.swift in Sources */,
 				F25D20CD24100B2700CF89C3 /* APIService.swift in Sources */,
 				F2F59D29245736C7008B20AD /* CheckoutTableViewController.swift in Sources */,
 				F2F59D2A245736CC008B20AD /* AddressDetail.swift in Sources */,
 				F2E5A512241934B9005DFBFE /* AppDelegate.swift in Sources */,
 				F25400D1243CD0520091668D /* EX+Double.swift in Sources */,
+				F2FC7F292462FFB4000E46EB /* ThankYouCell.swift in Sources */,
 				F2D2A84C245B1A620000B4B4 /* ProductSummaryView.swift in Sources */,
 				F2E5A51624193501005DFBFE /* Utilities.swift in Sources */,
 				F26DD85224175B7400504A3F /* Product.swift in Sources */,
@@ -754,7 +774,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = AJZ8YNH2N6;
 				INFOPLIST_FILE = "ios-shoppe-demo/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -773,7 +793,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = AJZ8YNH2N6;
 				INFOPLIST_FILE = "ios-shoppe-demo/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

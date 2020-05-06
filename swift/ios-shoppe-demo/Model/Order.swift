@@ -16,8 +16,8 @@ class Order {
         items.filter { $0.title == productName }.first?.quantity += 1
     }
 
-    func cartOrderTotal() -> Double {
-        var cost = Double()
+    func cartOrderTotal() -> Decimal {
+        var cost = Decimal()
         items.forEach { (item) in
             cost += item.price.multiply(item.quantity)
         }

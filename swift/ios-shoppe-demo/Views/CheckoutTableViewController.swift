@@ -21,6 +21,8 @@ class CheckoutTableViewController: UITableViewController {
         tableView.register(UINib(nibName: "CheckoutTableViewCell", bundle: nil), forCellReuseIdentifier: "textField")
         tableView.register(UINib(nibName: "LargeLabelTableViewCell", bundle: nil), forCellReuseIdentifier: "title")
         tableView.register(UINib(nibName: "CartTableViewCell", bundle: nil), forCellReuseIdentifier: "checkout")
+        tableView.separatorStyle = .none
+        tableView.backgroundColor = fsBackgroundColor
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {

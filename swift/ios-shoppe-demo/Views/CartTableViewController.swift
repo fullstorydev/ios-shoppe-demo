@@ -23,7 +23,10 @@ class CartTableViewController: UITableViewController {
         navigationController?.navigationBar.tintColor = .white
         tableView.register(UINib(nibName: "CartTableViewCell", bundle: nil), forCellReuseIdentifier: "checkout")
         tableView.register(UINib(nibName: "CartQuantityTableViewCell", bundle: nil), forCellReuseIdentifier: "quantity")
+
         setOrderItemsForCart()
+        tableView.separatorStyle = .none
+        tableView.backgroundColor = fsBackgroundColor
     }
 
     func setOrderItemsForCart() {
@@ -39,47 +42,56 @@ class CartTableViewController: UITableViewController {
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return (items.count == 0) ? 1 : 3
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 2:
-            return items.count
+            return (items.count == 0) ? 1 : items.count
         default:
             return 1
         }
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.section {
-        case 0:
-            let cell =  tableView.dequeueReusableCell(withIdentifier: "checkout") as? CartTableViewCell
 
-            cell?.cartTableViewController = self
-            cell?.setup()
-
-            return cell ?? UITableViewCell()
-        case 1:
+        if (items.count == 0) {
             let cell = UITableViewCell()
 
-            cell.textLabel?.font = UIFont(name: "Helvetica-Bold", size: 30)
-            cell.textLabel?.textAlignment = .left
-            cell.backgroundColor = .secondarySystemBackground
-
-            cell.textLabel?.text = "Products In Cart:"
+            cell.textLabel?.text = "No items in Cart."
+            cell.textLabel?.textAlignment = .center
 
             return cell
-        case 2:
-            let product = items[indexPath.row]
-            let cell = tableView.dequeueReusableCell(withIdentifier: "quantity", for: indexPath) as? CartQuantityTableViewCell
+        }
+        else {
+            switch indexPath.section {
+            case 0:
+                let cell =  tableView.dequeueReusableCell(withIdentifier: "checkout") as? CartTableViewCell
 
-            cell?.product = product
-            cell?.tableViewController = self
+                cell?.cartTableViewController = self
+                cell?.setup()
 
-            return cell ?? UITableViewCell()
-        default:
-            return UITableViewCell()
+                return cell ?? UITableViewCell()
+            case 1:
+                let cell = UITableViewCell()
+
+                cell.textLabel?.font = UIFont(name: "Helvetica-Bold", size: 30)
+                cell.textLabel?.textAlignment = .left
+                cell.textLabel?.text = "Products In Cart:"
+
+                return cell
+            case 2:
+                let product = items[indexPath.row]
+                let cell = tableView.dequeueReusableCell(withIdentifier: "quantity", for: indexPath) as? CartQuantityTableViewCell
+
+                cell?.product = product
+                cell?.tableViewController = self
+
+                return cell ?? UITableViewCell()
+            default:
+                return UITableViewCell()
+            }
         }
     }
 }
