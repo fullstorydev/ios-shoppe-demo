@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 import FullStory
 
 @UIApplicationMain
@@ -27,6 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FSDelegate {
         // Override point for customization after application launch.
 
         FS.delegate = self
+        FirebaseApp.configure()
 
         return true
     }

@@ -24,4 +24,10 @@ class Order {
 
         return cost
     }
+
+    func orderSummary() -> [String: Any] {
+        let orderDict: [String: Any] = [:]
+
+        return orderDict
+    }
 }

@@ -49,6 +49,8 @@
 		F2FC7F292462FFB4000E46EB /* ThankYouCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FC7F282462FFB4000E46EB /* ThankYouCell.swift */; };
 		F2FC7F2B24630438000E46EB /* ProductSummaryUserDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2FC7F2A24630438000E46EB /* ProductSummaryUserDetailCell.xib */; };
 		F2FC7F2D24631F89000E46EB /* ProductSummaryTotalCost.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2FC7F2C24631F89000E46EB /* ProductSummaryTotalCost.xib */; };
+		F2FDDDBB2464528B00ADB58B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2FDDDBA2464528B00ADB58B /* GoogleService-Info.plist */; };
+		F2FDDDBE24645E6C00ADB58B /* FullStoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FDDDBD24645E6C00ADB58B /* FullStoryManager.swift */; };
 		F584FA6FCFF911FCE00C41B7 /* Pods_ios_shoppe_demo_ios_shoppe_demoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81439738BD777FCE9509559B /* Pods_ios_shoppe_demo_ios_shoppe_demoUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -123,6 +125,8 @@
 		F2FC7F282462FFB4000E46EB /* ThankYouCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankYouCell.swift; sourceTree = "<group>"; };
 		F2FC7F2A24630438000E46EB /* ProductSummaryUserDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductSummaryUserDetailCell.xib; sourceTree = "<group>"; };
 		F2FC7F2C24631F89000E46EB /* ProductSummaryTotalCost.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductSummaryTotalCost.xib; sourceTree = "<group>"; };
+		F2FDDDBA2464528B00ADB58B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F2FDDDBD24645E6C00ADB58B /* FullStoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullStoryManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +293,7 @@
 				F25D20A5240EB5A600CF89C3 /* Assets.xcassets */,
 				F25D20A7240EB5A600CF89C3 /* LaunchScreen.storyboard */,
 				F25D20AA240EB5A600CF89C3 /* Info.plist */,
+				F2FDDDBA2464528B00ADB58B /* GoogleService-Info.plist */,
 				F2C804D924168C8B0098418D /* Preferences.plist */,
 				F2E5A51524193501005DFBFE /* Utilities.swift */,
 				F21E144B2428DA82005D4C76 /* Products.json */,
@@ -300,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				F25D20CC24100B2700CF89C3 /* APIService.swift */,
+				F2FDDDBD24645E6C00ADB58B /* FullStoryManager.swift */,
 			);
 			path = ServiceManagers;
 			sourceTree = "<group>";
@@ -329,6 +335,7 @@
 				F25D2097240EB5A300CF89C3 /* Resources */,
 				1B221A27197A6189FE5C1C37 /* [CP] Embed Pods Frameworks */,
 				F2441D882433B091006BEFF3 /* ShellScript */,
+				F2FDDDBC246455B700ADB58B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -439,6 +446,7 @@
 				F2C804DA24168C8B0098418D /* Preferences.plist in Resources */,
 				F25400D7243F78550091668D /* CartQuantityTableViewCell.xib in Resources */,
 				F2FC7F2D24631F89000E46EB /* ProductSummaryTotalCost.xib in Resources */,
+				F2FDDDBB2464528B00ADB58B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -578,6 +586,25 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\n\"${PROJECT_DIR}/Pods/FullStory/tools/FullStoryCommandLine\" \"${CONFIGURATION_BUILD_DIR}/${WRAPPER_NAME}\"\n";
 		};
+		F2FDDDBC246455B700ADB58B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -601,6 +628,7 @@
 				F2B80CFA24632229004EECFA /* ProductSummaryTotalCell.swift in Sources */,
 				F25D20CD24100B2700CF89C3 /* APIService.swift in Sources */,
 				F2F59D29245736C7008B20AD /* CheckoutTableViewController.swift in Sources */,
+				F2FDDDBE24645E6C00ADB58B /* FullStoryManager.swift in Sources */,
 				F2F59D2A245736CC008B20AD /* AddressDetail.swift in Sources */,
 				F2E5A512241934B9005DFBFE /* AppDelegate.swift in Sources */,
 				F25400D1243CD0520091668D /* EX+Double.swift in Sources */,
