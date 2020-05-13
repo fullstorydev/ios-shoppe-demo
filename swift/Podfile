@@ -16,5 +16,6 @@ pod 'FullStory', :http => 'https://ios-releases.fullstory.com/fullstory-1.1.0.ta
   target 'ios-shoppe-demoUITests' do
     # Pods for testing
   end
-
+  
+pod 'Analytics', '~> 3.0'
 end

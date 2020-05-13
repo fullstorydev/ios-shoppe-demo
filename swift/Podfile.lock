@@ -1,8 +1,14 @@
 PODS:
+  - Analytics (3.8.1)
   - FullStory (1.1.0)
 
 DEPENDENCIES:
+  - Analytics (~> 3.0)
   - "FullStory (from `{:http=>\"https://ios-releases.fullstory.com/fullstory-1.1.0.tar.gz\"}`)"
+
+SPEC REPOS:
+  trunk:
+    - Analytics
 
 EXTERNAL SOURCES:
   FullStory:
@@ -13,8 +19,9 @@ CHECKOUT OPTIONS:
     :http: https://ios-releases.fullstory.com/fullstory-1.1.0.tar.gz
 
 SPEC CHECKSUMS:
+  Analytics: 45b1faec509367a99c7b788cc5389180c43fe3fc
   FullStory: 931387833d819c00ff185a2ce6480de5ea5413dd
 
-PODFILE CHECKSUM: 8c2c3a39ad741ce58f451114bb1d22aef8984d6d
+PODFILE CHECKSUM: 985757ad5b384dadb1a4d03d5d3be34357407a5e
 
 COCOAPODS: 1.9.1
