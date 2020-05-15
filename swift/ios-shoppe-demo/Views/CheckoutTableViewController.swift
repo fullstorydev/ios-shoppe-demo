@@ -14,6 +14,9 @@ class CheckoutTableViewController: UITableViewController {
     var cardItems: [CardDetail] = [.name, .cardNumber, .expiration, .csv]
     var addressDict = [AddressDetail: String]()
 
+    var autoFillEnabled: Bool = false
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
