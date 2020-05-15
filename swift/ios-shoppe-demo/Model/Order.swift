@@ -26,7 +26,12 @@ class Order {
     }
 
     func orderSummary() -> [String: Any] {
-        let orderDict: [String: Any] = [:]
+        let sortedItems: [Product] = items.filter { $0.quantity > 0 }
+        var orderDict: [String: Any] = [:]
+
+        for item in sortedItems {
+            orderDict[item.title] = item.quantity
+        }
 
         return orderDict
     }

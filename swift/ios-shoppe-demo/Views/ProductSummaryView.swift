@@ -59,9 +59,10 @@ class ProductSummaryView: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "thankYou", for: indexPath) as? ThankYouCell
             return cell ?? UITableViewCell()
         case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "userDetails", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "userDetails", for: indexPath) as? ProductSummaryDetailCell
+            cell?.setupFSElements()
 
-            return cell
+            return cell ?? UITableViewCell()
         case 2:
             let product = purchasedItems[indexPath.row]
             let cell = tableView.dequeueReusableCell(withIdentifier: "quantity", for: indexPath) as? ProductSummaryCell

@@ -51,6 +51,7 @@
 		F2FC7F2D24631F89000E46EB /* ProductSummaryTotalCost.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2FC7F2C24631F89000E46EB /* ProductSummaryTotalCost.xib */; };
 		F2FDDDBB2464528B00ADB58B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2FDDDBA2464528B00ADB58B /* GoogleService-Info.plist */; };
 		F2FDDDBE24645E6C00ADB58B /* FullStoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FDDDBD24645E6C00ADB58B /* FullStoryManager.swift */; };
+		F2FDDDC02465A7F200ADB58B /* ProductSummaryDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FDDDBF2465A7F200ADB58B /* ProductSummaryDetailCell.swift */; };
 		F584FA6FCFF911FCE00C41B7 /* Pods_ios_shoppe_demo_ios_shoppe_demoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81439738BD777FCE9509559B /* Pods_ios_shoppe_demo_ios_shoppe_demoUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -127,6 +128,7 @@
 		F2FC7F2C24631F89000E46EB /* ProductSummaryTotalCost.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductSummaryTotalCost.xib; sourceTree = "<group>"; };
 		F2FDDDBA2464528B00ADB58B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F2FDDDBD24645E6C00ADB58B /* FullStoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullStoryManager.swift; sourceTree = "<group>"; };
+		F2FDDDBF2465A7F200ADB58B /* ProductSummaryDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSummaryDetailCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +205,7 @@
 				F2D2A84D245B1CB70000B4B4 /* ProductSummaryCell.swift */,
 				F2FC7F282462FFB4000E46EB /* ThankYouCell.swift */,
 				F2B80CF924632229004EECFA /* ProductSummaryTotalCell.swift */,
+				F2FDDDBF2465A7F200ADB58B /* ProductSummaryDetailCell.swift */,
 				F25400DA2440C5350091668D /* Nibs */,
 			);
 			name = ViewCells;
@@ -613,6 +616,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F25D20A1240EB5A300CF89C3 /* StoreViewController.swift in Sources */,
+				F2FDDDC02465A7F200ADB58B /* ProductSummaryDetailCell.swift in Sources */,
 				F2F59D27245736C0008B20AD /* CheckoutTextViewCell.swift in Sources */,
 				F2CA62B4245B223200772F93 /* UserProfile.swift in Sources */,
 				F2D2A84E245B1CB70000B4B4 /* ProductSummaryCell.swift in Sources */,

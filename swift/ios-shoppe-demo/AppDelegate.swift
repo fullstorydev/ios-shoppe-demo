@@ -8,12 +8,16 @@
 
 import UIKit
 import Firebase
+import FirebaseCrashlytics
 import FullStory
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, FSDelegate {
 
     func fullstoryDidStartSession(_ sessionUrl: String) {
+        print("FSSessionURL: ",sessionUrl)
+
+        Crashlytics.crashlytics().setCustomValue(sessionUrl, forKey: "FSURLSession")
     }
 
     func fullstoryDidStopSession() {

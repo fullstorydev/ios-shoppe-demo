@@ -8,7 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="userDetails" rowHeight="27" id="ClA-hD-8te">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="userDetails" rowHeight="27" id="ClA-hD-8te" customClass="ProductSummaryDetailCell" customModule="ios_shoppe_demo" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="137"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ClA-hD-8te" id="jFU-JM-fCv">
@@ -57,6 +57,12 @@
                     <constraint firstItem="5DK-fp-Qrm" firstAttribute="leading" secondItem="jFU-JM-fCv" secondAttribute="leading" constant="20" id="zba-gu-UAY"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="nameLabel" destination="OSd-sh-BS3" id="05l-Qf-teT"/>
+                <outlet property="shippedLabel" destination="Dqp-ZC-HDC" id="AD1-bJ-K2L"/>
+                <outlet property="shippingAddress" destination="nTL-xd-hBw" id="fFq-I5-qGt"/>
+                <outlet property="shippingLabel" destination="5DK-fp-Qrm" id="LiZ-Ql-1Ro"/>
+            </connections>
             <point key="canvasLocation" x="155.07246376811597" y="-72.65625"/>
         </tableViewCell>
     </objects>

@@ -15,6 +15,8 @@ class ProductSummaryCell: UITableViewCell {
     @IBOutlet weak var quantityLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
 
+    var fsManager = FullStoryManager.shared
+
     var product: Product! {
         didSet {
             setup()
@@ -27,5 +29,9 @@ class ProductSummaryCell: UITableViewCell {
             self.quantityLabel.text = "x\(self.product.quantity)"
             self.totalLabel.text = "$\(self.product.getTotal())"
         }
+
+        fsManager.fsModify(status: .unmask, of: titleLabel)
+        fsManager.fsModify(status: .unmask, of: quantityLabel)
+        fsManager.fsModify(status: .unmask, of: totalLabel)
     }
 }
