@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0019F530089CB2B5C24FC344 /* Pods_ios_shoppe_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0F1CA512D658190A6D7A3AB /* Pods_ios_shoppe_demo.framework */; };
+		04A7D590246EDF95008CE705 /* FullStoryMiddleware.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A7D58F246EDF95008CE705 /* FullStoryMiddleware.m */; };
 		72A290BF723CE163DA2D4CAD /* Pods_ios_shoppe_demoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBA0A3569A524FA18FE78485 /* Pods_ios_shoppe_demoTests.framework */; };
 		F20C9029242D08D300113086 /* ProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F20C9028242D08D300113086 /* ProductCollectionViewCell.xib */; };
 		F21E144C2428DA82005D4C76 /* Products.json in Resources */ = {isa = PBXBuildFile; fileRef = F21E144B2428DA82005D4C76 /* Products.json */; };
@@ -65,6 +66,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04A7D58D246EDF55008CE705 /* FullStoryMiddleware.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FullStoryMiddleware.h; sourceTree = "<group>"; };
+		04A7D58E246EDF95008CE705 /* ios-shoppe-demo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ios-shoppe-demo-Bridging-Header.h"; sourceTree = "<group>"; };
+		04A7D58F246EDF95008CE705 /* FullStoryMiddleware.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FullStoryMiddleware.m; sourceTree = "<group>"; };
 		2E9EF5FCF3EC3A0AB8187EC5 /* Pods-ios-shoppe-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-shoppe-demo.debug.xcconfig"; path = "Target Support Files/Pods-ios-shoppe-demo/Pods-ios-shoppe-demo.debug.xcconfig"; sourceTree = "<group>"; };
 		4E54438F114A7298757447A9 /* Pods-ios-shoppe-demoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-shoppe-demoTests.release.xcconfig"; path = "Target Support Files/Pods-ios-shoppe-demoTests/Pods-ios-shoppe-demoTests.release.xcconfig"; sourceTree = "<group>"; };
 		72879FE3257269A05966A08B /* Pods-ios-shoppe-demo-ios-shoppe-demoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-shoppe-demo-ios-shoppe-demoUITests.debug.xcconfig"; path = "Target Support Files/Pods-ios-shoppe-demo-ios-shoppe-demoUITests/Pods-ios-shoppe-demo-ios-shoppe-demoUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -241,6 +245,9 @@
 			children = (
 				F2E5A511241934B9005DFBFE /* AppDelegate.swift */,
 				F2E5A51724193637005DFBFE /* SceneDelegate.swift */,
+				04A7D58D246EDF55008CE705 /* FullStoryMiddleware.h */,
+				04A7D58F246EDF95008CE705 /* FullStoryMiddleware.m */,
+				04A7D58E246EDF95008CE705 /* ios-shoppe-demo-Bridging-Header.h */,
 				F26DD8562417DCF700504A3F /* ServiceManagers */,
 				F26DD8572417DD0900504A3F /* Model */,
 				F21E1451242A36D9005D4C76 /* Views */,
@@ -375,6 +382,7 @@
 				TargetAttributes = {
 					F25D2098240EB5A300CF89C3 = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1140;
 					};
 					F25D20AE240EB5A600CF89C3 = {
 						CreatedOnToolsVersion = 11.3.1;
@@ -567,6 +575,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04A7D590246EDF95008CE705 /* FullStoryMiddleware.m in Sources */,
 				F25D20A1240EB5A300CF89C3 /* StoreViewController.swift in Sources */,
 				F2F59D27245736C0008B20AD /* CheckoutTextViewCell.swift in Sources */,
 				F2CA62B4245B223200772F93 /* UserProfile.swift in Sources */,
@@ -690,6 +699,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "ios-shoppe-demo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -743,6 +753,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "ios-shoppe-demo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -753,6 +764,7 @@
 			baseConfigurationReference = 2E9EF5FCF3EC3A0AB8187EC5 /* Pods-ios-shoppe-demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "ios-shoppe-demo/Resources/Info.plist";
@@ -762,6 +774,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.FullStory.ios-shoppe-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ios-shoppe-demo/ios-shoppe-demo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -772,6 +786,7 @@
 			baseConfigurationReference = 98BAF5AFA0FF0AE9BB28CE7F /* Pods-ios-shoppe-demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "ios-shoppe-demo/Resources/Info.plist";
@@ -781,6 +796,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.FullStory.ios-shoppe-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ios-shoppe-demo/ios-shoppe-demo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

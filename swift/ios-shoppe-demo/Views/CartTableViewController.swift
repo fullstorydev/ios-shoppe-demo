@@ -24,6 +24,8 @@ class CartTableViewController: UITableViewController {
         tableView.register(UINib(nibName: "CartTableViewCell", bundle: nil), forCellReuseIdentifier: "checkout")
         tableView.register(UINib(nibName: "CartQuantityTableViewCell", bundle: nil), forCellReuseIdentifier: "quantity")
         setOrderItemsForCart()
+        
+        SEGAnalytics.shared()?.track("Cart view did load")
     }
 
     func setOrderItemsForCart() {

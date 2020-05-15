@@ -10,6 +10,7 @@ import UIKit
 import FullStory
 import Analytics
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, FSDelegate {
 
@@ -31,31 +32,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FSDelegate {
         
         let configuration = SEGAnalyticsConfiguration.init(writeKey: "w44t5luR7FK0fK9w3YG4FcB1G2NLYoZa");
         configuration.trackApplicationLifecycleEvents = true; // Enable this to record certain application events automatically!
-//        configuration.recordScreenViews = true; // Enable this to record screen views automatically!
         
-        let customizeAllTrackCalls = SEGBlockMiddleware { (context, next) in
-            if context.eventType == .track {
-                next(context.modify { ctx in
-                    guard let track = ctx.payload as? SEGTrackPayload else {
-                        return
-                    }
-                    let newEvent = "[New] \(track.event)"
-                    var newProps = track.properties ?? [:]
-                    newProps["customAttribute"] = "Hello"
-                    ctx.payload = SEGTrackPayload(
-                        event: newEvent,
-                        properties: newProps,
-                        context: track.context,
-                        integrations: track.integrations
-                    )
-                })
-            } else {
-                next(context)
-            }
-        }
+        
 
         configuration.middlewares = [
-            customizeAllTrackCalls,
+            FullStoryMiddleware.init()
         ]
         SEGAnalytics.setup(with: configuration)
 
