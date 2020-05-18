@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FSDelegate {
         
         let configuration = SEGAnalyticsConfiguration.init(writeKey: "w44t5luR7FK0fK9w3YG4FcB1G2NLYoZa");
         configuration.trackApplicationLifecycleEvents = true; // Enable this to record certain application events automatically!
-        
+//        configuration.flushAt = 1;
         
 
         configuration.middlewares = [

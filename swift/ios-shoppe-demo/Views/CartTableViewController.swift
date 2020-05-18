@@ -26,6 +26,11 @@ class CartTableViewController: UITableViewController {
         setOrderItemsForCart()
         
         SEGAnalytics.shared()?.track("Cart view did load")
+        SEGAnalytics.shared()?.screen("cartview")
+        SEGAnalytics.shared()?.identify("testuser2", traits:["email": "testuser2@test.com", "additionalTraits":"test trait"]);
+        SEGAnalytics.shared()?.group("testgroupid")
+        NSLog("fullstroy %@", FS.currentSessionURL ?? "no fs session")
+        
     }
 
     func setOrderItemsForCart() {
