@@ -12,6 +12,7 @@ import UIKit
 class CartQuantityTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var quantityLabel: UILabel!
+    @IBOutlet weak var totalLabel: UILabel!
 
     var product: Product! {
         didSet {
@@ -28,7 +29,8 @@ class CartQuantityTableViewCell: UITableViewCell {
         }
 
         titleLabel.text = product.title
-        quantityLabel.text = "\(product.quantity)"
+        quantityLabel.text = "x\(product.quantity)"
+        // TODO: Add after first PR totalLabel.text = "$\(product.getTotal())"
     }
 
     @IBAction func addQuantity(_ sender: Any) {
@@ -48,7 +50,8 @@ class CartQuantityTableViewCell: UITableViewCell {
 
         if product.quantity <= 0 {
             tableViewController?.setOrderItemsForCart()
-            tableViewController?.tableView.reloadData()
         }
+
+        tableViewController?.tableView.reloadData()
     }
 }

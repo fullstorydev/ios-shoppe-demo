@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="thankYou" rowHeight="170" id="kcu-I4-f9B" customClass="ThankYouCell" customModule="ios_shoppe_demo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="170"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kcu-I4-f9B" id="JgA-sG-aQZ">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="170"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank You" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0my-Z7-j31">
+                        <rect key="frame" x="117" y="14" width="180" height="45"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="37"/>
+                        <color key="textColor" red="0.85883748530000004" green="0.30198901890000002" blue="0.56464594599999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fs_heart" translatesAutoresizingMaskIntoConstraints="NO" id="ydY-52-lB9">
+                        <rect key="frame" x="157" y="59" width="100" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="FD6-k2-O6q"/>
+                            <constraint firstAttribute="height" constant="100" id="rGk-dP-D1M"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" red="0.03917218745" green="0.12158025059999999" blue="0.19604882600000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstItem="ydY-52-lB9" firstAttribute="centerX" secondItem="0my-Z7-j31" secondAttribute="centerX" id="fiU-OB-wOM"/>
+                    <constraint firstItem="ydY-52-lB9" firstAttribute="centerX" secondItem="JgA-sG-aQZ" secondAttribute="centerX" id="ghZ-WP-wrB"/>
+                    <constraint firstAttribute="bottom" secondItem="ydY-52-lB9" secondAttribute="bottom" constant="11" id="iQx-bU-AzG"/>
+                    <constraint firstItem="0my-Z7-j31" firstAttribute="top" secondItem="JgA-sG-aQZ" secondAttribute="top" constant="14" id="jRx-eb-9CN"/>
+                    <constraint firstItem="ydY-52-lB9" firstAttribute="top" secondItem="0my-Z7-j31" secondAttribute="bottom" id="nXg-nS-M3d"/>
+                    <constraint firstItem="ydY-52-lB9" firstAttribute="bottom" secondItem="JgA-sG-aQZ" secondAttribute="bottomMargin" id="sDW-to-CHd"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="137.68115942028987" y="192.1875"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="fs_heart" width="800" height="800"/>
+    </resources>
+</document>
