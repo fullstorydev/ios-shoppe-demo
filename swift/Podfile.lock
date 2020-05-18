@@ -44,7 +44,7 @@ PODS:
     - GoogleUtilities/Environment (~> 6.6)
     - GoogleUtilities/UserDefaults (~> 6.6)
     - PromisesObjC (~> 1.2)
-  - FullStory (1.1.5)
+  - FullStory (1.2.0)
   - GoogleAppMeasurement (6.5.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
     - GoogleUtilities/MethodSwizzler (~> 6.0)
@@ -84,7 +84,7 @@ PODS:
 DEPENDENCIES:
   - Firebase/Analytics
   - Firebase/Crashlytics
-  - "FullStory (from `{:http=>\"https://ios-releases.fullstory.com/fullstory-1.1.5.tar.gz\"}`)"
+  - "FullStory (from `{:http=>\"https://ios-releases.fullstory.com/fullstory-1.2.0.tar.gz\"}`)"
 
 SPEC REPOS:
   trunk:
@@ -105,11 +105,11 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   FullStory:
-    :http: https://ios-releases.fullstory.com/fullstory-1.1.5.tar.gz
+    :http: https://ios-releases.fullstory.com/fullstory-1.2.0.tar.gz
 
 CHECKOUT OPTIONS:
   FullStory:
-    :http: https://ios-releases.fullstory.com/fullstory-1.1.5.tar.gz
+    :http: https://ios-releases.fullstory.com/fullstory-1.2.0.tar.gz
 
 SPEC CHECKSUMS:
   Firebase: b28e55c60efd98963cd9011fe2fac5a10c2ba124
@@ -120,7 +120,7 @@ SPEC CHECKSUMS:
   FirebaseCoreDiagnosticsInterop: 296e2c5f5314500a850ad0b83e9e7c10b011a850
   FirebaseCrashlytics: fff345f16a07f0b23cb342d8de5a42cec6de3492
   FirebaseInstallations: 2119fb3e46b0a88bfdbf12562f855ee3252462fa
-  FullStory: b354b2eded80400e690f79b347f06ce09c79ae6f
+  FullStory: f643b02e319e400ef6ac5b34976f2e06c4de737b
   GoogleAppMeasurement: 4c644d86835d827bab30ab6aabb9ecaf1f500735
   GoogleDataTransport: f6f8eba931df03ebd2232ff4645aa85f8f47b5ab
   GoogleDataTransportCCTSupport: d70a561f7d236af529fee598835caad5e25f6d3d
@@ -128,6 +128,6 @@ SPEC CHECKSUMS:
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
 
-PODFILE CHECKSUM: 8ac388ed756c77b26532de65965a0d62997e534d
+PODFILE CHECKSUM: 279703c01a59ad17398d7b0af42176c8a1ced947
 
 COCOAPODS: 1.9.1
