@@ -13,12 +13,12 @@
 
 @implementation FullStoryMiddleware
 
-//- (instancetype)initWithWhitelistEvents:(NSArray<NSString *> *)whitelistEvents {
-//     if (self = [super init]) {
-//         self.whitelistEvents = whitelistEvents;
-//     }
-//    return self;
-//}
+- (id)initWithWhitelistEvents:(NSArray<NSString *> *)whitelistEvents {
+     if (self = [super init]) {
+         self.whitelistEvents = whitelistEvents;
+     }
+    return self;
+}
 //- (instancetype)initWithSendScreenAsEvents:(BOOL)enable {
 //     if (self = [super init]) {
 //         self.sendScreenAsEvents = enable;
@@ -38,7 +38,7 @@
 //    return self;
 //}
 
-- (instancetype)init{
+- (id)init{
     NSLog(@"init!");
     if (self = [super init]) {
         self.whitelistEvents = [[NSArray alloc] init];

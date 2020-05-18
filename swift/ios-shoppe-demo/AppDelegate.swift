@@ -34,9 +34,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FSDelegate {
         configuration.trackApplicationLifecycleEvents = true; // Enable this to record certain application events automatically!
 //        configuration.flushAt = 1;
         
-        let fsm: FullStoryMiddleware = FullStoryMiddleware.init()
-        fsm.whitelistEvents(["Cart view did load"])
+        let fsm: FullStoryMiddleware = FullStoryMiddleware.init(whitelistEvents: ["Cart view did load"])
         fsm.sendScreen(asEvents: true)
+        fsm.enableFSSessionURL(inEvent: true);
+        fsm.enableGroupTraits(toUserVars: true)
+        
 
 
         configuration.middlewares = [
