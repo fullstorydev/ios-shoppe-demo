@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import FullStory
 
 var order: Order = Order()
 var user: UserProfile?
@@ -26,6 +27,7 @@ class CartTableViewController: UITableViewController {
         setOrderItemsForCart()
         
         SEGAnalytics.shared()?.track("Cart view did load")
+        SEGAnalytics.shared()?.track("Another event")
         SEGAnalytics.shared()?.screen("cartview")
         SEGAnalytics.shared()?.identify("testuser2", traits:["email": "testuser2@test.com", "additionalTraits":"test trait"]);
         SEGAnalytics.shared()?.group("testgroupid")

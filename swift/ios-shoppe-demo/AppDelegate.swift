@@ -34,9 +34,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FSDelegate {
         configuration.trackApplicationLifecycleEvents = true; // Enable this to record certain application events automatically!
 //        configuration.flushAt = 1;
         
+        let fsm: FullStoryMiddleware = FullStoryMiddleware.init()
+        fsm.whitelistEvents(["Cart view did load"])
+        fsm.sendScreen(asEvents: true)
+
 
         configuration.middlewares = [
-            FullStoryMiddleware.init()
+            fsm
         ]
         SEGAnalytics.setup(with: configuration)
 
