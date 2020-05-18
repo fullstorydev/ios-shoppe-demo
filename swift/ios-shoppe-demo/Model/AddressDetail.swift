@@ -29,4 +29,23 @@ enum AddressDetail {
             return "Phone"
         }
     }
+
+    var template: String {
+        switch self {
+        case .name:
+            return "John Doe"
+        case .street:
+            return "1110 Downing Street"
+        case .unit:
+            return "Apt, Suit, Unit, Building (optional)"
+        case .city:
+            return "London"
+        case .state:
+            return "GG"
+        case .zip:
+            return "8966"
+        case .phone:
+            return "115-551-1555"
+        }
+    }
 }
