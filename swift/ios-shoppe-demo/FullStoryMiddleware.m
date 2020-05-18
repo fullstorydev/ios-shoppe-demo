@@ -19,27 +19,8 @@
      }
     return self;
 }
-//- (instancetype)initWithSendScreenAsEvents:(BOOL)enable {
-//     if (self = [super init]) {
-//         self.sendScreenAsEvents = enable;
-//     }
-//    return self;
-//}
-//- (instancetype)initWithEnableGroupTraitsToUserVars:(BOOL)enable {
-//     if (self = [super init]) {
-//         self.enableGroupTraitsToUserVars = enable;
-//     }
-//    return self;
-//}
-//- (instancetype)initWithEnableFSSessionURLInEvent:(BOOL)enable {
-//     if (self = [super init]) {
-//         self.enableFSSessionURLInEvent = enable;
-//     }
-//    return self;
-//}
 
 - (id)init{
-    NSLog(@"init!");
     if (self = [super init]) {
         self.whitelistEvents = [[NSArray alloc] init];
         self.sendScreenAsEvents = false;
@@ -51,7 +32,6 @@
 }
 
 - (void)context:(SEGContext * _Nonnull)context next:(SEGMiddlewareNext _Nonnull)next {
-    NSLog(@"We got here");
     next([context modify:^(id<SEGMutableContext>  _Nonnull ctx) {
         switch(ctx.eventType){
             case SEGEventTypeGroup:{
@@ -138,25 +118,22 @@
 }
 
 - (void) whitelistEvents: (NSArray *) eventNames{
-    NSLog(@"setting event names");
-    NSLog(@"array : %@", eventNames);
     self.whitelistEvents = eventNames;
-    
-    NSLog(@"after setting eventNames: %@",self.whitelistEvents);
+    [FS logWithLevel:FSLOG_INFO format:@"set Segment whitelisted event names: %@", eventNames];
 }
 
 - (void) sendScreenAsEvents: (BOOL) enable {
-    if(enable){
-        NSLog(@"enabled sendScreenAsEvents");
-    }
     self.sendScreenAsEvents = enable;
+    [FS logWithLevel:FSLOG_INFO format:@"set sendScreenAsEvents: %@",enable];
 }
 
 - (void) enableGroupTraitsToUserVars: (BOOL) enable{
     self.enableGroupTraitsToUserVars = enable;
+    [FS logWithLevel:FSLOG_INFO format:@"set enableGroupTraitsToUserVars: %@",enable];
 }
 
 - (void) enableFSSessionURLInEvent: (BOOL) enable{
     self.enableFSSessionURLInEvent = enable;
+    [FS logWithLevel:FSLOG_INFO format:@"set enableFSSessionURLInEvent: %@",enable];
 }
 @end

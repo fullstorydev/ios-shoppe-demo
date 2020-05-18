@@ -16,13 +16,7 @@
 @property (nonatomic) BOOL enableGroupTraitsToUserVars;
 @property (nonatomic) BOOL enableFSSessionURLInEvent;
 
-//- (instancetype)init;
 - (id)initWithWhitelistEvents:(NSArray<NSString *> *) whitelistEvents;
-//- (instancetype)initWithWhitelistEvents:(NSArray<NSString *> *) whitelistEvents
-//                        sendScreenAsEvents:(BOOL) sendScreenAsEvents
-//                        enableGroupTraitsToUserVars:(BOOL) enableGroupTraitsToUserVars
-//                        enableFSSessionURLInEvent:(BOOL) enableFSSessionURLInEvent;
-    
 - (void) whitelistEvents: (NSArray *) eventNames;
 - (void) sendScreenAsEvents: (BOOL) enable;
 - (void) enableGroupTraitsToUserVars: (BOOL) enable;
