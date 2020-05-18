@@ -2,8 +2,8 @@
 //  FullStoryManager.swift
 //  ios-shoppe-demo
 //
-//  Created  5/7/20.
-//  Copyright © 2020 Harold Davis Jr. All rights reserved.
+//  Created 5/7/20.
+//  Copyright © 2020 FullStory All rights reserved.
 //
 
 import Foundation
