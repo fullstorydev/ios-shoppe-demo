@@ -37,5 +37,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
 
     @IBAction func addProductToCart(_ sender: Any) {
         collectionView?.addToCart(product.title)
+        SEGAnalytics.shared()?.track("Product Added", properties: ["title":product.title, "price":product.price])
+        NSLog("product added segment called")
     }
 }

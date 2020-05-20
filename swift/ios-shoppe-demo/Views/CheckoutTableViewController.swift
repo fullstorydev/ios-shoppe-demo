@@ -80,7 +80,9 @@ class CheckoutTableViewController: UITableViewController {
 
         productView.modalPresentationStyle = .formSheet
         productView.checkoutTableViewController = self
-
+        
+        SEGAnalytics.shared()?.track("Order Completed", properties: ["total":order.cartOrderTotal()])
+        NSLog("order completed segment called")
         present(productView, animated: true, completion: nil)
     }
 }
