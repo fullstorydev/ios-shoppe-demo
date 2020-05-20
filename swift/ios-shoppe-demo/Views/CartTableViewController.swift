@@ -26,11 +26,11 @@ class CartTableViewController: UITableViewController {
         tableView.register(UINib(nibName: "CartQuantityTableViewCell", bundle: nil), forCellReuseIdentifier: "quantity")
         setOrderItemsForCart()
         
-        SEGAnalytics.shared()?.track("Cart view did load")
+        SEGAnalytics.shared()?.track("Cart view did load", properties: ["test2":"test2"])
         SEGAnalytics.shared()?.track("Another event")
         SEGAnalytics.shared()?.screen("cartview")
-        SEGAnalytics.shared()?.identify("testuser2", traits:["email": "testuser2@test.com", "additionalTraits":"test trait"]);
-        SEGAnalytics.shared()?.group("testgroupid")
+        SEGAnalytics.shared()?.identify("testuser3", traits:["email": "testuser3@test.com", "additionalTraits2":"test trait"])
+        SEGAnalytics.shared()?.group("testgroupid2",traits:["industry": "Retail"])
         NSLog("fullstroy %@", FS.currentSessionURL ?? "no fs session")
         
     }

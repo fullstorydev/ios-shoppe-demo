@@ -12,13 +12,12 @@
 @interface FullStoryMiddleware : NSObject<SEGMiddleware>
 
 @property (strong, nonatomic) NSArray* whitelistEvents;
-@property (nonatomic) BOOL sendScreenAsEvents;
-@property (nonatomic) BOOL enableGroupTraitsToUserVars;
-@property (nonatomic) BOOL enableFSSessionURLInEvent;
+@property (nonatomic) BOOL enableSendScreenAsEvents;
+@property (nonatomic) BOOL enableGroupTraitsAsUserVars;
+@property (nonatomic) BOOL enableFSSessionURLInEvents;
 
-- (id)initWithWhitelistEvents:(NSArray<NSString *> *) whitelistEvents;
-- (void) whitelistEvents: (NSArray *) eventNames;
-- (void) sendScreenAsEvents: (BOOL) enable;
-- (void) enableGroupTraitsToUserVars: (BOOL) enable;
-- (void) enableFSSessionURLInEvent: (BOOL) enable;
+- (id) initWithWhitelistEvents:(NSArray<NSString *> *) whitelistEvents;
+//- (void) addWhitelistedEvents: (NSArray *) addEventNames;
+//- (void) removeWhitelistedEvents: (NSArray *) removeEventNames;
+
 @end
