@@ -147,6 +147,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		046FF4D92475B170003E582B /* FullStoryMiddleware */ = {
+			isa = PBXGroup;
+			children = (
+				04A7D58D246EDF55008CE705 /* FullStoryMiddleware.h */,
+				04A7D58F246EDF95008CE705 /* FullStoryMiddleware.m */,
+			);
+			path = FullStoryMiddleware;
+			sourceTree = "<group>";
+		};
 		B54DBF6AD15CC976BF1A043C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,8 +254,7 @@
 			children = (
 				F2E5A511241934B9005DFBFE /* AppDelegate.swift */,
 				F2E5A51724193637005DFBFE /* SceneDelegate.swift */,
-				04A7D58D246EDF55008CE705 /* FullStoryMiddleware.h */,
-				04A7D58F246EDF95008CE705 /* FullStoryMiddleware.m */,
+				046FF4D92475B170003E582B /* FullStoryMiddleware */,
 				04A7D58E246EDF95008CE705 /* ios-shoppe-demo-Bridging-Header.h */,
 				F26DD8562417DCF700504A3F /* ServiceManagers */,
 				F26DD8572417DD0900504A3F /* Model */,
