@@ -14,4 +14,8 @@ class ProductSummaryDetailCell: UITableViewCell {
     @IBOutlet weak var shippingLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var shippingAddress: UILabel!
+
+    func setupFSMaskingElements() {
+
+    }
 }
