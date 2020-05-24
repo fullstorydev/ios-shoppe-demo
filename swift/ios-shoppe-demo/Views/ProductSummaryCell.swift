@@ -3,7 +3,7 @@
 //  ios-shoppe-demo
 //
 //  Created on 4/30/20.
-//  Copyright © 2020 Harold Davis Jr. All rights reserved.
+//  Copyright © 2020 FullStory All rights reserved.
 //
 
 import Foundation
@@ -13,6 +13,7 @@ import UIKit
 class ProductSummaryCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var quantityLabel: UILabel!
+    @IBOutlet weak var totalLabel: UILabel!
 
     var product: Product! {
         didSet {
@@ -23,7 +24,8 @@ class ProductSummaryCell: UITableViewCell {
     func setup() {
         DispatchQueue.main.async {
             self.titleLabel.text = self.product.title
-            self.quantityLabel.text = "\(self.product.quantity)"
+            self.quantityLabel.text = "x\(self.product.quantity)"
+            self.totalLabel.text = "$\(self.product.getTotal())"
         }
     }
 }

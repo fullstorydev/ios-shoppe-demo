@@ -18,7 +18,13 @@ class ProductSummaryView: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         tableView.register(UINib(nibName: "ProductSummaryCell", bundle: nil), forCellReuseIdentifier: "quantity")
+        tableView.register(UINib(nibName: "ProductSummaryTopCell", bundle: nil), forCellReuseIdentifier: "thankYou")
+        tableView.register(UINib(nibName: "ProductSummaryUserDetailCell", bundle: nil), forCellReuseIdentifier: "userDetails")
+        tableView.register(UINib(nibName: "ProductSummaryTotalCost", bundle: nil), forCellReuseIdentifier: "totalCell")
+        tableView.separatorStyle = .none
+        tableView.backgroundColor = UIColor().fsBackground()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -31,14 +37,14 @@ class ProductSummaryView: UITableViewController {
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 4
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
-        case 0:
+        case 0, 1, 3:
             return 1
-        case 1:
+        case 2:
             return purchasedItems.count
         default:
             return 0
@@ -48,16 +54,24 @@ class ProductSummaryView: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
-            let cell =  UITableViewCell()
-            cell.textLabel?.numberOfLines = 0
-            cell.textLabel?.text = user?.description()
-
-            return cell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "thankYou", for: indexPath) as? ThankYouCell
+            return cell ?? UITableViewCell()
         case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "userDetails", for: indexPath) as? ProductSummaryDetailCell
+            cell?.setupFSMaskingElements()
+
+            return cell ?? UITableViewCell()
+        case 2:
             let product = purchasedItems[indexPath.row]
             let cell = tableView.dequeueReusableCell(withIdentifier: "quantity", for: indexPath) as? ProductSummaryCell
 
             cell?.product = product
+
+            return cell ?? UITableViewCell()
+        case 3:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "totalCell", for: indexPath) as? ProductSummaryTotalCell
+
+            cell?.order = order
 
             return cell ?? UITableViewCell()
         default:

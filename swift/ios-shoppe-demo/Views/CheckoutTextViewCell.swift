@@ -26,7 +26,10 @@ class CheckoutTableViewCell: UITableViewCell, UITextFieldDelegate {
     }
 
     func showTooltip() {
-        addressDetailTextField.placeholder = (addressDetail != nil) ? addressDetail?.placeHolder : cardDetail?.placeHolder
+        if tableViewController?.autoFillEnabled ?? false { }
+        else {
+            addressDetailTextField.placeholder = (addressDetail != nil) ? addressDetail?.placeHolder : cardDetail?.placeHolder
+        }
         addressDetailTextField.delegate = self
     }
 
