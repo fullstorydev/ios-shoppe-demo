@@ -25,8 +25,8 @@ class CartTableViewController: UITableViewController {
         tableView.register(UINib(nibName: "CartQuantityTableViewCell", bundle: nil), forCellReuseIdentifier: "quantity")
         tableView.register(UINib(nibName: "LargeLabelTableViewCell", bundle: nil), forCellReuseIdentifier: "title")
 
-
         setOrderItemsForCart()
+        
         tableView.separatorStyle = .none
         tableView.backgroundColor = UIColor().fsBackground()
     }

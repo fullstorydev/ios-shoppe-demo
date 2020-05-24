@@ -50,7 +50,6 @@ class APIService {
                 completion(products)
             }
             catch {
-                print("\(error.localizedDescription)") // TODO: Add proper error handling
                 completion(nil)
             }
         }.resume()
@@ -83,9 +82,7 @@ class APIService {
                 for dict in jsonResult ?? [] {
                     products.append(Product(dict as? [String : Any] ?? [:]))
                 }
-              } catch {
-                   // TODO: Add proper error handling
-              }
+              } catch { }
         }
 
         completion(products)

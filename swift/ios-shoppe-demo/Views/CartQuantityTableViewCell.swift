@@ -30,7 +30,7 @@ class CartQuantityTableViewCell: UITableViewCell {
 
         titleLabel.text = product.title
         quantityLabel.text = "x\(product.quantity)"
-        // TODO: Add after first PR totalLabel.text = "$\(product.getTotal())"
+        totalLabel.text = "$\(product.getTotal())"
     }
 
     @IBAction func addQuantity(_ sender: Any) {
