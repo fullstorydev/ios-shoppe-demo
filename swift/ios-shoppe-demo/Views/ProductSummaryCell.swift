@@ -26,6 +26,13 @@ class ProductSummaryCell: UITableViewCell {
             self.titleLabel.text = self.product.title
             self.quantityLabel.text = "x\(self.product.quantity)"
             self.totalLabel.text = "$\(self.product.getTotal())"
+            self.setupMasking()
         }
+    }
+
+    func setupMasking() {
+        fsModify(status: .unmask, of: titleLabel)
+        fsModify(status: .unmask, of: quantityLabel)
+        fsModify(status: .unmask, of: totalLabel)
     }
 }

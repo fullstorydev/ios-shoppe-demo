@@ -9,12 +9,14 @@
 import Foundation
 
 enum AddressDetail {
-    case name, street, unit, city, state, zip, phone
+    case name, street, unit, city, state, zip, phone, email
 
     var placeHolder: String {
         switch self {
         case .name:
             return "Name"
+        case .email:
+            return "Password"
         case .street:
             return "Street address or P.O.Box"
         case .unit:
@@ -34,6 +36,8 @@ enum AddressDetail {
         switch self {
         case .name:
             return "John Doe"
+        case .email:
+            return "John_Doe@fullstory.com"
         case .street:
             return "1110 Downing Street"
         case .unit:

@@ -50,6 +50,7 @@ class CartQuantityTableViewCell: UITableViewCell {
 
         if product.quantity <= 0 {
             tableViewController?.setOrderItemsForCart()
+            fsLog(message: "\(product.title) was removed from cart.", level: .warning)
         }
 
         tableViewController?.tableView.reloadData()

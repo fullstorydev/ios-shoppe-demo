@@ -56,9 +56,26 @@ func fsLog(message: String, level: LogLevel = .info) {
         fsLogType = FSLOG_DEBUG
     }
 
-    FS.log(with: fsLogType, message: "\(Date())" + message)
+    FS.log(with: fsLogType, message: "\(Date()) " + message)
 }
 
-func fsModify(status: FSStatus, of view: UIView) {
-    FS.addClass(view, className: status.rawValue)
+func fsModify(status: FSStatus, of view: UIView? = nil, views: [UIView] = [] ) {
+    if views.count > 0 {
+        for v in views {
+            FS.addClass(v, className: status.rawValue)
+        }
+    }
+    else {
+        guard let view = view else {
+            return
+        }
+
+        FS.addClass(view, className: status.rawValue)
+    }
+}
+
+func fsIdentify(userInfo: [String: Any]) {
+    let userId = "13ff474bae77 \(arc4random())"
+
+    FS.identify(userId, userVars: userInfo)
 }

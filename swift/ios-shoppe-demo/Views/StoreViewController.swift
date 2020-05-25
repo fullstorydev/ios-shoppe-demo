@@ -15,6 +15,8 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        fsLog(message: "Browsing the store.")
+
         setupNavigationBar()
 
         APIService.sharedInstance.getProductsFromFile { (productsRecieved) in
@@ -30,6 +32,8 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
                             DispatchQueue.main.async {
                                 order.items = self.products
                                 self.collectionView.reloadData()
+                                
+                                fsModify(status: .unmask, views: [self.collectionView])
                             }
                         }
                     }

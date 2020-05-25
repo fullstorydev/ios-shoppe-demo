@@ -9,7 +9,8 @@
 import UIKit
 
 class ThankYouCell: UITableViewCell {
-
+    @IBOutlet weak var thankYouLabel: UILabel!
+    
     override func awakeFromNib() {
         // Initialization code
         super.awakeFromNib()

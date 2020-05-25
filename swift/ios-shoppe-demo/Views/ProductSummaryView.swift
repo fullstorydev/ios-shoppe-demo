@@ -19,6 +19,8 @@ class ProductSummaryView: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        fsLog(message: "User successfully checked out.")
+
         tableView.register(UINib(nibName: "ProductSummaryCell", bundle: nil), forCellReuseIdentifier: "quantity")
         tableView.register(UINib(nibName: "ProductSummaryTopCell", bundle: nil), forCellReuseIdentifier: "thankYou")
         tableView.register(UINib(nibName: "ProductSummaryUserDetailCell", bundle: nil), forCellReuseIdentifier: "userDetails")
@@ -55,6 +57,9 @@ class ProductSummaryView: UITableViewController {
         switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "thankYou", for: indexPath) as? ThankYouCell
+
+            fsModify(status: .unmask, of: cell)
+
             return cell ?? UITableViewCell()
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "userDetails", for: indexPath) as? ProductSummaryDetailCell

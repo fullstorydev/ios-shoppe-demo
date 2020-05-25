@@ -15,7 +15,9 @@ class ProductSummaryDetailCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var shippingAddress: UILabel!
 
+    /// This is an example of how to unmask items we may want to show, in order to help someone follow the recorded flow easier.
     func setupFSMaskingElements() {
-
+        fsModify(status: .unmask, of: shippedLabel)
+        fsModify(status: .unmask, of: shippingLabel)
     }
 }

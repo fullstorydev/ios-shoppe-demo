@@ -13,6 +13,7 @@ import FullStory
 class AppDelegate: UIResponder, UIApplicationDelegate, FSDelegate {
 
     func fullstoryDidStartSession(_ sessionUrl: String) {
+        print(sessionUrl)
     }
 
     func fullstoryDidStopSession() {
@@ -23,9 +24,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FSDelegate {
 
     }
 
+    func setFSUser() {
+        user?.name = AddressDetail.name.placeHolder
+        user?.email = AddressDetail.email.placeHolder
+
+        fsIdentify(userInfo: user?.dictDescription() ?? [:])
+    }
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
+        setFSUser()
         FS.delegate = self
 
         return true
