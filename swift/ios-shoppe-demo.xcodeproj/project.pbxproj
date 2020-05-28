@@ -42,6 +42,7 @@
 		F25D20CD24100B2700CF89C3 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D20CC24100B2700CF89C3 /* APIService.swift */; };
 		F26DD85224175B7400504A3F /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26DD85124175B7400504A3F /* Product.swift */; };
 		F27CAA1D247B348B001FD47C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27CAA1C247B348B001FD47C /* LoginViewController.swift */; };
+		F27CAA20247ECCB5001FD47C /* FSLumberjackLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27CAA1F247ECCB5001FD47C /* FSLumberjackLogger.swift */; };
 		F2C804DA24168C8B0098418D /* Preferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2C804D924168C8B0098418D /* Preferences.plist */; };
 		F2C804DB24168C8B0098418D /* Preferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2C804D924168C8B0098418D /* Preferences.plist */; };
 		F2C804DC24168C8B0098418D /* Preferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2C804D924168C8B0098418D /* Preferences.plist */; };
@@ -125,6 +126,7 @@
 		F25D20CC24100B2700CF89C3 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		F26DD85124175B7400504A3F /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		F27CAA1C247B348B001FD47C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F27CAA1F247ECCB5001FD47C /* FSLumberjackLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSLumberjackLogger.swift; sourceTree = "<group>"; };
 		F2C804D924168C8B0098418D /* Preferences.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Preferences.plist; sourceTree = "<group>"; };
 		F2CA62B3245B223200772F93 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		F2D2A84B245B1A620000B4B4 /* ProductSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSummaryView.swift; sourceTree = "<group>"; };
@@ -319,6 +321,7 @@
 		F26DD8572417DD0900504A3F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F27CAA1E247ECC96001FD47C /* LoggingExample */,
 				F26DD85124175B7400504A3F /* Product.swift */,
 				F2441D862433900C006BEFF3 /* Order.swift */,
 				F25400E12440D8910091668D /* AddressDetail.swift */,
@@ -326,6 +329,14 @@
 				F2CA62B3245B223200772F93 /* UserProfile.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		F27CAA1E247ECC96001FD47C /* LoggingExample */ = {
+			isa = PBXGroup;
+			children = (
+				F27CAA1F247ECCB5001FD47C /* FSLumberjackLogger.swift */,
+			);
+			path = LoggingExample;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -617,6 +628,7 @@
 				F2E5A512241934B9005DFBFE /* AppDelegate.swift in Sources */,
 				F25400D1243CD0520091668D /* EX+Double.swift in Sources */,
 				F202DDD8246EDA4F00D32F89 /* CartQuantityTableViewCell.swift in Sources */,
+				F27CAA20247ECCB5001FD47C /* FSLumberjackLogger.swift in Sources */,
 				F202DDD7246EDA4F00D32F89 /* ProductSummaryTotalCell.swift in Sources */,
 				F2D2A84C245B1A620000B4B4 /* ProductSummaryView.swift in Sources */,
 				F202DDDB246EDA4F00D32F89 /* ProductSummaryCell.swift in Sources */,

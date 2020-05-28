@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CocoaLumberjack
 import FullStory
 
 @UIApplicationMain
@@ -33,6 +34,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FSDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+
+        DDLog.add(FSLumberjackLogger())
 
         setFSUser()
         FS.delegate = self

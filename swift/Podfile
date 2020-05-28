@@ -7,8 +7,9 @@ target 'ios-shoppe-demo' do
 
   # Pods for ios-shoppe-demo
 pod 'FullStory', :http => 'https://ios-releases.fullstory.com/fullstory-1.3.1.tar.gz'
+pod 'CocoaLumberjack/Swift'
 
-  target 'ios-shoppe-demoTests' do
+target 'ios-shoppe-demoTests' do
     inherit! :search_paths
     # Pods for testing
   end

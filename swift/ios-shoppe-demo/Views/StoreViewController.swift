@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CocoaLumberjack
 
 class StoreViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
@@ -14,6 +15,13 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // MARK: - DDLogging Test
+        DDLogVerbose("DDLogVerbose log message")
+        DDLogDebug("DDLogDebug log message")
+        DDLogInfo("DDLogInfo log message")
+        DDLogWarn("DDLogWarn log message")
+        DDLogError("DDLogError log message")
 
         fsLog(message: "Browsing the store.")
 
@@ -32,8 +40,8 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
                             DispatchQueue.main.async {
                                 order.items = self.products
                                 self.collectionView.reloadData()
-                                
-                                fsModify(status: .unmask, views: [self.collectionView])
+
+                                fsModify(status: .unmask, views: [self.view])
                             }
                         }
                     }
