@@ -58,7 +58,6 @@
             }
             case SEGEventTypeTrack: {
                 SEGTrackPayload *payload = (SEGTrackPayload *) ctx.payload;
-                NSLog(@"here, %@ %@", [self getEventName:ctx.eventType],payload.event);
                 if(self.whitelistAllTrackEvents || [self.whitelistEvents containsObject:payload.event]){
                     [FS event:payload.event properties:payload.properties];
                 }
@@ -78,17 +77,6 @@
         }
     }]);
 }
-
-// disallow modification of event names once init
-//- (void) addWhitelistedEvents: (NSArray *) addEventNames{
-//    [self.whitelistEvents addObjectsFromArray:addEventNames];
-//    [FS logWithLevel:FSLOG_INFO format:@"added Segment whitelisted events, whitelisted: %@", addEventNames];
-//}
-//- (void) removeWhitelistedEvents: (NSArray *) removeEventNames{
-//    [self.whitelistEvents removeObjectsInArray:removeEventNames];
-//
-//    [FS logWithLevel:FSLOG_INFO format:@"removed Segment whitelisted events, whitelisted: %@", removeEventNames];
-//}
 
 - (SEGPayload *) getNewPayloadWithFSURL:(SEGContext * _Nonnull)context {
     if(context.eventType == SEGEventTypeTrack){

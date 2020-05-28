@@ -18,7 +18,5 @@
 @property (nonatomic) BOOL whitelistAllTrackEvents;
 
 - (id) initWithWhitelistEvents:(NSArray<NSString *> *) whitelistEvents;
-//- (void) addWhitelistedEvents: (NSArray *) addEventNames;
-//- (void) removeWhitelistedEvents: (NSArray *) removeEventNames;
 
 @end
