@@ -11,6 +11,8 @@ import UIKit
 class StoreViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     var products: [Product] = []
+    var cartNumberView = UIBarButtonItem()
+    var cartNumber: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,19 +44,26 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
         }
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        cartNumber = order.items.filter({ $0.quantity > 0 }).count
+        setupNavigationBar()
+    }
+
     func setupNavigationBar() {
         let barCartButton = UIBarButtonItem(image: UIImage(named: "shopping_cart"), style: .done, target: self, action: #selector(openCart))
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
 
+        cartNumberView = UIBarButtonItem(title: "\(cartNumber)", style: .done, target: self, action: nil)
+        cartNumberView.tintColor = .white
         barCartButton.tintColor = .white
 
         navigationController?.navigationBar.titleTextAttributes = textAttributes
         navigationController?.navigationBar.barTintColor = UIColor(displayP3Red: 206/255, green: 78/255, blue: 142/255, alpha: 1.0)
 
         navigationItem.title = "iOS Shoppe"
-        navigationItem.rightBarButtonItem = barCartButton
+        navigationItem.rightBarButtonItems = [cartNumberView, barCartButton]
 
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = UIColor().fsBackground()
         collectionView.register(UINib(nibName: "ProductCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cell")
     }
 
@@ -84,6 +93,11 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
     }
 
     func addToCart(_ product: String) {
+        let generator = UIImpactFeedbackGenerator(style: .medium)
+        generator.impactOccurred()
+
         order.addProduct(product)
+        cartNumber = order.items.filter({ $0.quantity > 0 }).count
+        setupNavigationBar()
     }
 }

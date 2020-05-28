@@ -17,10 +17,13 @@
                 <subviews>
                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8ko-fe-mfq">
                         <rect key="frame" x="20" y="5" width="374" height="34"/>
+                        <color key="backgroundColor" red="0.03917218745" green="0.12158025059999999" blue="0.19604882600000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
                 </subviews>
+                <color key="backgroundColor" red="0.03917218745" green="0.12158025059999999" blue="0.19604882600000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstItem="8ko-fe-mfq" firstAttribute="leading" secondItem="o7j-N8-bk1" secondAttribute="leading" constant="20" id="3ad-CV-c73"/>
                     <constraint firstAttribute="trailing" secondItem="8ko-fe-mfq" secondAttribute="trailing" constant="20" id="Hb2-pV-wf3"/>

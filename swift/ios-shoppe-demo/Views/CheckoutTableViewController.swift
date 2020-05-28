@@ -16,6 +16,8 @@ class CheckoutTableViewController: UITableViewController {
 
     var autoFillEnabled: Bool = false
 
+    var pageCanGoForward: Bool = false
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,17 +26,19 @@ class CheckoutTableViewController: UITableViewController {
         tableView.register(UINib(nibName: "CheckoutTableViewCell", bundle: nil), forCellReuseIdentifier: "textField")
         tableView.register(UINib(nibName: "LargeLabelTableViewCell", bundle: nil), forCellReuseIdentifier: "title")
         tableView.register(UINib(nibName: "CartTableViewCell", bundle: nil), forCellReuseIdentifier: "checkout")
+        tableView.register(UINib(nibName: "CheckBoxButton", bundle: nil), forCellReuseIdentifier: "checkoutBox")
         tableView.separatorStyle = .none
-        tableView.backgroundColor = UIColor().fsBackground()
+        tableView.backgroundView?.backgroundColor = UIColor().fsBackground()
+        view.backgroundColor = UIColor().fsBackground()
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 5
+        return 6
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
-        case 0, 2, 4:
+        case 0, 2, 4, 5:
             return 1
         case 1:
             return addressItems.count
@@ -75,20 +79,28 @@ class CheckoutTableViewController: UITableViewController {
             }
 
             return cell ?? UITableViewCell()
+        case 5:
+            let cell =  tableView.dequeueReusableCell(withIdentifier: "checkoutBox") as? CheckBoxButtonCell
+
+            cell?.checkoutView = self
+
+            return cell ?? UITableViewCell()
         default:
             return UITableViewCell()
         }
     }
 
     func presentProductView() {
-        let productView = ProductSummaryView()
+        if pageCanGoForward {
+            let productView = ProductSummaryView()
 
-        productView.modalPresentationStyle = .formSheet
-        productView.checkoutTableViewController = self
+            productView.modalPresentationStyle = .formSheet
+            productView.checkoutTableViewController = self
 
-        // FSExample: - CustomEvent
-        fsCreateEvent(event: .checkout, with: order.orderSummary())
+            // FSExample: - CustomEvent
+            fsCreateEvent(event: .checkout, with: order.orderSummary())
 
-        present(productView, animated: true, completion: nil)
+            present(productView, animated: true, completion: nil)
+        }
     }
 }

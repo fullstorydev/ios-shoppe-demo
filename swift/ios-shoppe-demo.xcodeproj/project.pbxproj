@@ -50,6 +50,8 @@
 		F2E5A512241934B9005DFBFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E5A511241934B9005DFBFE /* AppDelegate.swift */; };
 		F2E5A51624193501005DFBFE /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E5A51524193501005DFBFE /* Utilities.swift */; };
 		F2E5A51824193637005DFBFE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E5A51724193637005DFBFE /* SceneDelegate.swift */; };
+		F2F5765B24801EBE00C455C4 /* CheckBoxButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2F5765A24801EBE00C455C4 /* CheckBoxButton.xib */; };
+		F2F5765D24801FA800C455C4 /* CheckBoxButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F5765C24801FA800C455C4 /* CheckBoxButtonCell.swift */; };
 		F2F59D29245736C7008B20AD /* CheckoutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25400DD2440C92E0091668D /* CheckoutTableViewController.swift */; };
 		F2F59D2A245736CC008B20AD /* AddressDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25400E12440D8910091668D /* AddressDetail.swift */; };
 		F2F59D2B245736CC008B20AD /* CardDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25401242444CDF30091668D /* CardDetail.swift */; };
@@ -131,6 +133,8 @@
 		F2E5A511241934B9005DFBFE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2E5A51524193501005DFBFE /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		F2E5A51724193637005DFBFE /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F2F5765A24801EBE00C455C4 /* CheckBoxButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckBoxButton.xib; sourceTree = "<group>"; };
+		F2F5765C24801FA800C455C4 /* CheckBoxButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxButtonCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +213,7 @@
 				F202DDC6246EDA4F00D32F89 /* ProductSummaryDetailCell.swift */,
 				F202DDCA246EDA4F00D32F89 /* ProductSummaryTotalCell.swift */,
 				F202DDC4246EDA4F00D32F89 /* ThankYouCell.swift */,
+				F2F5765C24801FA800C455C4 /* CheckBoxButtonCell.swift */,
 				F25400DA2440C5350091668D /* Nibs */,
 			);
 			name = ViewCells;
@@ -236,6 +241,7 @@
 				F202DDB6246ED9DE00D32F89 /* ProductSummaryTopCell.xib */,
 				F202DDB8246ED9DF00D32F89 /* ProductSummaryTotalCost.xib */,
 				F202DDB5246ED9DE00D32F89 /* ProductSummaryUserDetailCell.xib */,
+				F2F5765A24801EBE00C455C4 /* CheckBoxButton.xib */,
 			);
 			name = Nibs;
 			sourceTree = "<group>";
@@ -450,6 +456,7 @@
 				F202DDBE246ED9DF00D32F89 /* ProductSummaryUserDetailCell.xib in Resources */,
 				F21E144C2428DA82005D4C76 /* Products.json in Resources */,
 				F202DDBB246ED9DF00D32F89 /* CartQuantityTableViewCell.xib in Resources */,
+				F2F5765B24801EBE00C455C4 /* CheckBoxButton.xib in Resources */,
 				F2C804DA24168C8B0098418D /* Preferences.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -611,6 +618,7 @@
 				F2441D7E24322B26006BEFF3 /* EX+UIView.swift in Sources */,
 				F25339C42472CFD50021BB7A /* EX+UIColor.swift in Sources */,
 				F25D20CD24100B2700CF89C3 /* APIService.swift in Sources */,
+				F2F5765D24801FA800C455C4 /* CheckBoxButtonCell.swift in Sources */,
 				F2F59D29245736C7008B20AD /* CheckoutTableViewController.swift in Sources */,
 				F202DDDA246EDA4F00D32F89 /* CheckoutTextViewCell.swift in Sources */,
 				F2F59D2A245736CC008B20AD /* AddressDetail.swift in Sources */,
@@ -791,14 +799,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 8Q8W5KSX6X;
 				INFOPLIST_FILE = "ios-shoppe-demo/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.fullstory.ios-shoppe";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -814,14 +822,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 8Q8W5KSX6X;
 				INFOPLIST_FILE = "ios-shoppe-demo/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.fullstory.ios-shoppe";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

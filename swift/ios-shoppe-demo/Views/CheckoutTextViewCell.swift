@@ -30,6 +30,11 @@ class CheckoutTableViewCell: UITableViewCell, UITextFieldDelegate {
         else {
             addressDetailTextField.placeholder = (addressDetail != nil) ? addressDetail?.placeHolder : cardDetail?.placeHolder
         }
+
+        if cardDetail != nil {
+            fsModify(status: .exclude, views: [self])
+        }
+
         addressDetailTextField.delegate = self
     }
 
