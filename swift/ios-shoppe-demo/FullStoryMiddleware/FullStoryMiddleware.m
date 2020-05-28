@@ -18,6 +18,7 @@
          self.enableSendScreenAsEvents = false;
          self.enableGroupTraitsAsUserVars = false;
          self.enableFSSessionURLInEvents = true;
+         self.whitelistAllTrackEvents = false;
          self.whitelistEvents = [[NSMutableArray alloc] initWithArray:whitelistEvents];
      }
     return self;
@@ -30,75 +31,50 @@
 
 - (void)context:(SEGContext * _Nonnull)context next:(SEGMiddlewareNext _Nonnull)next {
     next([context modify:^(id<SEGMutableContext>  _Nonnull ctx) {
+        
         switch(ctx.eventType){
             case SEGEventTypeGroup:{
                 SEGGroupPayload *payload = (SEGGroupPayload *) ctx.payload;
-                [FS setUserVars: @{@"groupID":payload.groupId}];
+                NSMutableDictionary *userVars = [NSMutableDictionary alloc];
+                userVars[@"groupID"] = payload.groupId;
                 if(self.enableGroupTraitsAsUserVars){
-                    [FS setUserVars:payload.traits];
+                    [userVars addEntriesFromDictionary:payload.traits];
                 }
-                [FS logWithLevel:FSLOG_INFO format:@"Segment GROUP event"];
+                [FS setUserVars:userVars];
                 break;
             }
             case SEGEventTypeIdentify:{
                 SEGIdentifyPayload *payload = (SEGIdentifyPayload *) ctx.payload;
                 [FS identify: payload.userId userVars:payload.traits];
-                [FS logWithLevel:FSLOG_INFO format:@"Segment Identify event"];
                 break;
             }
             case SEGEventTypeScreen:{
                 SEGScreenPayload *payload = (SEGScreenPayload *) ctx.payload;
-
-                if(self.enableFSSessionURLInEvents){
-                    NSMutableDictionary *newProps = [[NSMutableDictionary alloc] initWithDictionary:payload.properties];
-                    [newProps setValue:[FS currentSessionURL] forKey:@"FSSessionURL"];
-                    [newProps setValue:[FS currentSessionURL:true] forKey:@"FSSessionNowURL"];
-                    SEGScreenPayload *newPayload = [[SEGScreenPayload alloc]
-                                                   initWithName:payload.name
-                                                   properties:newProps
-                                                   context:payload.context
-                                                   integrations:payload.integrations];
-                    ctx.payload = newPayload;
-                }
-
                 if(self.enableSendScreenAsEvents){
-                    NSString *name = [[NSString alloc] initWithFormat:@"visited screen: %@",payload.name];
+                    NSString *name = [[NSString alloc] initWithFormat:@"Segment Screen: %@",payload.name];
                     [FS event:name properties:payload.properties];
                 }
-                [FS logWithLevel:FSLOG_INFO format:@"Segment SCREEN event"];
                 break;
             }
             case SEGEventTypeTrack: {
                 SEGTrackPayload *payload = (SEGTrackPayload *) ctx.payload;
-                
-                if(self.enableFSSessionURLInEvents){
-                    NSMutableDictionary *newProps = [[NSMutableDictionary alloc] initWithDictionary:payload.properties];
-                    [newProps setValue:[FS currentSessionURL] forKey:@"FSSessionURL"];
-                    [newProps setValue:[FS currentSessionURL:true] forKey:@"FSSessionNowURL"];
-                    SEGTrackPayload *newPayload = [[SEGTrackPayload alloc]
-                                                   initWithEvent:payload.event
-                                                   properties:newProps
-                                                   context:payload.context
-                                                   integrations:payload.integrations];
-                    ctx.payload = newPayload;
-                }
-                
-                if([self.whitelistEvents containsObject:payload.event]){
+                NSLog(@"here, %@ %@", [self getEventName:ctx.eventType],payload.event);
+                if(self.whitelistAllTrackEvents || [self.whitelistEvents containsObject:payload.event]){
                     [FS event:payload.event properties:payload.properties];
-                    [FS logWithLevel:FSLOG_INFO format:@"Segment TRACK event, whitelisted event: %@", payload.event];
-                }else{
-                    [FS logWithLevel:FSLOG_INFO format:@"Segment TRACK event, event not whitelisted, event data omitted"];
                 }
                 break;
             }
             case SEGEventTypeReset:{
-                [FS logWithLevel:FSLOG_INFO format:@"Segment RESET event"];
                 [FS anonymize];
                 break;
             }
-            default:{
-                [FS logWithLevel:FSLOG_INFO format:@"Segment event type index %d, see integer enum document here: https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#usage", ctx.eventType];
-            }
+            default:{}
+        }
+        [FS logWithLevel:FSLOG_INFO format:@"Segment event type: %@", [self getEventName:ctx.eventType]];
+        
+        SEGPayload *payload = [self getNewPayloadWithFSURL:context];
+        if(self.enableFSSessionURLInEvents && payload != nil){
+            ctx.payload = payload;
         }
     }]);
 }
@@ -114,4 +90,65 @@
 //    [FS logWithLevel:FSLOG_INFO format:@"removed Segment whitelisted events, whitelisted: %@", removeEventNames];
 //}
 
+- (SEGPayload *) getNewPayloadWithFSURL:(SEGContext * _Nonnull)context {
+    if(context.eventType == SEGEventTypeTrack){
+        SEGTrackPayload *trackPayload = (SEGTrackPayload *) context.payload;
+        NSMutableDictionary *newProps = [[NSMutableDictionary alloc] initWithDictionary:trackPayload.properties];
+        [newProps setValue:[FS currentSessionURL] forKey:@"FSSessionURL"];
+        
+        SEGTrackPayload *newPayload = [[SEGTrackPayload alloc]
+                                       initWithEvent:trackPayload.event
+                                       properties:newProps
+                                       context:trackPayload.context
+                                       integrations:trackPayload.integrations];
+        return newPayload;
+    }else if(context.eventType == SEGEventTypeScreen){
+        SEGScreenPayload *screenPayload = (SEGScreenPayload *) context.payload;
+        NSMutableDictionary *newProps = [[NSMutableDictionary alloc] initWithDictionary:screenPayload.properties];
+        [newProps setValue:[FS currentSessionURL] forKey:@"FSSessionURL"];
+        
+        SEGScreenPayload *newPayload = [[SEGScreenPayload alloc]
+                                       initWithName:screenPayload.name
+                                       properties:screenPayload.properties
+                                       context:screenPayload.context
+                                       integrations:screenPayload.integrations];
+        return newPayload;
+    }
+    return nil;
+}
+
+- (NSString *) getEventName:(SEGEventType)type {
+    NSArray *eventArr =@[
+        // Should not happen, but default state
+        @"SEGEventTypeUndefined",
+        // Core Tracking Methods
+        @"SEGEventTypeIdentify",
+        @"SEGEventTypeTrack",
+        @"SEGEventTypeScreen",
+        @"SEGEventTypeGroup",
+        @"SEGEventTypeAlias",
+
+        // General utility
+        @"SEGEventTypeReset",
+        @"SEGEventTypeFlush",
+
+        // Remote Notification
+        @"SEGEventTypeReceivedRemoteNotification",
+        @"SEGEventTypeFailedToRegisterForRemoteNotifications",
+        @"SEGEventTypeRegisteredForRemoteNotifications",
+        @"SEGEventTypeHandleActionWithForRemoteNotification",
+
+        // Application Lifecycle
+        @"SEGEventTypeApplicationLifecycle",
+
+        // Misc.
+        @"SEGEventTypeContinueUserActivity",
+        @"SEGEventTypeOpenURL"
+     ];
+    
+    return eventArr[type];
+}
+
+
 @end
+

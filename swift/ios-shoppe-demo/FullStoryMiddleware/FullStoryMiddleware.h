@@ -15,6 +15,7 @@
 @property (nonatomic) BOOL enableSendScreenAsEvents;
 @property (nonatomic) BOOL enableGroupTraitsAsUserVars;
 @property (nonatomic) BOOL enableFSSessionURLInEvents;
+@property (nonatomic) BOOL whitelistAllTrackEvents;
 
 - (id) initWithWhitelistEvents:(NSArray<NSString *> *) whitelistEvents;
 //- (void) addWhitelistedEvents: (NSArray *) addEventNames;

@@ -30,14 +30,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FSDelegate {
         // Override point for customization after application launch.
 
         FS.delegate = self
+        FS.currentSessionURL(true)
+        let writekey = ProcessInfo.processInfo.environment["SegmentWriteKey"]
+        let configuration = SEGAnalyticsConfiguration.init(writeKey: writekey ?? "")
+        configuration.trackApplicationLifecycleEvents = true // Enable this to record certain application events automatically!
         
-        let configuration = SEGAnalyticsConfiguration.init(writeKey: "w44t5luR7FK0fK9w3YG4FcB1G2NLYoZa");
-        configuration.trackApplicationLifecycleEvents = true; // Enable this to record certain application events automatically!
-        
-        let fsm: FullStoryMiddleware = FullStoryMiddleware.init(whitelistEvents: ["Cart Viewed","Order Completed"])
-        fsm.enableSendScreenAsEvents = false;
-        fsm.enableGroupTraitsAsUserVars = false;
-        fsm.enableFSSessionURLInEvents = true;
+//        let fsm: FullStoryMiddleware = FullStoryMiddleware.init(whitelistEvents: ["Cart Viewed","Order Completed"])
+        let fsm: FullStoryMiddleware = FullStoryMiddleware.init()
+        fsm.enableSendScreenAsEvents = false
+        fsm.enableGroupTraitsAsUserVars = false
+        fsm.enableFSSessionURLInEvents = true
+        fsm.whitelistAllTrackEvents = true
 
         configuration.middlewares = [fsm]
         SEGAnalytics.setup(with: configuration)
