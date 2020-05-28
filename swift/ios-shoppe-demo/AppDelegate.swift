@@ -31,8 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FSDelegate {
 
         FS.delegate = self
         FS.currentSessionURL(true)
-        let writekey = ProcessInfo.processInfo.environment["SegmentWriteKey"]
-        let configuration = SEGAnalyticsConfiguration.init(writeKey: writekey ?? "")
+        let writekey:String = ProcessInfo.processInfo.environment["SegmentWriteKey"] ?? ""
+        let configuration = SEGAnalyticsConfiguration.init(writeKey: writekey)
         configuration.trackApplicationLifecycleEvents = true // Enable this to record certain application events automatically!
         
 //        let fsm: FullStoryMiddleware = FullStoryMiddleware.init(whitelistEvents: ["Cart Viewed","Order Completed"])
