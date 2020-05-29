@@ -29,7 +29,7 @@ enum LogLevel {
     case assert, error, warning, info, debug
 }
 
-enum FSStatus: String {
+enum PrivacySetting: String {
     case exclude = "fs-exclude"
     case mask = "fs-mask"
     case unmask = "fs-unmask"
@@ -59,6 +59,6 @@ func fsLog(message: String, level: LogLevel = .info) {
     FS.log(with: fsLogType, message: "\(Date())" + message)
 }
 
-func fsModify(status: FSStatus, of view: UIView) {
-    FS.addClass(view, className: status.rawValue)
+func fsModifyPrivacy(setting: PrivacySetting, of view: UIView) {
+    FS.addClass(view, className: setting.rawValue)
 }
