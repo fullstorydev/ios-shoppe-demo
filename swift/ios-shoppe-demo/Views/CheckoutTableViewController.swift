@@ -102,5 +102,8 @@ class CheckoutTableViewController: UITableViewController {
 
             present(productView, animated: true, completion: nil)
         }
+        else {
+            fsLog(message: "User tried to checkout without confirmation.", level: .error)
+        }
     }
 }
