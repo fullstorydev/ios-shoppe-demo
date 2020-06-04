@@ -3,13 +3,11 @@
 //  ios-shoppe-demo
 //
 //  Created on 4/30/20.
-//  Copyright © 2020 FullStory All rights reserved.
+//  Copyright © 2020 Harold Davis Jr. All rights reserved.
 //
 
 import Foundation
 import UIKit
-
-let fsBackgroundColor: UIColor = #colorLiteral(red: 0.03917218745, green: 0.1215802506, blue: 0.196048826, alpha: 1)
 
 class ProductSummaryView: UITableViewController {
     var checkoutTableViewController: CheckoutTableViewController!
@@ -26,7 +24,7 @@ class ProductSummaryView: UITableViewController {
         tableView.register(UINib(nibName: "ProductSummaryUserDetailCell", bundle: nil), forCellReuseIdentifier: "userDetails")
         tableView.register(UINib(nibName: "ProductSummaryTotalCost", bundle: nil), forCellReuseIdentifier: "totalCell")
         tableView.separatorStyle = .none
-        tableView.backgroundColor = fsBackgroundColor
+        tableView.backgroundColor = UIColor().fsBackground()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -60,7 +58,7 @@ class ProductSummaryView: UITableViewController {
             return cell ?? UITableViewCell()
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "userDetails", for: indexPath) as? ProductSummaryDetailCell
-            cell?.setupFSElements()
+            cell?.setupFSMaskingElements()
 
             return cell ?? UITableViewCell()
         case 2:

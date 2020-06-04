@@ -3,7 +3,7 @@
 //  ios-shoppe-demo
 //
 //  Created on 4/30/20.
-//  Copyright © 2020 FullStory All rights reserved.
+//  Copyright © 2020 Harold Davis Jr. All rights reserved.
 //
 
 import Foundation

@@ -9,7 +9,7 @@
 import UIKit
 
 class CheckoutTableViewController: UITableViewController {
-    
+
     var addressItems: [AddressDetail] = [.name, .street, .unit, .city, .state, .zip, .phone]
     var cardItems: [CardDetail] = [.name, .cardNumber, .expiration, .csv]
     var addressDict = [AddressDetail: String]()
@@ -25,7 +25,7 @@ class CheckoutTableViewController: UITableViewController {
         tableView.register(UINib(nibName: "LargeLabelTableViewCell", bundle: nil), forCellReuseIdentifier: "title")
         tableView.register(UINib(nibName: "CartTableViewCell", bundle: nil), forCellReuseIdentifier: "checkout")
         tableView.separatorStyle = .none
-        tableView.backgroundColor = fsBackgroundColor
+        tableView.backgroundColor = UIColor().fsBackground()
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -69,11 +69,11 @@ class CheckoutTableViewController: UITableViewController {
             let cell =  tableView.dequeueReusableCell(withIdentifier: "checkout") as? CartTableViewCell
 
             cell?.checkoutTableViewController = self
-            
+
             DispatchQueue.main.async {
                 cell?.setup()
             }
-            
+
             return cell ?? UITableViewCell()
         default:
             return UITableViewCell()

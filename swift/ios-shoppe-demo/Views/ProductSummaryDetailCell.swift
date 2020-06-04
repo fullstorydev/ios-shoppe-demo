@@ -15,13 +15,7 @@ class ProductSummaryDetailCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var shippingAddress: UILabel!
 
-    var fsManager = FullStoryManager.shared
+    func setupFSMaskingElements() {
 
-    func setupFSElements() {
-        fsManager.fsModify(status: .unmask, of: shippedLabel)
-        fsManager.fsModify(status: .unmask, of: shippingLabel)
-        fsManager.fsModify(status: .mask, of: nameLabel)
-        fsManager.fsModify(status: .mask, of: shippingAddress)
     }
-
 }
