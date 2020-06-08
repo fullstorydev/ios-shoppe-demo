@@ -31,12 +31,11 @@
 
 - (void)context:(SEGContext * _Nonnull)context next:(SEGMiddlewareNext _Nonnull)next {
     next([context modify:^(id<SEGMutableContext>  _Nonnull ctx) {
-        
+        //TODO: add support for Options
         switch(ctx.eventType){
             case SEGEventTypeGroup:{
                 SEGGroupPayload *payload = (SEGGroupPayload *) ctx.payload;
-                NSMutableDictionary *userVars = [NSMutableDictionary alloc];
-                userVars[@"groupID"] = payload.groupId;
+                NSMutableDictionary *userVars = [[NSMutableDictionary alloc] initWithObjectsAndKeys:payload.groupId,@"groupID", nil];
                 if(self.enableGroupTraitsAsUserVars){
                     [userVars addEntriesFromDictionary:payload.traits];
                 }
@@ -105,6 +104,7 @@
     return nil;
 }
 
+// get all possible events from Event integer enum: https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#usage
 - (NSString *) getEventName:(SEGEventType)type {
     NSArray *eventArr =@[
         // Should not happen, but default state

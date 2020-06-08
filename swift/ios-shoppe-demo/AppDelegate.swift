@@ -38,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FSDelegate {
 //        let fsm: FullStoryMiddleware = FullStoryMiddleware.init(whitelistEvents: ["Cart Viewed","Order Completed"])
         let fsm: FullStoryMiddleware = FullStoryMiddleware.init()
         fsm.enableSendScreenAsEvents = false
-        fsm.enableGroupTraitsAsUserVars = false
+        fsm.enableGroupTraitsAsUserVars = true
         fsm.enableFSSessionURLInEvents = true
         fsm.whitelistAllTrackEvents = true
 
