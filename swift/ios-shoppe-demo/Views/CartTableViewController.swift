@@ -27,7 +27,9 @@ class CartTableViewController: UITableViewController {
         setOrderItemsForCart()
         
         SEGAnalytics.shared()?.track("Cart Viewed", properties: ["total":order.cartOrderTotal()])
-        NSLog("cart viewed segment called")
+        SEGAnalytics.shared()?.identify("testUserId1", traits: ["displayName": "test user 1"]);
+        SEGAnalytics.shared()?.screen("CartTableViewController")
+        SEGAnalytics.shared()?.track("Test Track Event", properties: ["total":order.cartOrderTotal(),"viewed":true])
     }
 
     func setOrderItemsForCart() {
