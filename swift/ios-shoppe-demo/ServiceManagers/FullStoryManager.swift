@@ -8,6 +8,7 @@
 
 import Foundation
 import FullStory
+import FirebaseAnalytics
 
 /**
  FullStory Manager is a file full of functions and enums that can make the FullStory API easier to apply to areas of your project.
@@ -25,7 +26,7 @@ enum Event: String {
     case crash
 }
 
-enum LogLevel {
+enum LogLevel: String {
     case assert, error, warning, info, debug
 }
 
@@ -37,7 +38,9 @@ enum PrivacySetting: String {
 
 
 func fsCreateEvent(event: Event, with dict: [String: Any]) {
+    print("Session:" + Analytics.appInstanceID())
     FS.event(event.rawValue, properties: dict)
+    Analytics.logEvent(event.rawValue , parameters: ["Session": FS.currentSessionURL ?? "No FullStory session available"])
 }
 
 func fsLog(message: String, level: LogLevel = .info) {
@@ -61,4 +64,13 @@ func fsLog(message: String, level: LogLevel = .info) {
 
 func fsModifyPrivacy(setting: PrivacySetting, of view: UIView) {
     FS.addClass(view, className: setting.rawValue)
+}
+
+func fsIdentify(sessionURL: String) {
+    let userID: String = "0232432342"
+    fsLog(message: "Captured user info.")
+    Analytics.logEvent("Started Capture Session", parameters: ["FullStorrySessionURL": sessionURL])
+    Analytics.setUserProperty("Harold", forName: "username")
+    
+    FS.identify(userID, userVars: ["username": "Harold","email":"harold_davis@icloud.com"])
 }

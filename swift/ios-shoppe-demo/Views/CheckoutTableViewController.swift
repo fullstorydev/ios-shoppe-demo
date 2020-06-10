@@ -86,6 +86,7 @@ class CheckoutTableViewController: UITableViewController {
         productView.modalPresentationStyle = .formSheet
         productView.checkoutTableViewController = self
 
+        fsCreateEvent(event: .checkout, with: order.orderSummary())
         present(productView, animated: true, completion: nil)
     }
 }

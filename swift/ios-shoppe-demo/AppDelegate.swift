@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FSDelegate {
     func fullstoryDidStartSession(_ sessionUrl: String) {
         print("FSSessionURL: ",sessionUrl)
 
+        fsIdentify(sessionURL: sessionUrl)
         Crashlytics.crashlytics().setCustomValue(sessionUrl, forKey: "FSURLSession")
     }
 
