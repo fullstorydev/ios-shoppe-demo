@@ -30,7 +30,7 @@ class CartQuantityTableViewCell: UITableViewCell {
 
         titleLabel.text = product.title
         quantityLabel.text = "x\(product.quantity)"
-        totalLabel.text = "$\(product.getTotal())"
+        totalLabel.text = product.getTotal().convertDoubleToCurrency()
     }
 
     @IBAction func addQuantity(_ sender: Any) {

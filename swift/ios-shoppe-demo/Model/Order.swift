@@ -16,10 +16,10 @@ class Order {
         items.filter { $0.title == productName }.first?.quantity += 1
     }
 
-    func cartOrderTotal() -> Decimal {
-        var cost = Decimal()
+    func cartOrderTotal() -> Double {
+        var cost = Double()
         items.forEach { (item) in
-            cost += item.price.multiply(item.quantity)
+            cost += item.getTotal()
         }
 
         return cost

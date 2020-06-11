@@ -25,7 +25,7 @@ class ProductSummaryCell: UITableViewCell {
         DispatchQueue.main.async {
             self.titleLabel.text = self.product.title
             self.quantityLabel.text = "x\(self.product.quantity)"
-            self.totalLabel.text = "$\(self.product.getTotal())"
+            self.totalLabel.text = self.product.getTotal().convertDoubleToCurrency()
         }
     }
 }
