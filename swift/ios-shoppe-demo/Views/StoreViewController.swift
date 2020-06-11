@@ -11,6 +11,8 @@ import UIKit
 class StoreViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     var products: [Product] = []
+    var cartNumberView = UIBarButtonItem()
+    var cartNumber: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,19 +40,24 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
         }
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        updateCartNumber()
+        setupNavigationBar()
+    }
+
     func setupNavigationBar() {
         let barCartButton = UIBarButtonItem(image: UIImage(named: "shopping_cart"), style: .done, target: self, action: #selector(openCart))
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
 
+        cartNumberView = UIBarButtonItem(title: "\(cartNumber)", style: .done, target: self, action: nil)
+        cartNumberView.tintColor = .white
         barCartButton.tintColor = .white
 
         navigationController?.navigationBar.titleTextAttributes = textAttributes
         navigationController?.navigationBar.barTintColor = UIColor(displayP3Red: 206/255, green: 78/255, blue: 142/255, alpha: 1.0)
 
         navigationItem.title = "iOS Shoppe"
-        navigationItem.rightBarButtonItem = barCartButton
-
-        collectionView.backgroundColor = UIColor().fsBackground()
+        navigationItem.rightBarButtonItems = [cartNumberView, barCartButton]
         collectionView.register(UINib(nibName: "ProductCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cell")
     }
 
@@ -70,16 +77,32 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? ProductCollectionViewCell
         cell?.product = products[indexPath.row]
         cell?.collectionView = self
-        
+
         return cell ?? UICollectionViewCell()
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
+
         return CGSize(width: 375, height: 300)
     }
 
     func addToCart(_ product: String) {
+        let generator = UIImpactFeedbackGenerator(style: .medium)
+        generator.impactOccurred()
+
         order.addProduct(product)
+        updateCartNumber()
+        setupNavigationBar()
+    }
+
+    func updateCartNumber() {
+        let orderItems = order.items.filter({ $0.quantity > 0 })
+        var count: Int = 0
+
+        for item in orderItems {
+            count += item.quantity
+        }
+
+        cartNumber = count
     }
 }
