@@ -15,7 +15,7 @@ extension Double {
 }
 
 extension Double {
-    func convertDoubleToCurrency() -> String {
+    func toCurrency() -> String {
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .currency
         numberFormatter.locale = Locale.current

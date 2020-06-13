@@ -21,7 +21,7 @@ class ProductSummaryTotalCell: UITableViewCell {
 
     func setup() {
         DispatchQueue.main.async {
-            self.totalLabel.text = self.order.cartOrderTotal().convertDoubleToCurrency()
+            self.totalLabel.text = self.order.cartOrderTotal.toCurrency()
         }
     }
 }

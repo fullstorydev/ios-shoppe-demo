@@ -9,29 +9,8 @@
 import Foundation
 import UIKit
 
-class CartQuantityTableViewCell: UITableViewCell {
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var quantityLabel: UILabel!
-    @IBOutlet weak var totalLabel: UILabel!
-
-    var product: Product! {
-        didSet {
-            setup()
-        }
-    }
-
+class CartQuantityTableViewCell: ProductViewCell {
     weak var tableViewController: CartTableViewController?
-
-    func setup() {
-        guard let product = product else {
-            tableViewController?.tableView.reloadData()
-            return
-        }
-
-        titleLabel.text = product.title
-        quantityLabel.text = "x\(product.quantity)"
-        totalLabel.text = product.getTotal().convertDoubleToCurrency()
-    }
 
     @IBAction func addQuantity(_ sender: Any) {
         product?.quantity += 1

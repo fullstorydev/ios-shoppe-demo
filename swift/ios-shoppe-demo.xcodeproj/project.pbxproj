@@ -41,6 +41,7 @@
 		F25D20BF240EB5A600CF89C3 /* ios_shoppe_demoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D20BE240EB5A600CF89C3 /* ios_shoppe_demoUITests.swift */; };
 		F25D20CD24100B2700CF89C3 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D20CC24100B2700CF89C3 /* APIService.swift */; };
 		F26DD85224175B7400504A3F /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26DD85124175B7400504A3F /* Product.swift */; };
+		F28D6EB7249418A90038F04F /* ProductViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28D6EB6249418A90038F04F /* ProductViewCell.swift */; };
 		F2C804DA24168C8B0098418D /* Preferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2C804D924168C8B0098418D /* Preferences.plist */; };
 		F2C804DB24168C8B0098418D /* Preferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2C804D924168C8B0098418D /* Preferences.plist */; };
 		F2C804DC24168C8B0098418D /* Preferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2C804D924168C8B0098418D /* Preferences.plist */; };
@@ -123,6 +124,7 @@
 		F25D20C0240EB5A600CF89C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F25D20CC24100B2700CF89C3 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		F26DD85124175B7400504A3F /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		F28D6EB6249418A90038F04F /* ProductViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewCell.swift; sourceTree = "<group>"; };
 		F2C804D924168C8B0098418D /* Preferences.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Preferences.plist; sourceTree = "<group>"; };
 		F2CA62B3245B223200772F93 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		F2D2A84B245B1A620000B4B4 /* ProductSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSummaryView.swift; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 				F25400E12440D8910091668D /* AddressDetail.swift */,
 				F25401242444CDF30091668D /* CardDetail.swift */,
 				F2CA62B3245B223200772F93 /* UserProfile.swift */,
+				F28D6EB6249418A90038F04F /* ProductViewCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -596,6 +599,7 @@
 			files = (
 				F2433CA0246F00FE00094DCA /* FullStoryManager.swift in Sources */,
 				F202DDD1246EDA4F00D32F89 /* ThankYouCell.swift in Sources */,
+				F28D6EB7249418A90038F04F /* ProductViewCell.swift in Sources */,
 				F25D20A1240EB5A300CF89C3 /* StoreViewController.swift in Sources */,
 				F2CA62B4245B223200772F93 /* UserProfile.swift in Sources */,
 				F2E5A51824193637005DFBFE /* SceneDelegate.swift in Sources */,
