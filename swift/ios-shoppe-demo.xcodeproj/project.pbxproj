@@ -16,7 +16,6 @@
 		F202DDC0246ED9DF00D32F89 /* CartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F202DDB7246ED9DF00D32F89 /* CartTableViewCell.xib */; };
 		F202DDC1246ED9DF00D32F89 /* ProductSummaryTotalCost.xib in Resources */ = {isa = PBXBuildFile; fileRef = F202DDB8246ED9DF00D32F89 /* ProductSummaryTotalCost.xib */; };
 		F202DDC2246ED9DF00D32F89 /* CheckoutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F202DDB9246ED9DF00D32F89 /* CheckoutTableViewCell.xib */; };
-		F202DDC3246ED9DF00D32F89 /* LargeLabelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F202DDBA246ED9DF00D32F89 /* LargeLabelTableViewCell.xib */; };
 		F202DDD1246EDA4F00D32F89 /* ThankYouCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F202DDC4246EDA4F00D32F89 /* ThankYouCell.swift */; };
 		F202DDD2246EDA4F00D32F89 /* LargeLabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F202DDC5246EDA4F00D32F89 /* LargeLabelTableViewCell.swift */; };
 		F202DDD3246EDA4F00D32F89 /* ProductSummaryDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F202DDC6246EDA4F00D32F89 /* ProductSummaryDetailCell.swift */; };
@@ -41,6 +40,7 @@
 		F25D20CD24100B2700CF89C3 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D20CC24100B2700CF89C3 /* APIService.swift */; };
 		F26DD85224175B7400504A3F /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26DD85124175B7400504A3F /* Product.swift */; };
 		F28D6EBF2497BE450038F04F /* CartQuantityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F28D6EBE2497BE450038F04F /* CartQuantityTableViewCell.xib */; };
+		F28D6EC12497C1430038F04F /* LargeLabelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F28D6EC02497C1430038F04F /* LargeLabelTableViewCell.xib */; };
 		F2C804DA24168C8B0098418D /* Preferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2C804D924168C8B0098418D /* Preferences.plist */; };
 		F2C804DB24168C8B0098418D /* Preferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2C804D924168C8B0098418D /* Preferences.plist */; };
 		F2C804DC24168C8B0098418D /* Preferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2C804D924168C8B0098418D /* Preferences.plist */; };
@@ -89,7 +89,6 @@
 		F202DDB7246ED9DF00D32F89 /* CartTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartTableViewCell.xib; sourceTree = "<group>"; };
 		F202DDB8246ED9DF00D32F89 /* ProductSummaryTotalCost.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductSummaryTotalCost.xib; sourceTree = "<group>"; };
 		F202DDB9246ED9DF00D32F89 /* CheckoutTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckoutTableViewCell.xib; sourceTree = "<group>"; };
-		F202DDBA246ED9DF00D32F89 /* LargeLabelTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LargeLabelTableViewCell.xib; sourceTree = "<group>"; };
 		F202DDC4246EDA4F00D32F89 /* ThankYouCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThankYouCell.swift; sourceTree = "<group>"; };
 		F202DDC5246EDA4F00D32F89 /* LargeLabelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LargeLabelTableViewCell.swift; sourceTree = "<group>"; };
 		F202DDC6246EDA4F00D32F89 /* ProductSummaryDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductSummaryDetailCell.swift; sourceTree = "<group>"; };
@@ -123,6 +122,7 @@
 		F25D20CC24100B2700CF89C3 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		F26DD85124175B7400504A3F /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		F28D6EBE2497BE450038F04F /* CartQuantityTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartQuantityTableViewCell.xib; sourceTree = "<group>"; };
+		F28D6EC02497C1430038F04F /* LargeLabelTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LargeLabelTableViewCell.xib; sourceTree = "<group>"; };
 		F2C804D924168C8B0098418D /* Preferences.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Preferences.plist; sourceTree = "<group>"; };
 		F2CA62B3245B223200772F93 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		F2D2A84B245B1A620000B4B4 /* ProductSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSummaryView.swift; sourceTree = "<group>"; };
@@ -227,8 +227,8 @@
 				F28D6EBE2497BE450038F04F /* CartQuantityTableViewCell.xib */,
 				F202DDB7246ED9DF00D32F89 /* CartTableViewCell.xib */,
 				F202DDB9246ED9DF00D32F89 /* CheckoutTableViewCell.xib */,
-				F202DDBA246ED9DF00D32F89 /* LargeLabelTableViewCell.xib */,
 				F202DDB4246ED9DE00D32F89 /* ProductCollectionViewCell.xib */,
+				F28D6EC02497C1430038F04F /* LargeLabelTableViewCell.xib */,
 				F202DDB3246ED9DE00D32F89 /* ProductSummaryCell.xib */,
 				F202DDB6246ED9DE00D32F89 /* ProductSummaryTopCell.xib */,
 				F202DDB8246ED9DF00D32F89 /* ProductSummaryTotalCost.xib */,
@@ -440,7 +440,7 @@
 				F25D20A6240EB5A600CF89C3 /* Assets.xcassets in Resources */,
 				F202DDBD246ED9DF00D32F89 /* ProductCollectionViewCell.xib in Resources */,
 				F202DDBF246ED9DF00D32F89 /* ProductSummaryTopCell.xib in Resources */,
-				F202DDC3246ED9DF00D32F89 /* LargeLabelTableViewCell.xib in Resources */,
+				F28D6EC12497C1430038F04F /* LargeLabelTableViewCell.xib in Resources */,
 				F202DDC1246ED9DF00D32F89 /* ProductSummaryTotalCost.xib in Resources */,
 				F28D6EBF2497BE450038F04F /* CartQuantityTableViewCell.xib in Resources */,
 				F202DDC0246ED9DF00D32F89 /* CartTableViewCell.xib in Resources */,
@@ -786,7 +786,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8Q8W5KSX6X;
 				INFOPLIST_FILE = "ios-shoppe-demo/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -805,7 +805,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8Q8W5KSX6X;
 				INFOPLIST_FILE = "ios-shoppe-demo/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
