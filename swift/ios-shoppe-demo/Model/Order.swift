@@ -11,18 +11,12 @@ import Foundation
 class Order {
     var items: [Product] = []
     var date: Date = Date()
+    var cartOrderTotal: Double {
+        return items.reduce(0, { $0 + getTotal(for product: $1) })
+    }
 
     func addProduct(_ productName: String ) {
         items.filter { $0.title == productName }.first?.quantity += 1
-    }
-
-    func cartOrderTotal() -> Decimal {
-        var cost = Decimal()
-        items.forEach { (item) in
-            cost += item.price.multiply(item.quantity)
-        }
-
-        return cost
     }
 
     func orderSummary() -> [String: Any] {

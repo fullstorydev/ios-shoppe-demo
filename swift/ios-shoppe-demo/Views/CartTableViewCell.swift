@@ -25,7 +25,7 @@ class CartTableViewCell: UITableViewCell {
     func setup() {
         checkoutButton.curveViewCornersWithShadow()
         orderTotalLabel.adjustsFontSizeToFitWidth = true
-        orderTotalLabel.text = "$\(abs(order.cartOrderTotal().distance(to: 0)))"
+        orderTotalLabel.text = order.cartOrderTotal.toCurrency()
     }
 
     func setTextForPlacingOrder() {
