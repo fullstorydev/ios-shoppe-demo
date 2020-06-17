@@ -29,7 +29,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
             self.curveViewCornersWithShadow()
             self.addToCartButton.curveViewCornersWithShadow()
             self.productTitleLabel.text = self.product.title
-            self.productPriceLabel.text = "Price: $\(self.product.price)"
+            self.productPriceLabel.text = "Price: \(self.product.price.toCurrency())"
             self.productDescriptionLabel.text = self.product.description
             self.productImageView.image = self.product.image
         }

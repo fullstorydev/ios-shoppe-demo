@@ -8,8 +8,17 @@
 
 import Foundation
 
-extension Decimal {
-    func multiply(_ byNumber: Int) -> Decimal {
-        return self * Decimal(integerLiteral: byNumber)
+extension Double {
+    func multiply(_ byNumber: Int) -> Double {
+        return self * Double(integerLiteral: Int64(byNumber))
+    }
+}
+
+extension Double {
+    func toCurrency() -> String {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .currency
+        numberFormatter.locale = Locale.current
+        return numberFormatter.string(from: NSNumber(value: self))!
     }
 }
