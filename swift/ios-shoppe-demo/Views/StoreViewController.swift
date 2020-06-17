@@ -50,7 +50,7 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
         navigationItem.title = "iOS Shoppe"
         navigationItem.rightBarButtonItem = barCartButton
 
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = UIColor().fsBackground()
         collectionView.register(UINib(nibName: "ProductCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cell")
     }
 
