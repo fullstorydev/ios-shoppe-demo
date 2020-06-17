@@ -12,7 +12,7 @@ class Order {
     var items: [Product] = []
     var date: Date = Date()
     var cartOrderTotal: Double {
-        return items.reduce(0, { $0 + getTotal(for product: $1) })
+        return items.reduce(0, { $0 + getTotal(for: $1) })
     }
 
     func addProduct(_ productName: String ) {

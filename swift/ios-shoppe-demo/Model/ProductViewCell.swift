@@ -22,7 +22,7 @@ class ProductViewCell: UITableViewCell {
     func setup() {
         titleLabel.text = product.title
         quantityLabel.text = "x\(product.quantity)"
-        totalLabel.text = getTotal(for product: product).toCurrency()
+        totalLabel.text = getTotal(for: product).toCurrency()
     }
     
 }
