@@ -29,6 +29,8 @@ class CartTableViewController: UITableViewController {
         
         tableView.separatorStyle = .none
         tableView.backgroundColor = UIColor().fsBackground()
+        
+        trackCartViewedEvent(order: order)
     }
 
     func setOrderItemsForCart() {

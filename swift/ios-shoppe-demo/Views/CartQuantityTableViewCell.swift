@@ -37,6 +37,8 @@ class CartQuantityTableViewCell: UITableViewCell {
         product?.quantity += 1
         tableViewController?.setOrderItemsForCart()
         tableViewController?.tableView.reloadData()
+        
+        trackProductAddedEvent(product: product)
     }
 
     @IBAction func subtractQuantity(_ sender: Any) {
@@ -45,6 +47,8 @@ class CartQuantityTableViewCell: UITableViewCell {
             tableViewController?.tableView.reloadData()
             return
         }
+        
+        trackProductRemovedEvent(product: product)
 
         product.quantity -= 1
 

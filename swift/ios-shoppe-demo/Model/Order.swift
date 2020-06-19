@@ -13,7 +13,10 @@ class Order {
     var date: Date = Date()
 
     func addProduct(_ productName: String ) {
-        items.filter { $0.title == productName }.first?.quantity += 1
+        let product = items.filter { $0.title == productName }.first
+        product?.quantity += 1
+        
+        trackProductAddedEvent(product: product)
     }
 
     func cartOrderTotal() -> Decimal {

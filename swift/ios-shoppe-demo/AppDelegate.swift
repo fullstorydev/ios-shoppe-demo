@@ -8,11 +8,15 @@
 
 import UIKit
 import FullStory
+import Analytics
+import FullStorySegmentMiddleware
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, FSDelegate {
 
     func fullstoryDidStartSession(_ sessionUrl: String) {
+        NSLog("FS Session URL: %@", FS.currentSessionURL ?? "nil")
     }
 
     func fullstoryDidStopSession() {
@@ -28,6 +32,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FSDelegate {
 
         FS.delegate = self
 
+        let configuration = SEGAnalyticsConfiguration.init(writeKey: "your_write_key")
+
+        let fsm = FullStoryMiddleware.init()
+        // allow all events to be tracked by FS, defualt to false
+        fsm.allowlistAllTrackEvents = true
+        // allow FS session URL to be added in segemnt event properties, default to true
+        fsm.enableFSSessionURLInEvents = true
+        // enable to send group traits as userVars, default to false
+        fsm.enableGroupTraitsAsUserVars = true
+        // enable to send FS custom events on screen event, default to false
+        fsm.enableSendScreenAsEvents = true
+        
+        configuration.middlewares = [fsm]
+        SEGAnalytics.setup(with: configuration)
+        
         return true
     }
 

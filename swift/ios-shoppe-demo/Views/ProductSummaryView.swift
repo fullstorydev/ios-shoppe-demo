@@ -25,6 +25,8 @@ class ProductSummaryView: UITableViewController {
         tableView.register(UINib(nibName: "ProductSummaryTotalCost", bundle: nil), forCellReuseIdentifier: "totalCell")
         tableView.separatorStyle = .none
         tableView.backgroundColor = UIColor().fsBackground()
+        
+        trackOrderCompletedEvent(order: order)
     }
 
     override func viewWillDisappear(_ animated: Bool) {

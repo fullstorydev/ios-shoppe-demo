@@ -26,6 +26,8 @@ class CheckoutTableViewController: UITableViewController {
         tableView.register(UINib(nibName: "CartTableViewCell", bundle: nil), forCellReuseIdentifier: "checkout")
         tableView.separatorStyle = .none
         tableView.backgroundColor = UIColor().fsBackground()
+        
+        trackCheckoutStartedEvent(order: order)
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
