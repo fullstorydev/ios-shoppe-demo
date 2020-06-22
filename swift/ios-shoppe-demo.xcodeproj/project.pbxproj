@@ -24,6 +24,8 @@
 		F202DDDA246EDA4F00D32F89 /* CheckoutTextViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F202DDCD246EDA4F00D32F89 /* CheckoutTextViewCell.swift */; };
 		F202DDDB246EDA4F00D32F89 /* ProductSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F202DDCE246EDA4F00D32F89 /* ProductSummaryCell.swift */; };
 		F214B20224A0FDE70019DF92 /* CheckoutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F214B20124A0FDE70019DF92 /* CheckoutTableViewCell.xib */; };
+		F214B20924A1072B0019DF92 /* CheckBoxButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F214B20724A1072B0019DF92 /* CheckBoxButtonCell.swift */; };
+		F214B20A24A1072B0019DF92 /* CheckBoxButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = F214B20824A1072B0019DF92 /* CheckBoxButton.xib */; };
 		F21E144C2428DA82005D4C76 /* Products.json in Resources */ = {isa = PBXBuildFile; fileRef = F21E144B2428DA82005D4C76 /* Products.json */; };
 		F2433CA0246F00FE00094DCA /* FullStoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2433C9F246F00FE00094DCA /* FullStoryManager.swift */; };
 		F2441D7E24322B26006BEFF3 /* EX+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2441D7D24322B26006BEFF3 /* EX+UIView.swift */; };
@@ -98,6 +100,8 @@
 		F202DDCD246EDA4F00D32F89 /* CheckoutTextViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutTextViewCell.swift; sourceTree = "<group>"; };
 		F202DDCE246EDA4F00D32F89 /* ProductSummaryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductSummaryCell.swift; sourceTree = "<group>"; };
 		F214B20124A0FDE70019DF92 /* CheckoutTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckoutTableViewCell.xib; sourceTree = "<group>"; };
+		F214B20724A1072B0019DF92 /* CheckBoxButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBoxButtonCell.swift; sourceTree = "<group>"; };
+		F214B20824A1072B0019DF92 /* CheckBoxButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckBoxButton.xib; sourceTree = "<group>"; };
 		F21E144B2428DA82005D4C76 /* Products.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Products.json; sourceTree = "<group>"; };
 		F2433C9F246F00FE00094DCA /* FullStoryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullStoryManager.swift; sourceTree = "<group>"; };
 		F2441D7D24322B26006BEFF3 /* EX+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EX+UIView.swift"; sourceTree = "<group>"; };
@@ -202,6 +206,7 @@
 				F202DDCB246EDA4F00D32F89 /* CartQuantityTableViewCell.swift */,
 				F202DDC8246EDA4F00D32F89 /* CartTableViewCell.swift */,
 				F202DDCD246EDA4F00D32F89 /* CheckoutTextViewCell.swift */,
+				F214B20724A1072B0019DF92 /* CheckBoxButtonCell.swift */,
 				F202DDC5246EDA4F00D32F89 /* LargeLabelTableViewCell.swift */,
 				F202DDC9246EDA4F00D32F89 /* ProductCollectionViewCell.swift */,
 				F202DDCE246EDA4F00D32F89 /* ProductSummaryCell.swift */,
@@ -230,6 +235,7 @@
 				F28D6EC22497C23C0038F04F /* CartTableViewCell.xib */,
 				F28D6EC02497C1430038F04F /* LargeLabelTableViewCell.xib */,
 				F214B20124A0FDE70019DF92 /* CheckoutTableViewCell.xib */,
+				F214B20824A1072B0019DF92 /* CheckBoxButton.xib */,
 				F202DDB4246ED9DE00D32F89 /* ProductCollectionViewCell.xib */,
 				F202DDB3246ED9DE00D32F89 /* ProductSummaryCell.xib */,
 				F202DDB6246ED9DE00D32F89 /* ProductSummaryTopCell.xib */,
@@ -450,6 +456,7 @@
 				F28D6EC32497C23C0038F04F /* CartTableViewCell.xib in Resources */,
 				F202DDBE246ED9DF00D32F89 /* ProductSummaryUserDetailCell.xib in Resources */,
 				F21E144C2428DA82005D4C76 /* Products.json in Resources */,
+				F214B20A24A1072B0019DF92 /* CheckBoxButton.xib in Resources */,
 				F2C804DA24168C8B0098418D /* Preferences.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -611,6 +618,7 @@
 				F2441D7E24322B26006BEFF3 /* EX+UIView.swift in Sources */,
 				F25339C42472CFD50021BB7A /* EX+UIColor.swift in Sources */,
 				F25D20CD24100B2700CF89C3 /* APIService.swift in Sources */,
+				F214B20924A1072B0019DF92 /* CheckBoxButtonCell.swift in Sources */,
 				F2F59D29245736C7008B20AD /* CheckoutTableViewController.swift in Sources */,
 				F202DDDA246EDA4F00D32F89 /* CheckoutTextViewCell.swift in Sources */,
 				F2F59D2A245736CC008B20AD /* AddressDetail.swift in Sources */,
