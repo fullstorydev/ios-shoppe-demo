@@ -10,11 +10,15 @@ import UIKit
 
 class CheckoutTableViewController: UITableViewController {
 
+    // MARK: - Properties
+
     var addressItems: [AddressDetail] = [.name, .street, .unit, .city, .state, .zip, .phone]
     var cardItems: [CardDetail] = [.name, .cardNumber, .expiration, .csv]
     var addressDict = [AddressDetail: String]()
 
     var autoFillEnabled: Bool = false
+
+    // MARK: - View Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
