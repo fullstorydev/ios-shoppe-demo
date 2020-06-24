@@ -87,5 +87,9 @@ class CheckoutTableViewController: UITableViewController {
         productView.checkoutTableViewController = self
 
         present(productView, animated: true, completion: nil)
+
+        // MARK: - FullStory Event Example
+
+        fsCreateEvent(event: .checkout, with: order.orderSummary())
     }
 }
