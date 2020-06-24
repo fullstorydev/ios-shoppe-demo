@@ -108,7 +108,6 @@ class CheckoutTableViewController: UITableViewController {
             return cell ?? UITableViewCell()
         case 5:
             let cell =  tableView.dequeueReusableCell(withIdentifier: "checkoutBox") as? CheckBoxButtonCell
-
             cell?.checkoutView = self
 
             return cell ?? UITableViewCell()
