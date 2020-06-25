@@ -2,8 +2,8 @@
 //  ProductViewCell.swift
 //  ios-shoppe-demo
 //
-//  Created by Harold Davis Jr. on 6/12/20.
-//  Copyright © 2020 Harold Davis Jr. All rights reserved.
+//  Created on 6/12/20.
+//  Copyright © 2020 FullStory All rights reserved.
 //
 
 import UIKit
