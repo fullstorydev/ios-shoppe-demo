@@ -63,11 +63,6 @@ func fsModifyPrivacy(setting: PrivacySetting, of view: UIView) {
     FS.addClass(view, className: setting.rawValue)
 }
 
-func fsIdentify(userInfo: [String: Any]) {
-    let userId = "13ff474bae77 \(arc4random())"
-    var userDict = userInfo
-
-    userDict["displayName"] = "Shopping User"
-
-    FS.identify(userId, userVars: userInfo)
+func fsIdentify(id: String, userInfo: [String: Any]) {
+    FS.identify(id, userVars: userInfo)
 }

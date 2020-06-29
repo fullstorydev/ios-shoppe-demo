@@ -13,6 +13,7 @@ class CheckoutTableViewCell: UITableViewCell, UITextFieldDelegate {
     @IBOutlet weak var addressDetailTextField: UITextField!
 
     var tableViewController: CheckoutTableViewController?
+
     var addressDetail: AddressDetail? {
         didSet {
             showTooltip()
@@ -25,18 +26,25 @@ class CheckoutTableViewCell: UITableViewCell, UITextFieldDelegate {
         }
     }
 
+    /**
+     # showTooltip sets the placeholder text on the textfield based on the provided enum case's placeholder property.
+     */
     func showTooltip() {
         if tableViewController?.autoFillEnabled ?? false { }
         else {
             addressDetailTextField.placeholder = (addressDetail != nil) ? addressDetail?.placeHolder : cardDetail?.placeHolder
         }
+
         addressDetailTextField.delegate = self
     }
+
+    // MARK: - UITextFieldDelegate Methods
 
     func textFieldDidEndEditing(_ textField: UITextField) {
         if let addressDetail = addressDetail {
             tableViewController?.addressDict[addressDetail] = addressDetailTextField.text
         }
+
         tableViewController?.tableView.reloadData()
         textField.resignFirstResponder()
     }
@@ -44,9 +52,5 @@ class CheckoutTableViewCell: UITableViewCell, UITextFieldDelegate {
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-    }
-
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-
     }
 }

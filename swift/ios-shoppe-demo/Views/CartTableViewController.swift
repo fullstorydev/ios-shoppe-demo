@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 var order: Order = Order()
-var user: UserProfile?
+var user: UserProfile = UserProfile(addressDetail: [.email:"user1@example.com"])
 
 class CartTableViewController: UITableViewController {
 

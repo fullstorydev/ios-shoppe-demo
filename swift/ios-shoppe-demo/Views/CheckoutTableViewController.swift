@@ -10,11 +10,18 @@ import UIKit
 
 class CheckoutTableViewController: UITableViewController {
 
+    // MARK: - Properties
+
     var addressItems: [AddressDetail] = [.name, .street, .unit, .city, .state, .zip, .phone]
     var cardItems: [CardDetail] = [.name, .cardNumber, .expiration, .csv]
     var addressDict = [AddressDetail: String]()
 
     var autoFillEnabled: Bool = false
+    var pageCanGoForward: Bool = false
+
+    let numberOfSections: Int = 6
+
+    // MARK: - View Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,17 +31,41 @@ class CheckoutTableViewController: UITableViewController {
         tableView.register(UINib(nibName: "CheckoutTableViewCell", bundle: nil), forCellReuseIdentifier: "textField")
         tableView.register(UINib(nibName: "LargeLabelTableViewCell", bundle: nil), forCellReuseIdentifier: "title")
         tableView.register(UINib(nibName: "CartTableViewCell", bundle: nil), forCellReuseIdentifier: "checkout")
+        tableView.register(UINib(nibName: "CheckBoxButton", bundle: nil), forCellReuseIdentifier: "checkoutBox")
+
         tableView.separatorStyle = .none
         tableView.backgroundColor = UIColor().fsBackground()
     }
 
+    // MARK: - Helper Methods
+
+    func presentProductView() {
+        if pageCanGoForward {
+            let productView = ProductSummaryView()
+
+            productView.modalPresentationStyle = .formSheet
+            productView.checkoutTableViewController = self
+
+            // MARK: - FullStory Example CustomEvent
+            fsCreateEvent(event: .checkout, with: order.orderSummary())
+
+            present(productView, animated: true, completion: nil)
+        }
+        else {
+            // MARK: - FullStory Example logging
+            fsLog(message: "User tried to checkout without confirmation.", level: .error)
+        }
+    }
+
+    // MARK: - TableViewDataSource
+
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 5
+        return numberOfSections
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
-        case 0, 2, 4:
+        case 0, 2, 4, 5:
             return 1
         case 1:
             return addressItems.count
@@ -75,21 +106,13 @@ class CheckoutTableViewController: UITableViewController {
             }
 
             return cell ?? UITableViewCell()
+        case 5:
+            let cell =  tableView.dequeueReusableCell(withIdentifier: "checkoutBox") as? CheckBoxButtonCell
+            cell?.checkoutView = self
+
+            return cell ?? UITableViewCell()
         default:
             return UITableViewCell()
         }
-    }
-
-    func presentProductView() {
-        let productView = ProductSummaryView()
-
-        productView.modalPresentationStyle = .formSheet
-        productView.checkoutTableViewController = self
-
-        present(productView, animated: true, completion: nil)
-
-        // MARK: - FullStory Event Example
-
-        fsCreateEvent(event: .checkout, with: order.orderSummary())
     }
 }
