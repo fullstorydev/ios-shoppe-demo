@@ -12,6 +12,28 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
 
     var products: [Product] = []
 
+    // MARK: - NavigationBar Button Properties
+
+    var barCartButton: UIBarButtonItem {
+        let button = UIBarButtonItem(image: UIImage(named: "shopping_cart"), style: .done, target: self, action: #selector(openCart))
+        button.tintColor = .white
+        return button
+    }
+
+    var cartNumberView: UIBarButtonItem = UIBarButtonItem() {
+        didSet {
+            cartNumberView.tintColor = .white
+        }
+    }
+
+    var cartNumber: Int = 0 {
+        didSet {
+            setCartUI()
+        }
+    }
+
+    // MARK: - View Life Cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,25 +62,50 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
         }
     }
 
-    func setupNavigationBar() {
-        let barCartButton = UIBarButtonItem(image: UIImage(named: "shopping_cart"), style: .done, target: self, action: #selector(openCart))
-        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+    override func viewWillAppear(_ animated: Bool) {
+        updateCartNumber()
+    }
 
-        barCartButton.tintColor = .white
+    // MARK: - UI Methods
+
+    func setupNavigationBar() {
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
 
         navigationController?.navigationBar.titleTextAttributes = textAttributes
         navigationController?.navigationBar.barTintColor = UIColor(displayP3Red: 206/255, green: 78/255, blue: 142/255, alpha: 1.0)
 
         navigationItem.title = "iOS Shoppe"
-        navigationItem.rightBarButtonItem = barCartButton
 
-        collectionView.backgroundColor = UIColor().fsBackground()
+        setCartUI()
+
         collectionView.register(UINib(nibName: "ProductCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cell")
+        collectionView.backgroundColor = UIColor().fsBackground()
+    }
+
+    func updateCartNumber() {
+        let numberOfItems = order.items.reduce(0, { $0 + $1.quantity })
+
+        cartNumber = numberOfItems
+    }
+
+    func setCartUI() {
+        cartNumberView = UIBarButtonItem(title: "\(cartNumber)", style: .done, target: self, action: nil)
+        navigationItem.rightBarButtonItems = [cartNumberView, barCartButton]
+    }
+
+    func addToCart(_ product: String) {
+        let generator = UIImpactFeedbackGenerator(style: .medium)
+        generator.impactOccurred()
+
+        order.addProduct(product)
+        updateCartNumber()
     }
 
     @objc func openCart() {
         self.navigationController?.pushViewController(CartTableViewController(), animated: true)
     }
+
+    // MARK: - CollectionViewDelegate Methods
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -72,16 +119,12 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? ProductCollectionViewCell
         cell?.product = products[indexPath.row]
         cell?.collectionView = self
-        
+
         return cell ?? UICollectionViewCell()
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        return CGSize(width: 375, height: 300)
-    }
 
-    func addToCart(_ product: String) {
-        order.addProduct(product)
+        return CGSize(width: 375, height: 300)
     }
 }
