@@ -9,17 +9,21 @@
 import Foundation
 
 class UserProfile {
+    var id: UUID
     var name: String
+    var email:String
     var street: String
     var phone: String
+
+    var infoDict: [String: String] {
+        return ["id":id.uuidString, "email":email]
+    }
 
     init(addressDetail: [AddressDetail: String]) {
         self.name = addressDetail[.name] ?? ""
         self.street = addressDetail[.street] ?? ""
         self.phone = addressDetail[.phone] ?? ""
-    }
-
-    func description() -> String {
-        return "\(name)/n\(street)/n\(phone)"
+        self.email = addressDetail[.email] ?? ""
+        self.id = UUID()
     }
 }

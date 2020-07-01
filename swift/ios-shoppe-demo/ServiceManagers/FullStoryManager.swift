@@ -62,3 +62,7 @@ func fsLog(message: String, level: LogLevel = .info) {
 func fsModifyPrivacy(setting: PrivacySetting, of view: UIView) {
     FS.addClass(view, className: setting.rawValue)
 }
+
+func fsIdentify(id: String, userInfo: [String: Any]) {
+    FS.identify(id, userVars: userInfo)
+}

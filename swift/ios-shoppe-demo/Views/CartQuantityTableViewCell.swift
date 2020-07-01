@@ -16,6 +16,10 @@ class CartQuantityTableViewCell: ProductViewCell {
         product?.quantity += 1
         tableViewController?.setOrderItemsForCart()
         tableViewController?.tableView.reloadData()
+
+        // MARK: - FullStory Logging Example
+
+        fsLog(message: "\(product.title) was added from cart.", level: .info)
     }
 
     @IBAction func subtractQuantity(_ sender: Any) {
@@ -32,5 +36,9 @@ class CartQuantityTableViewCell: ProductViewCell {
         }
 
         tableViewController?.tableView.reloadData()
+
+        // MARK: - FullStory Logging Example
+
+        fsLog(message: "\(product.title) was removed from cart.", level: .info)
     }
 }

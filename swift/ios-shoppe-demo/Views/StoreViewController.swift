@@ -17,6 +17,8 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
 
         setupNavigationBar()
 
+        fsIdentify(id: user.id.uuidString, userInfo: user.infoDict)
+
         APIService.sharedInstance.getProductsFromFile { (productsRecieved) in
             if !productsRecieved.isEmpty {
                 self.products = productsRecieved
