@@ -69,8 +69,6 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
     func setupNavigationBar() {
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
 
-        cartNumberView = UIBarButtonItem(title: "\(cartNumber)", style: .done, target: self, action: nil)
-
         navigationController?.navigationBar.titleTextAttributes = textAttributes
         navigationController?.navigationBar.barTintColor = UIColor(displayP3Red: 206/255, green: 78/255, blue: 142/255, alpha: 1.0)
 
