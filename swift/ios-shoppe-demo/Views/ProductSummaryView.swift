@@ -19,6 +19,9 @@ class ProductSummaryView: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // MARK: - FullStory unmasking Example
+        fsModifyPrivacy(setting: .unmask, of: tableView)
+
         tableView.register(UINib(nibName: "ProductSummaryCell", bundle: nil), forCellReuseIdentifier: "quantity")
         tableView.register(UINib(nibName: "ProductSummaryTopCell", bundle: nil), forCellReuseIdentifier: "thankYou")
         tableView.register(UINib(nibName: "ProductSummaryUserDetailCell", bundle: nil), forCellReuseIdentifier: "userDetails")
