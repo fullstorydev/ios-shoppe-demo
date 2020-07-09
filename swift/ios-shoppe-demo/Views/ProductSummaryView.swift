@@ -29,6 +29,7 @@ class ProductSummaryView: UITableViewController {
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
+        order.items.forEach { $0.quantity = 0 }
         checkoutTableViewController.navigationController?.popToRootViewController(animated: true)
     }
 
