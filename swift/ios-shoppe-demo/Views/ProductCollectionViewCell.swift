@@ -26,7 +26,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
 
     func setup() {
         // MARK: - FullStory Unmasking Example
-        fsModifyPrivacy(setting: .unmask, of: self)
+        fsModifyPrivacy(setting: .unmask, views: self)
 
         DispatchQueue.main.async {
             self.curveViewCornersWithShadow()

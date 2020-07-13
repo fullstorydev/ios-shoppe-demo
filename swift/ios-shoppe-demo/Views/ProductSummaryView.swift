@@ -20,7 +20,7 @@ class ProductSummaryView: UITableViewController {
         super.viewDidLoad()
 
         // MARK: - FullStory unmasking Example
-        fsModifyPrivacy(setting: .unmask, of: tableView)
+        fsModifyPrivacy(setting: .unmask, views: tableView)
 
         tableView.register(UINib(nibName: "ProductSummaryCell", bundle: nil), forCellReuseIdentifier: "quantity")
         tableView.register(UINib(nibName: "ProductSummaryTopCell", bundle: nil), forCellReuseIdentifier: "thankYou")

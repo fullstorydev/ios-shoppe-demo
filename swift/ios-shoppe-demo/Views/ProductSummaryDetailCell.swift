@@ -17,6 +17,6 @@ class ProductSummaryDetailCell: UITableViewCell {
 
     func setupFSMaskingElements() {
         // MARK: - FullStory masking Example
-        fsModifyPrivacy(setting: .mask, views: [nameLabel, shippingAddress])
+        fsModifyPrivacy(setting: .mask, views: nameLabel, shippingAddress)
     }
 }
