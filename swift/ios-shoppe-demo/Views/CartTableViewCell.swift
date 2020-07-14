@@ -29,7 +29,8 @@ class CartTableViewCell: UITableViewCell {
     }
 
     func setTextForPlacingOrder() {
-        self.checkoutButton.titleLabel?.text = "Place your order"
+        self.checkoutButton.setTitle("Place your order", for: .normal)
+        self.checkoutButton.attributedTitle(for: .normal)
     }
 
     @IBAction func proceedToCheckout(_ sender: Any) {
