@@ -35,7 +35,6 @@ enum PrivacySetting: String {
     case unmask = "fs-unmask"
 }
 
-
 func fsCreateEvent(event: Event, with dict: [String: Any]) {
     FS.event(event.rawValue, properties: dict)
 }
@@ -59,8 +58,12 @@ func fsLog(message: String, level: LogLevel = .info) {
     FS.log(with: fsLogType, message: "\(Date())" + message)
 }
 
-func fsModifyPrivacy(setting: PrivacySetting, of view: UIView) {
-    FS.addClass(view, className: setting.rawValue)
+func fsModifyPrivacy(setting: PrivacySetting, views: UIView?...) {
+    views.forEach { view in
+        if let view = view {
+            FS.addClass(view, className: setting.rawValue)
+        }
+    }
 }
 
 func fsIdentify(id: String, userInfo: [String: Any]) {

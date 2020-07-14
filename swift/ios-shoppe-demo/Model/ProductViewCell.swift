@@ -26,8 +26,6 @@ class ProductViewCell: UITableViewCell {
     }
 
     func setupMasking() {
-        fsModifyPrivacy(setting: .unmask, of: titleLabel)
-        fsModifyPrivacy(setting: .unmask, of: quantityLabel)
-        fsModifyPrivacy(setting: .unmask, of: totalLabel)
+        fsModifyPrivacy(setting: .unmask, views: titleLabel, quantityLabel, totalLabel)
     }
 }

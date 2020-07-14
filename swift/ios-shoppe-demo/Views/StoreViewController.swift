@@ -89,6 +89,9 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
     }
 
     func setCartUI() {
+        // MARK: - FullStory unmasking Example
+        fsModifyPrivacy(setting: .unmask, views: cartNumberView.customView, barCartButton.customView)
+
         cartNumberView = UIBarButtonItem(title: "\(cartNumber)", style: .done, target: self, action: nil)
         navigationItem.rightBarButtonItems = [cartNumberView, barCartButton]
     }

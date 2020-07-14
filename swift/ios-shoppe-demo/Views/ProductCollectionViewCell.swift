@@ -25,6 +25,9 @@ class ProductCollectionViewCell: UICollectionViewCell {
     var collectionView: StoreViewController?
 
     func setup() {
+        // MARK: - FullStory Unmasking Example
+        fsModifyPrivacy(setting: .unmask, views: self)
+
         DispatchQueue.main.async {
             self.curveViewCornersWithShadow()
             self.addToCartButton.curveViewCornersWithShadow()
