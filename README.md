@@ -55,20 +55,58 @@ func fsIdentify(id: String, userInfo: [String: Any]) {
 ```
 
 ### Creating Events:
-- [Creating Events](https://github.com/fullstorydev/ios-shoppe-demo/blob/c534166901d71f0dace44f85aee053242dd25caf/swift/ios-shoppe-demo/ServiceManagers/FullStoryManager.swift#L38)
+- [Here](https://github.com/fullstorydev/ios-shoppe-demo/blob/c534166901d71f0dace44f85aee053242dd25caf/swift/ios-shoppe-demo/ServiceManagers/FullStoryManager.swift#L38) is how we create events. We started with creating an enum that incumpouses the different events in the ios app. (This could be different for you based on the flow of your app.)
+```
+enum Event: String {
+    case browsing
+    case itemSelected
+    case viewCart
+    case addToCart
+    case checkout
+    case removeFromCart
+    case crash
+}
+```
+- Then we create a convenience method that takes a case and a dictionary to title the event and provide properties.
 ```
 func fsCreateEvent(event: Event, with dict: [String: Any]) {
     FS.event(event.rawValue, properties: dict)
 }
 ```
-
-- [Usage](https://github.com/fullstorydev/ios-shoppe-demo/blob/c534166901d71f0dace44f85aee053242dd25caf/swift/ios-shoppe-demo/Views/CheckoutTableViewController.swift#L50)
+- [Here](https://github.com/fullstorydev/ios-shoppe-demo/blob/c534166901d71f0dace44f85aee053242dd25caf/swift/ios-shoppe-demo/Views/CheckoutTableViewController.swift#L50) is how we create a custom event using the `fsCreateEvent` method.
 ```
 fsCreateEvent(event: .checkout, with: order.orderSummary())
 ```
 
 ### Logging:
-- [Logging]()
+We started by creating an enum:
+```
+enum LogLevel {
+    case assert, error, warning, info, debug
+}
+```
+
+- Then we follow up with a method that switches off of the log level [here](https://github.com/fullstorydev/ios-shoppe-demo/blob/c534166901d71f0dace44f85aee053242dd25caf/swift/ios-shoppe-demo/ServiceManagers/FullStoryManager.swift#L42).
+```
+func fsLog(message: String, level: LogLevel = .info) {
+    var fsLogType: FSEventLogLevel
+
+    switch level {
+    case .assert:
+        fsLogType = FSLOG_ASSERT
+    case .error:
+        fsLogType = FSLOG_ERROR
+    case .warning:
+        fsLogType = FSLOG_WARNING
+    case .info:
+        fsLogType = FSLOG_INFO
+    case .debug:
+        fsLogType = FSLOG_DEBUG
+    }
+
+    FS.log(with: fsLogType, message: "\(Date())" + message)
+}
+```
 
 ## Using FullStory with the app
 
