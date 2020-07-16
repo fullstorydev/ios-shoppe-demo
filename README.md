@@ -23,7 +23,7 @@ Your orgId can be found on the _Settings_ page once you are logged in to FullSto
 
 For successful recording, please do not change the `server` value. It should always be `https://fullstory.com`.
 
-Sync gradle after the changes and your app should be fully instrumented with your org information.
+For the complete guide on how to install FullStory visit [Getting Started with iOS Recording](https://help.fullstory.com/hc/en-us/articles/360042772333-Getting-Started-with-iOS-Recording)
 
 ## Using the app
 
@@ -35,6 +35,40 @@ The Shoppe is a super simple e-commerce application. Build and run the app on yo
 - Review your cart and then click the **Checkout** button.
 - Fill out the form on the _Checkout_ view and click **Purchase**. The app persists locally all the information from this view. Please do **not** use your real information.
 - When clicking **Purchase** your information is validated and a Toast message will be shown. The purchase is successful if all fields passed the validate and your subtotal is greater than 0.
+
+## API Usage Examples
+
+`FullStoryManager.swift` (FSManager) is a file full of functions and enums that can make the FullStory API easier to apply to areas of your project. (Its an example of implementation for your app)
+
+
+### Identifying a user:
+- [Identify](https://github.com/fullstorydev/ios-shoppe-demo/blob/c534166901d71f0dace44f85aee053242dd25caf/swift/ios-shoppe-demo/ServiceManagers/FullStoryManager.swift#L69)
+```
+func fsIdentify(id: String, userInfo: [String: Any]) {
+    FS.identify(id, userVars: userInfo)
+}
+```
+
+- [Usage](https://github.com/fullstorydev/ios-shoppe-demo/blob/c534166901d71f0dace44f85aee053242dd25caf/swift/ios-shoppe-demo/Views/StoreViewController.swift#L42)
+```
+        fsIdentify(id: user.id.uuidString, userInfo: user.infoDict)
+```
+
+### Creating Events:
+- [Creating Events](https://github.com/fullstorydev/ios-shoppe-demo/blob/c534166901d71f0dace44f85aee053242dd25caf/swift/ios-shoppe-demo/ServiceManagers/FullStoryManager.swift#L38)
+```
+func fsCreateEvent(event: Event, with dict: [String: Any]) {
+    FS.event(event.rawValue, properties: dict)
+}
+```
+
+- [Usage](https://github.com/fullstorydev/ios-shoppe-demo/blob/c534166901d71f0dace44f85aee053242dd25caf/swift/ios-shoppe-demo/Views/CheckoutTableViewController.swift#L50)
+```
+fsCreateEvent(event: .checkout, with: order.orderSummary())
+```
+
+### Logging:
+- [Logging]()
 
 ## Using FullStory with the app
 
