@@ -7,6 +7,7 @@
 //
 
 import UIKit
+//import FullStory
 
 class StoreViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
@@ -25,6 +26,21 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
             cartNumberView.tintColor = .white
         }
     }
+
+    var stopButton: UIBarButtonItem {
+        let button = UIBarButtonItem(title: "Stop", style: .done, target: self, action: #selector(fsStop))
+        button.tintColor = .white
+
+        return button
+    }
+
+    var restartButton: UIBarButtonItem  {
+        let button = UIBarButtonItem(title: "Restart", style: .done, target: self, action: #selector(fsRestart))
+        button.tintColor = .white
+
+        return button
+    }
+
 
     var cartNumber: Int = 0 {
         didSet {
@@ -66,6 +82,16 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
         updateCartNumber()
     }
 
+    // MARK: Testing
+
+    @objc func fsStop() {
+//        FS.shutdown()
+    }
+
+    @objc func fsRestart() {
+//        FS.restart()
+    }
+
     // MARK: - UI Methods
 
     func setupNavigationBar() {
@@ -93,7 +119,7 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
         fsModifyPrivacy(setting: .unmask, views: cartNumberView.customView, barCartButton.customView)
 
         cartNumberView = UIBarButtonItem(title: "\(cartNumber)", style: .done, target: self, action: nil)
-        navigationItem.rightBarButtonItems = [cartNumberView, barCartButton]
+        navigationItem.rightBarButtonItems = [stopButton, restartButton,cartNumberView, barCartButton]
     }
 
     func addToCart(_ product: String) {
