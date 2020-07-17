@@ -40,18 +40,17 @@ The Shoppe is a super simple e-commerce application. Build and run the app on yo
 
 `FullStoryManager.swift` (FSManager) is a file full of functions and enums that can make the FullStory API easier to apply to areas of your project. (Its an example of implementation for your app)
 
-
 ### Identifying a user:
-- [Identify](https://github.com/fullstorydev/ios-shoppe-demo/blob/c534166901d71f0dace44f85aee053242dd25caf/swift/ios-shoppe-demo/ServiceManagers/FullStoryManager.swift#L69)
+- [Here](https://github.com/fullstorydev/ios-shoppe-demo/blob/c534166901d71f0dace44f85aee053242dd25caf/swift/ios-shoppe-demo/ServiceManagers/FullStoryManager.swift#L69) is how we can creat an easily accessable method for FS identify.
 ```
 func fsIdentify(id: String, userInfo: [String: Any]) {
     FS.identify(id, userVars: userInfo)
 }
 ```
 
-- [Usage](https://github.com/fullstorydev/ios-shoppe-demo/blob/c534166901d71f0dace44f85aee053242dd25caf/swift/ios-shoppe-demo/Views/StoreViewController.swift#L42)
+- [Here](https://github.com/fullstorydev/ios-shoppe-demo/blob/c534166901d71f0dace44f85aee053242dd25caf/swift/ios-shoppe-demo/Views/StoreViewController.swift#L42) is how we can use it.
 ```
-        fsIdentify(id: user.id.uuidString, userInfo: user.infoDict)
+fsIdentify(id: user.id.uuidString, userInfo: user.infoDict)
 ```
 
 ### Creating Events:
@@ -79,7 +78,7 @@ fsCreateEvent(event: .checkout, with: order.orderSummary())
 ```
 
 ### Logging:
-We started by creating an enum:
+- We started by creating an enum:
 ```
 enum LogLevel {
     case assert, error, warning, info, debug
@@ -107,6 +106,13 @@ func fsLog(message: String, level: LogLevel = .info) {
     FS.log(with: fsLogType, message: "\(Date())" + message)
 }
 ```
+- [Here](https://github.com/fullstorydev/ios-shoppe-demo/blob/c534166901d71f0dace44f85aee053242dd25caf/swift/ios-shoppe-demo/Views/CheckoutTableViewController.swift#L56) is how we can use it to log.
+```
+fsLog(message: "User tried to checkout without confirmation.", level: .error)
+```
+
+Then the image will show up on your screen:
+![LogExample](readmeImages/logExample.png "FullStory Logo")
 
 ## Using FullStory with the app
 
