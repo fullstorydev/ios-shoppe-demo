@@ -111,7 +111,7 @@ func fsLog(message: String, level: LogLevel = .info) {
 fsLog(message: "User tried to checkout without confirmation.", level: .error)
 ```
 
-Then the image will show up on your screen:
+Then the logs will show up the developer console:
 ![LogExample](readmeImages/logExample.png "FullStory Logo")
 
 ## Using FullStory with the app
