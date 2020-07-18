@@ -41,21 +41,21 @@ The Shoppe is a super simple e-commerce application. Build and run the app on yo
 `FullStoryManager.swift` (FSManager) is a file full of functions and enums that can make the FullStory API easier to apply to areas of your project. (Its an example of implementation for your app)
 
 ### Identifying a user:
-- [Here](https://github.com/fullstorydev/ios-shoppe-demo/blob/c534166901d71f0dace44f85aee053242dd25caf/swift/ios-shoppe-demo/ServiceManagers/FullStoryManager.swift#L69) is how we can creat an easily accessable method for FS identify.
-```
+- [Here](https://github.com/fullstorydev/ios-shoppe-demo/blob/c534166901d71f0dace44f85aee053242dd25caf/swift/ios-shoppe-demo/ServiceManagers/FullStoryManager.swift#L69) is how we can create an easily accessible method for FS identify.
+```swift
 func fsIdentify(id: String, userInfo: [String: Any]) {
     FS.identify(id, userVars: userInfo)
 }
 ```
 
 - [Here](https://github.com/fullstorydev/ios-shoppe-demo/blob/c534166901d71f0dace44f85aee053242dd25caf/swift/ios-shoppe-demo/Views/StoreViewController.swift#L42) is how we can use it.
-```
+```swift
 fsIdentify(id: user.id.uuidString, userInfo: user.infoDict)
 ```
 
 ### Creating Events:
-- [Here](https://github.com/fullstorydev/ios-shoppe-demo/blob/c534166901d71f0dace44f85aee053242dd25caf/swift/ios-shoppe-demo/ServiceManagers/FullStoryManager.swift#L38) is how we create events. We started with creating an enum that incumpouses the different events in the ios app. (This could be different for you based on the flow of your app.)
-```
+- [Here](https://github.com/fullstorydev/ios-shoppe-demo/blob/c534166901d71f0dace44f85aee053242dd25caf/swift/ios-shoppe-demo/ServiceManagers/FullStoryManager.swift#L38) is how we create events. We started with creating an enum that has the different events in the iOS app. (This could be different for you based on the flow of your app.)
+```swift
 enum Event: String {
     case browsing
     case itemSelected
@@ -67,26 +67,26 @@ enum Event: String {
 }
 ```
 - Then we create a convenience method that takes a case and a dictionary to title the event and provide properties.
-```
+```swift
 func fsCreateEvent(event: Event, with dict: [String: Any]) {
     FS.event(event.rawValue, properties: dict)
 }
 ```
 - [Here](https://github.com/fullstorydev/ios-shoppe-demo/blob/c534166901d71f0dace44f85aee053242dd25caf/swift/ios-shoppe-demo/Views/CheckoutTableViewController.swift#L50) is how we create a custom event using the `fsCreateEvent` method.
-```
+```swift
 fsCreateEvent(event: .checkout, with: order.orderSummary())
 ```
 
 ### Logging:
 - We started by creating an enum:
-```
+```swift
 enum LogLevel {
     case assert, error, warning, info, debug
 }
 ```
 
 - Then we follow up with a method that switches off of the log level [here](https://github.com/fullstorydev/ios-shoppe-demo/blob/c534166901d71f0dace44f85aee053242dd25caf/swift/ios-shoppe-demo/ServiceManagers/FullStoryManager.swift#L42).
-```
+```swift
 func fsLog(message: String, level: LogLevel = .info) {
     var fsLogType: FSEventLogLevel
 
@@ -107,12 +107,50 @@ func fsLog(message: String, level: LogLevel = .info) {
 }
 ```
 - [Here](https://github.com/fullstorydev/ios-shoppe-demo/blob/c534166901d71f0dace44f85aee053242dd25caf/swift/ios-shoppe-demo/Views/CheckoutTableViewController.swift#L56) is how we can use it to log.
-```
+```swift
 fsLog(message: "User tried to checkout without confirmation.", level: .error)
 ```
 
 Then the logs will show up the developer console:
 ![LogExample](readmeImages/logExample.png "FullStory Logo")
+
+## Privacy
+
+- We for the hardcoded values that represent the privacy settings we have an example of more enum utilization [here](https://github.com/fullstorydev/ios-shoppe-demo/blob/c534166901d71f0dace44f85aee053242dd25caf/swift/ios-shoppe-demo/ServiceManagers/FullStoryManager.swift#L32).
+
+```swift
+enum PrivacySetting: String {
+    case exclude = "fs-exclude"
+    case mask = "fs-mask"
+    case unmask = "fs-unmask"
+}
+```
+
+- Then we created a method called `fsModifyPrivacy` [here](https://github.com/fullstorydev/ios-shoppe-demo/blob/c534166901d71f0dace44f85aee053242dd25caf/swift/ios-shoppe-demo/ServiceManagers/FullStoryManager.swift#L61):
+
+```swift
+func fsModifyPrivacy(setting: PrivacySetting, views: UIView?...) {
+    views.forEach { view in
+        if let view = view {
+            FS.addClass(view, className: setting.rawValue)
+        }
+    }
+}
+```
+
+- Then we use it:
+
+  An example of making sure a view appears on FillStory with the `unmasking` setting can be found in [ProductCollectionViewCell](https://github.com/fullstorydev/ios-shoppe-demo/blob/c534166901d71f0dace44f85aee053242dd25caf/swift/ios-shoppe-demo/Views/ProductCollectionViewCell.swift#L29):
+
+```swift
+fsModifyPrivacy(setting: .unmask, views: self)
+```
+
+​		An example of making sure a view does not appears on FillStory with the  setting can be found in [ProductSummaryDetailCell](https://github.com/fullstorydev/ios-shoppe-demo/blob/c534166901d71f0dace44f85aee053242dd25caf/swift/ios-shoppe-demo/Views/ProductSummaryDetailCell.swift#L20):
+
+```swift
+fsLog(message: "User tried to checkout without confirmation.", level: .error)
+```
 
 ## Using FullStory with the app
 
