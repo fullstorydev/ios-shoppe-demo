@@ -116,6 +116,8 @@ Then the logs will show up the developer console:
 
 ## Privacy
 
+For more info on how we inssure privacy is inforced on mobile, checkout this bionic blog on [Private by Default](https://bionic.fullstory.com/private-by-default-mobile-analytics/) by one of our Directors of Engineering at FullStory.
+
 - We for the hardcoded values that represent the privacy settings we have an example of more enum utilization [here](https://github.com/fullstorydev/ios-shoppe-demo/blob/c534166901d71f0dace44f85aee053242dd25caf/swift/ios-shoppe-demo/ServiceManagers/FullStoryManager.swift#L32).
 
 ```swift
