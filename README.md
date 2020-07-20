@@ -38,7 +38,7 @@ The Shoppe is a super simple e-commerce application. Build and run the app on yo
 
 ## API Usage Examples
 
-`FullStoryManager.swift` (FSManager) is a file full of functions and enums that can make the FullStory API easier to apply to areas of your project. (Its an example of implementation for your app)
+`FullStoryManager.swift` (FSManager) is a file full of functions and enums that can make the FullStory API easier to apply to areas of your project. (It's an example of implementation for your app)
 
 ### Identifying a user:
 - [Here](https://github.com/fullstorydev/ios-shoppe-demo/blob/c534166901d71f0dace44f85aee053242dd25caf/swift/ios-shoppe-demo/ServiceManagers/FullStoryManager.swift#L69) is how we can create an easily accessible method for FS identify.
@@ -116,9 +116,9 @@ Then the logs will show up the developer console:
 
 ## Privacy
 
-For more info on how we inssure privacy is inforced on mobile, checkout this bionic blog on [Private by Default](https://bionic.fullstory.com/private-by-default-mobile-analytics/) by one of our Directors of Engineering at FullStory.
+For more info on how we ensure privacy is inforced on mobile, checkout this bionic blog on [Private by Default](https://bionic.fullstory.com/private-by-default-mobile-analytics/) by one of our Directors of Engineering at FullStory.
 
-- We for the hardcoded values that represent the privacy settings we have an example of more enum utilization [here](https://github.com/fullstorydev/ios-shoppe-demo/blob/c534166901d71f0dace44f85aee053242dd25caf/swift/ios-shoppe-demo/ServiceManagers/FullStoryManager.swift#L32).
+- For the hardcoded values that represent the privacy settings we have an example of more enum utilization [here](https://github.com/fullstorydev/ios-shoppe-demo/blob/c534166901d71f0dace44f85aee053242dd25caf/swift/ios-shoppe-demo/ServiceManagers/FullStoryManager.swift#L32).
 
 ```swift
 enum PrivacySetting: String {
