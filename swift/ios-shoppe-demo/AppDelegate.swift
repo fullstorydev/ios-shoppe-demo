@@ -9,12 +9,13 @@
 import UIKit
 import FullStory
 import Firebase
+import GoogleUtilities
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, FSDelegate {
 
     func fullstoryDidStartSession(_ sessionUrl: String) {
-        print(sessionUrl)
+        Analytics.setUserProperty(sessionUrl, forName: "fullstory_sessionURL")
     }
 
     func fullstoryDidStopSession() {
@@ -30,6 +31,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FSDelegate {
 
         FS.delegate = self
         FirebaseApp.configure()
+        Analytics.setUserID(user.id.uuidString)
+        Analytics.setUserProperty(user.email, forName: "user_email")
+        FS.identify(user.id.uuidString, userVars: user.infoDict)
 
         return true
     }
