@@ -69,3 +69,7 @@ func fsModifyPrivacy(setting: PrivacySetting, views: UIView?...) {
 func fsIdentify(id: String, userInfo: [String: Any]) {
     FS.identify(id, userVars: userInfo)
 }
+
+func sd() {
+    FS.shutdown()
+}

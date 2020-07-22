@@ -7,7 +7,16 @@ target 'ios-shoppe-demo' do
 
   # Pods for ios-shoppe-demo
 pod 'FullStory', :http => 'https://ios-releases.fullstory.com/fullstory-1.4.1.tar.gz'
+# add the Firebase pod for Google Analytics
+pod 'Firebase/Analytics'
+pod 'GoogleAnalytics'
+# add pods for any other desired Firebase products
+# https://firebase.google.com/docs/ios/setup#available-pods
+pod 'Firebase/Crashlytics'
 
+# Recommended: Add the Firebase pod for Google Analytics
+
+pod 'Firebase/Analytics'
   target 'ios-shoppe-demoTests' do
     inherit! :search_paths
     # Pods for testing

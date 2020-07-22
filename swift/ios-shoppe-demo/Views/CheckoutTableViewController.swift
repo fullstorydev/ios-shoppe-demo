@@ -49,7 +49,7 @@ class CheckoutTableViewController: UITableViewController {
             // MARK: - FullStory Example CustomEvent
             fsCreateEvent(event: .checkout, with: order.orderSummary())
 
-            present(productView, animated: true, completion: nil)
+            present(productView, animated: true) 
         }
         else {
             // MARK: - FullStory Example logging

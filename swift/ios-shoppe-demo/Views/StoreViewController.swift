@@ -105,6 +105,7 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
     }
 
     @objc func openCart() {
+        sd()
         self.navigationController?.pushViewController(CartTableViewController(), animated: true)
     }
 
