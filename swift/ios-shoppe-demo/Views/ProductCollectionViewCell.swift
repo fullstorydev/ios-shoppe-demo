@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import FullStory
+import Firebase
 
 class ProductCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var productImageView: UIImageView!
@@ -40,5 +42,9 @@ class ProductCollectionViewCell: UICollectionViewCell {
 
     @IBAction func addProductToCart(_ sender: Any) {
         collectionView?.addToCart(product.title)
+
+        let sessionURL = FS.currentSessionURL ?? "No Session Found."
+        Analytics.logEvent(AnalyticsEventAddToCart, parameters: ["fullstory_sessionURL": sessionURL])
+        FS.log(with: FSLOG_INFO, message: "Added: \(product.title) to cart.")
     }
 }

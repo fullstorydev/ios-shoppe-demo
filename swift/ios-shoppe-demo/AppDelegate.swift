@@ -15,7 +15,7 @@ import GoogleUtilities
 class AppDelegate: UIResponder, UIApplicationDelegate, FSDelegate {
 
     func fullstoryDidStartSession(_ sessionUrl: String) {
-        Analytics.setUserProperty(sessionUrl, forName: "fullstory_sessionURL")
+        Analytics.setUserProperty(sessionUrl, forName: "last_fs_sessionURL")
     }
 
     func fullstoryDidStopSession() {
@@ -31,9 +31,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FSDelegate {
 
         FS.delegate = self
         FirebaseApp.configure()
+
+
+
+        // User Logs In...
         Analytics.setUserID(user.id.uuidString)
         Analytics.setUserProperty(user.email, forName: "user_email")
         FS.identify(user.id.uuidString, userVars: user.infoDict)
+
+//        // User Logs out...
+//        FS.anonymize()
+//        Analytics.resetAnalyticsData()
 
         return true
     }
