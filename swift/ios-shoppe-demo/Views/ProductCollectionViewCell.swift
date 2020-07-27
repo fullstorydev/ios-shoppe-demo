@@ -43,8 +43,9 @@ class ProductCollectionViewCell: UICollectionViewCell {
     @IBAction func addProductToCart(_ sender: Any) {
         collectionView?.addToCart(product.title)
 
-        let sessionURL = FS.currentSessionURL ?? "No Session Found."
-        Analytics.logEvent(AnalyticsEventAddToCart, parameters: ["fullstory_sessionURL": sessionURL])
+        let sessionURL = FS.currentSession
+        print(sessionURL)
+        Analytics.logEvent(AnalyticsEventAddToCart, parameters: ["fs_sessionURL": sessionURL])
         FS.log(with: FSLOG_INFO, message: "Added: \(product.title) to cart.")
     }
 }

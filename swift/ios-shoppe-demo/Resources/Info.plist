@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>FSOrgId</key>
-	<string>YOUR_ORG_HERE</string>
+	<string>1ENq</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsLocalNetworking</key>

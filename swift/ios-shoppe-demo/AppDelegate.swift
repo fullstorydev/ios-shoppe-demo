@@ -9,7 +9,7 @@
 import UIKit
 import FullStory
 import Firebase
-import GoogleUtilities
+import FirebaseCore
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, FSDelegate {
@@ -32,11 +32,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FSDelegate {
         FS.delegate = self
         FirebaseApp.configure()
 
-
-
         // User Logs In...
         Analytics.setUserID(user.id.uuidString)
         Analytics.setUserProperty(user.email, forName: "user_email")
+        Analytics.setUserProperty(FS.currentSessionURL, forName: "last_fsSessionURL")
+
         FS.identify(user.id.uuidString, userVars: user.infoDict)
 
 //        // User Logs out...
