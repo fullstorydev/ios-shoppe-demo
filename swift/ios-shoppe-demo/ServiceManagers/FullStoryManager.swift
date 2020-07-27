@@ -33,8 +33,8 @@ enum LogLevel {
     case assert, error, warning, info, debug
 }
 
-/** For the hardcoded values that represent the privacy settings we have an example of more enum utilization here.
-
+/**
+ For the hardcoded values that represent the privacy settings we have an example of more enum utilization here.
  - For more info on how to use a  https://help.fullstory.com/hc/en-us/articles/360044349073-FullStory-Private-by-Default#exclude-fs-exclude
 */
 enum PrivacySetting: String {
@@ -53,8 +53,7 @@ func fsCreateEvent(event: Event, with dict: [String: Any]) {
 }
 
 /**
-  This method will allow you to pass a level as a parameter using dot notation with a message that will send logs to the dev tools on the FullStory app.
-
+ This method will allow you to pass a level as a parameter using dot notation with a message that will send logs to the dev tools on the FullStory app.
     - Parameter message: A text string that will be logged to the FullStory console.
     - Parameter level: This a LogLevel type.
  */
@@ -79,10 +78,9 @@ func fsLog(message: String, level: LogLevel = .info) {
 
 /**
  This method allows you to modify the privacy setting on a specific view.
-    - Parameter setting: `exclude`, `mask`, and `unmask`.
+    - Parameter setting: This is a PrivacySetting.
     - Parameter views: a UIView you wish to modify the privacy setting on.
  */
-
 func fsModifyPrivacy(setting: PrivacySetting, views: UIView?...) {
     views.forEach { view in
         if let view = view {
@@ -93,9 +91,8 @@ func fsModifyPrivacy(setting: PrivacySetting, views: UIView?...) {
 
 /**
  Here we can create an easily accessible method for FS identify.
-
- - Parameter id: A unique identifier for your user.
- - Parameter userInfo: This should be a dictionary containing any "import" you want to capture about your user.
+    - Parameter id: A unique identifier for your user.
+    - Parameter userInfo: This should be a dictionary containing any "import" you want to capture about your user.
  */
 func fsIdentify(id: String, userInfo: [String: Any]) {
     FS.identify(id, userVars: userInfo)
