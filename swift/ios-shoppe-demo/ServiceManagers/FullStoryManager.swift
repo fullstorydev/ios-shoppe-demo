@@ -20,17 +20,17 @@ FullStory Manager provides common functions and artifacts that make it easier to
 
 /// The Event enum represents major events in an iOS app. These may differ based on your particular app.
 enum Event: String {
-    case browsing
-    case itemSelected
-    case viewCart
     case addToCart
+    case browsing
     case checkout
-    case removeFromCart
     case crash
+    case itemSelected
+    case removeFromCart
+    case viewCart
 }
 
 enum LogLevel {
-    case assert, error, warning, info, debug
+    case assert, debug, error, info, warning
 }
 
 /**
@@ -63,14 +63,14 @@ func fsLog(message: String, level: LogLevel = .info) {
     switch level {
     case .assert:
         fsLogType = FSLOG_ASSERT
-    case .error:
-        fsLogType = FSLOG_ERROR
-    case .warning:
-        fsLogType = FSLOG_WARNING
-    case .info:
-        fsLogType = FSLOG_INFO
     case .debug:
         fsLogType = FSLOG_DEBUG
+    case .error:
+        fsLogType = FSLOG_ERROR
+    case .info:
+        fsLogType = FSLOG_INFO
+    case .warning:
+        fsLogType = FSLOG_WARNING
     }
 
     FS.log(with: fsLogType, message: "\(Date())" + message)
