@@ -44,7 +44,7 @@ enum PrivacySetting: String {
 }
 
 /**
- This is a convenience method that takes a case and a dictionary to title the event and provide properties.
+ This method lets you create an FullStory event using the `Event` cases.
     - Parameter event: This is an Event type.
     - Parameter dict: This should be a dictionary containing valuable info gathered at the time of the event.
  */
