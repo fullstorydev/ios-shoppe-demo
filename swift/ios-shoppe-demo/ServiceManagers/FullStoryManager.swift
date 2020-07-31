@@ -35,7 +35,7 @@ enum LogLevel {
 
 /**
  For the hardcoded values that represent the privacy settings we have an example of more enum utilization here.
- - For more info on how to use a  https://help.fullstory.com/hc/en-us/articles/360044349073-FullStory-Private-by-Default#exclude-fs-exclude
+ - [For more info on private by default visit vist our help.fullstory.com.](https://help.fullstory.com/hc/en-us/articles/360044349073-FullStory-Private-by-Default#enabling-private-by-default)
 */
 enum PrivacySetting: String {
     case exclude = "fs-exclude"
@@ -45,8 +45,8 @@ enum PrivacySetting: String {
 
 /**
  This method lets you create an FullStory event using the `Event` cases.
-    - Parameter event: This is an Event type.
-    - Parameter dict: This should be a dictionary containing valuable info gathered at the time of the event.
+    - Parameter event: Event type.
+    - Parameter dict: Dictionary with valuable info gathered at the time of the event.
  */
 func fsCreateEvent(event: Event, with dict: [String: Any]) {
     FS.event(event.rawValue, properties: dict)
@@ -54,8 +54,8 @@ func fsCreateEvent(event: Event, with dict: [String: Any]) {
 
 /**
  This method will allow you to pass a level as a parameter using dot notation with a message that will send logs to the dev tools on the FullStory app.
-    - Parameter message: A text string that will be logged to the FullStory console.
-    - Parameter level: This a LogLevel type.
+    - Parameter message: String to pass to the FullStory console.
+    - Parameter level: LogLevel type.
  */
 func fsLog(message: String, level: LogLevel = .info) {
     var fsLogType: FSEventLogLevel
@@ -78,8 +78,8 @@ func fsLog(message: String, level: LogLevel = .info) {
 
 /**
  This method allows you to modify the privacy setting on a specific view.
-    - Parameter setting: This is a PrivacySetting.
-    - Parameter views: a UIView you wish to modify the privacy setting on.
+    - Parameter setting: `PrivacySetting`.
+    - Parameter views: UIView(s) you wish to modify the privacy setting on.
  */
 func fsModifyPrivacy(setting: PrivacySetting, views: UIView?...) {
     views.forEach { view in
@@ -91,8 +91,8 @@ func fsModifyPrivacy(setting: PrivacySetting, views: UIView?...) {
 
 /**
  Here we can create an easily accessible method for FS identify.
-    - Parameter id: A unique identifier for your user.
-    - Parameter userInfo: This should be a dictionary containing any "import" you want to capture about your user.
+    - Parameter id: Unique identifier for your user.
+    - Parameter userInfo: Dictionary with any "relavent info" related to the user.
  */
 func fsIdentify(id: String, userInfo: [String: Any]) {
     FS.identify(id, userVars: userInfo)
