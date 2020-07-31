@@ -9,55 +9,78 @@
 import Foundation
 import FullStory
 
-/**
- FullStory Manager is a file full of functions and enums that can make the FullStory API easier to apply to areas of your project.
+/*
+FullStory Manager provides common functions and artifacts that make it easier to integrate FullStory into your iOS app.
+    - Events
+    - LogLevel
+    - Identifying a user
     - create events
-    - logging and unmasking elements
+    - PrivacySetting: EXCLUDE, MASK, and UNMASK elements
  */
 
+/// The Event enum represents major events in an iOS app. These may differ based on your particular app.
 enum Event: String {
-    case browsing
-    case itemSelected
-    case viewCart
     case addToCart
+    case browsing
     case checkout
-    case removeFromCart
     case crash
+    case itemSelected
+    case removeFromCart
+    case viewCart
 }
 
 enum LogLevel {
-    case assert, error, warning, info, debug
+    case assert, debug, error, info, warning
 }
 
+/**
+ For the hardcoded values that represent the privacy settings we have an example of more enum utilization here.
+ - [For more info on private by default visit vist our help.fullstory.com.](https://help.fullstory.com/hc/en-us/articles/360044349073-FullStory-Private-by-Default#enabling-private-by-default)
+*/
 enum PrivacySetting: String {
     case exclude = "fs-exclude"
     case mask = "fs-mask"
     case unmask = "fs-unmask"
 }
 
+/**
+ This method lets you create an FullStory event using the `Event` cases.
+    - Parameter event: Event type.
+    - Parameter dict: Dictionary with valuable info gathered at the time of the event.
+ */
 func fsCreateEvent(event: Event, with dict: [String: Any]) {
     FS.event(event.rawValue, properties: dict)
 }
 
+/**
+ This method will allow you to pass a level as a parameter using dot notation with a message that will send logs to the dev tools on the FullStory app.
+    - Parameter message: String to pass to the FullStory console.
+    - Parameter level: LogLevel type.
+ */
 func fsLog(message: String, level: LogLevel = .info) {
     var fsLogType: FSEventLogLevel
 
     switch level {
     case .assert:
         fsLogType = FSLOG_ASSERT
-    case .error:
-        fsLogType = FSLOG_ERROR
-    case .warning:
-        fsLogType = FSLOG_WARNING
-    case .info:
-        fsLogType = FSLOG_INFO
     case .debug:
         fsLogType = FSLOG_DEBUG
+    case .error:
+        fsLogType = FSLOG_ERROR
+    case .info:
+        fsLogType = FSLOG_INFO
+    case .warning:
+        fsLogType = FSLOG_WARNING
     }
 
     FS.log(with: fsLogType, message: "\(Date())" + message)
 }
 
+/**
+ This method allows you to modify the privacy setting on a specific view.
+    - Parameter setting: `PrivacySetting`.
+    - Parameter views: UIView(s) you wish to modify the privacy setting on.
+ */
 func fsModifyPrivacy(setting: PrivacySetting, views: UIView?...) {
     views.forEach { view in
         if let view = view {
@@ -66,6 +89,11 @@ func fsModifyPrivacy(setting: PrivacySetting, views: UIView?...) {
     }
 }
 
+/**
+ Here we can create an easily accessible method for FS identify.
+    - Parameter id: Unique identifier for your user.
+    - Parameter userInfo: Dictionary with any "relavent info" related to the user.
+ */
 func fsIdentify(id: String, userInfo: [String: Any]) {
     FS.identify(id, userVars: userInfo)
 }
