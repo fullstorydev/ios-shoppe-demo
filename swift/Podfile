@@ -6,7 +6,7 @@ target 'ios-shoppe-demo' do
   use_frameworks!
 
   # Pods for ios-shoppe-demo
-pod 'FullStory', :http => 'https://ios-releases.fullstory.com/fullstory-1.1.0.tar.gz'
+pod 'FullStory', :http => 'https://ios-releases.fullstory.com/fullstory-1.4.0.tar.gz'
 pod 'Analytics', '~> 3.0'
 pod 'FullStorySegmentMiddleware', :git => 'https://github.com/fullstorydev/fullstory-segment-middleware-ios.git', :branch => 'dev-preview-1'
 

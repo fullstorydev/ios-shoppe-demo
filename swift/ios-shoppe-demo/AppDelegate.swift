@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FSDelegate {
         FS.delegate = self
 
         let configuration = SEGAnalyticsConfiguration.init(writeKey: "your_write_key")
-
+        
         let fsm = FullStoryMiddleware.init()
         // allow all events to be tracked by FS, defualt to false
         fsm.allowlistAllTrackEvents = true
