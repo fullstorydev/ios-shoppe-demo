@@ -38,6 +38,8 @@ class CartTableViewCell: UITableViewCell {
             cartTableViewController?.presentCheckout()
         }
         else {
+            // trigger crash when subtotal exceeds 20 for Crashlytics demo purpose
+            if(order.cartOrderTotal > 20) { fatalError("A crash that's hard to troubleshoot'") }
             checkoutTableViewController?.presentProductView()
         }
     }

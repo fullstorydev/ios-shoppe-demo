@@ -25,6 +25,18 @@ class Product {
         self.imageName = dict["image"] as? String ?? ""
         self.unit = dict["unit"] as? String ?? ""
     }
+    
+    func getDictionary() -> [String: Any] {
+        return [
+            "title_str": self.title,
+            "description_str": self.description,
+            "price_real": self.price,
+            "imageName_str": self.imageName,
+            "image_str": self.image,
+            "unit_str": self.unit,
+            "quantity_int": self.quantity,
+        ]
+    }
 }
 
 func getTotal(for product: Product) -> Double {

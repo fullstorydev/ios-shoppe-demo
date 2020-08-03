@@ -17,9 +17,13 @@ class CartQuantityTableViewCell: ProductViewCell {
         tableViewController?.setOrderItemsForCart()
         tableViewController?.tableView.reloadData()
 
+        crashlyticsLog(logMsg: "Product Added \(product.getDictionary())")
+        fsCreateEvent(event: Event.addToCart, with: ["title": product.title, "price": product.price])
+        
         // MARK: - FullStory Logging Example
-
+        
         fsLog(message: "\(product.title) was added from cart.", level: .info)
+        
     }
 
     @IBAction func subtractQuantity(_ sender: Any) {
@@ -36,6 +40,9 @@ class CartQuantityTableViewCell: ProductViewCell {
         }
 
         tableViewController?.tableView.reloadData()
+
+        crashlyticsLog(logMsg: "Product Removed \(product.getDictionary())")
+        fsCreateEvent(event: Event.removeFromCart, with: ["title": product.title, "price": product.price])
 
         // MARK: - FullStory Logging Example
 

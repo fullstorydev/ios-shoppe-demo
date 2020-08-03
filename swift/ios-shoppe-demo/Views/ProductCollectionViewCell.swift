@@ -39,6 +39,9 @@ class ProductCollectionViewCell: UICollectionViewCell {
     }
 
     @IBAction func addProductToCart(_ sender: Any) {
+        crashlyticsLog(logMsg: "Product Added \(product.getDictionary())")
+        fsCreateEvent(event: Event.addToCart, with: ["title": product.title, "price": product.price])
+        
         collectionView?.addToCart(product.title)
     }
 }

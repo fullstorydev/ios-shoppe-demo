@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0019F530089CB2B5C24FC344 /* Pods_ios_shoppe_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0F1CA512D658190A6D7A3AB /* Pods_ios_shoppe_demo.framework */; };
+		0489953224D8B0BA002F4FD4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0489953124D8B0BA002F4FD4 /* GoogleService-Info.plist */; };
+		0489953424D8B313002F4FD4 /* CrashlyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489953324D8B313002F4FD4 /* CrashlyticsManager.swift */; };
 		72A290BF723CE163DA2D4CAD /* Pods_ios_shoppe_demoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBA0A3569A524FA18FE78485 /* Pods_ios_shoppe_demoTests.framework */; };
 		F202DDBC246ED9DF00D32F89 /* ProductSummaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F202DDB3246ED9DE00D32F89 /* ProductSummaryCell.xib */; };
 		F202DDBD246ED9DF00D32F89 /* ProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F202DDB4246ED9DE00D32F89 /* ProductCollectionViewCell.xib */; };
@@ -76,6 +78,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0489953124D8B0BA002F4FD4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0489953324D8B313002F4FD4 /* CrashlyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashlyticsManager.swift; sourceTree = "<group>"; };
 		2E9EF5FCF3EC3A0AB8187EC5 /* Pods-ios-shoppe-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-shoppe-demo.debug.xcconfig"; path = "Target Support Files/Pods-ios-shoppe-demo/Pods-ios-shoppe-demo.debug.xcconfig"; sourceTree = "<group>"; };
 		4E54438F114A7298757447A9 /* Pods-ios-shoppe-demoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-shoppe-demoTests.release.xcconfig"; path = "Target Support Files/Pods-ios-shoppe-demoTests/Pods-ios-shoppe-demoTests.release.xcconfig"; sourceTree = "<group>"; };
 		72879FE3257269A05966A08B /* Pods-ios-shoppe-demo-ios-shoppe-demoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-shoppe-demo-ios-shoppe-demoUITests.debug.xcconfig"; path = "Target Support Files/Pods-ios-shoppe-demo-ios-shoppe-demoUITests/Pods-ios-shoppe-demo-ios-shoppe-demoUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -305,6 +309,7 @@
 				F25D20A5240EB5A600CF89C3 /* Assets.xcassets */,
 				F25D20A7240EB5A600CF89C3 /* LaunchScreen.storyboard */,
 				F25D20AA240EB5A600CF89C3 /* Info.plist */,
+				0489953124D8B0BA002F4FD4 /* GoogleService-Info.plist */,
 				F2C804D924168C8B0098418D /* Preferences.plist */,
 				F2E5A51524193501005DFBFE /* Utilities.swift */,
 				F21E144B2428DA82005D4C76 /* Products.json */,
@@ -317,6 +322,7 @@
 			children = (
 				F25D20CC24100B2700CF89C3 /* APIService.swift */,
 				F2433C9F246F00FE00094DCA /* FullStoryManager.swift */,
+				0489953324D8B313002F4FD4 /* CrashlyticsManager.swift */,
 			);
 			path = ServiceManagers;
 			sourceTree = "<group>";
@@ -446,6 +452,7 @@
 			files = (
 				F202DDBC246ED9DF00D32F89 /* ProductSummaryCell.xib in Resources */,
 				F25D20A9240EB5A600CF89C3 /* LaunchScreen.storyboard in Resources */,
+				0489953224D8B0BA002F4FD4 /* GoogleService-Info.plist in Resources */,
 				F25D20A6240EB5A600CF89C3 /* Assets.xcassets in Resources */,
 				F202DDBD246ED9DF00D32F89 /* ProductCollectionViewCell.xib in Resources */,
 				F202DDBF246ED9DF00D32F89 /* ProductSummaryTopCell.xib in Resources */,
@@ -595,7 +602,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\n\"${PROJECT_DIR}/Pods/FullStory/tools/FullStoryCommandLine\" \"${CONFIGURATION_BUILD_DIR}/${WRAPPER_NAME}\"\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\n\"${PROJECT_DIR}/Pods/FullStory/tools/FullStoryCommandLine\" \"${CONFIGURATION_BUILD_DIR}/${WRAPPER_NAME}\"\n\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n\nfind dSYM_directory -name \"*.dSYM\" | xargs -I \\{\\} $PODS_ROOT/FirebaseCrashlytics/upload-symbols -gsp /path/to/GoogleService-Info.plist -p platform \\{\\}\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -620,6 +627,7 @@
 				F25D20CD24100B2700CF89C3 /* APIService.swift in Sources */,
 				F214B20924A1072B0019DF92 /* CheckBoxButtonCell.swift in Sources */,
 				F2F59D29245736C7008B20AD /* CheckoutTableViewController.swift in Sources */,
+				0489953424D8B313002F4FD4 /* CrashlyticsManager.swift in Sources */,
 				F202DDDA246EDA4F00D32F89 /* CheckoutTextViewCell.swift in Sources */,
 				F2F59D2A245736CC008B20AD /* AddressDetail.swift in Sources */,
 				F2E5A512241934B9005DFBFE /* AppDelegate.swift in Sources */,
@@ -798,7 +806,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8Q8W5KSX6X;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = KZF5HG57S9;
 				INFOPLIST_FILE = "ios-shoppe-demo/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -817,7 +826,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8Q8W5KSX6X;
+				DEVELOPMENT_TEAM = KZF5HG57S9;
 				INFOPLIST_FILE = "ios-shoppe-demo/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

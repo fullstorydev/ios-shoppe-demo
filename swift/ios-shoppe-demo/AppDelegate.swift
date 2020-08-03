@@ -8,12 +8,15 @@
 
 import UIKit
 import FullStory
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, FSDelegate {
 
     func fullstoryDidStartSession(_ sessionUrl: String) {
         print(sessionUrl)
+        Crashlytics.crashlytics().setCustomValue(sessionUrl, forKey: "FSsessionURL")
+        Crashlytics.crashlytics().log("Current FSSessionURL \(sessionUrl)")
     }
 
     func fullstoryDidStopSession() {
@@ -28,6 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FSDelegate {
         // Override point for customization after application launch.
 
         FS.delegate = self
+        FirebaseApp.configure()
 
         return true
     }
