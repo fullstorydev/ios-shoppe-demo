@@ -39,7 +39,7 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
 
         setupNavigationBar()
 
-        fsIdentify(id: user.id.uuidString, userInfo: user.infoDict)
+//        fsIdentify(id: user.id.uuidString, userInfo: user.infoDict)
 
         APIService.sharedInstance.getProductsFromFile { (productsRecieved) in
             if !productsRecieved.isEmpty {
@@ -101,6 +101,8 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
         generator.impactOccurred()
 
         order.addProduct(product)
+        //MARK: - Product removed event for conversion: revenue attribution
+        fsCreateEvent(event: .addToCart, with: order.getProduct(product))
         updateCartNumber()
     }
 

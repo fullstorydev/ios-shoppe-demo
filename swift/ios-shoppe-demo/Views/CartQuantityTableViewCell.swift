@@ -17,6 +17,9 @@ class CartQuantityTableViewCell: ProductViewCell {
         tableViewController?.setOrderItemsForCart()
         tableViewController?.tableView.reloadData()
 
+        //MARK: - Product removed event for conversion: revenue attribution
+        fsCreateEvent(event: .removeFromCart, with: product)
+        
         // MARK: - FullStory Logging Example
 
         fsLog(message: "\(product.title) was added from cart.", level: .info)
@@ -28,12 +31,15 @@ class CartQuantityTableViewCell: ProductViewCell {
             tableViewController?.tableView.reloadData()
             return
         }
-
+        
         product.quantity -= 1
 
         if product.quantity <= 0 {
             tableViewController?.setOrderItemsForCart()
         }
+        
+        //MARK: - Product removed event for conversion: revenue attribution
+        fsCreateEvent(event: .removeFromCart, with: product)
 
         tableViewController?.tableView.reloadData()
 

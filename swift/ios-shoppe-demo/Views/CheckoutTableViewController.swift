@@ -46,14 +46,17 @@ class CheckoutTableViewController: UITableViewController {
             productView.modalPresentationStyle = .formSheet
             productView.checkoutTableViewController = self
 
-            // MARK: - FullStory Example CustomEvent
+            // MARK: - FullStory Example Custom Event "Order Completed" for conversions: revenue attribution
             fsCreateEvent(event: .checkout, with: order.orderSummary())
 
             present(productView, animated: true, completion: nil)
         }
         else {
+            let msg = "User tried to checkout without confirmation."
+            let err: CheckoutError = CheckoutError(errorCode: "AC10XY2", message: msg, order: order)
             // MARK: - FullStory Example logging
-            fsLog(message: "User tried to checkout without confirmation.", level: .error)
+            fsLog(message: err.message, level: .error)
+            fsCreateEvent(event: .checkoutError, with: err)
         }
     }
 
