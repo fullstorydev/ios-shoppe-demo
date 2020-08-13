@@ -100,3 +100,7 @@ Carthage/Build.rbenv-vars
 ####
 # rbenv
 .rbenv-vars
+
+####
+# google services info
+ios-shoppe-demo/Resources/GoogleService-Info.plist
