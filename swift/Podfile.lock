@@ -1,20 +1,20 @@
 PODS:
-  - FullStory (1.4.1)
+  - FullStory (1.5.1)
 
 DEPENDENCIES:
-  - "FullStory (from `{:http=>\"https://ios-releases.fullstory.com/fullstory-1.4.1.tar.gz\"}`)"
+  - "FullStory (from `{:http=>\"https://ios-releases.fullstory.com/fullstory-1.5.1.tar.gz\"}`)"
 
 EXTERNAL SOURCES:
   FullStory:
-    :http: https://ios-releases.fullstory.com/fullstory-1.4.1.tar.gz
+    :http: https://ios-releases.fullstory.com/fullstory-1.5.1.tar.gz
 
 CHECKOUT OPTIONS:
   FullStory:
-    :http: https://ios-releases.fullstory.com/fullstory-1.4.1.tar.gz
+    :http: https://ios-releases.fullstory.com/fullstory-1.5.1.tar.gz
 
 SPEC CHECKSUMS:
-  FullStory: 7153fd5de9c7f261a993e9a946ec108ad5782783
+  FullStory: 2100c4f357779c70c3f72af897e7b9cc3fb64353
 
-PODFILE CHECKSUM: f6314ca9fe263ade827502cef7b661efe998200d
+PODFILE CHECKSUM: 2e40fbd2d113e1445b1175655e20059b96abec6b
 
 COCOAPODS: 1.9.1
