@@ -39,7 +39,7 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
 
         setupNavigationBar()
 
-//        fsIdentify(id: user.id.uuidString, userInfo: user.infoDict)
+        fsIdentify(id: user.id.uuidString, userInfo: user.infoDict)
 
         APIService.sharedInstance.getProductsFromFile { (productsRecieved) in
             if !productsRecieved.isEmpty {
@@ -52,7 +52,7 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
                         else if let image = image {
                             item.image = image
                             DispatchQueue.main.async {
-                                order.items = self.products
+                                order.addItems(items: self.products)
                                 self.collectionView.reloadData()
                             }
                         }
@@ -83,7 +83,7 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
     }
 
     func updateCartNumber() {
-        let numberOfItems = order.items.reduce(0, { $0 + $1.quantity })
+        let numberOfItems = order.getNumberOfItems()
 
         cartNumber = numberOfItems
     }

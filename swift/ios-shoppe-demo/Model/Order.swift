@@ -9,28 +9,51 @@
 import Foundation
 
 class Order {
-    var items: [Product] = []
+    var items: [String: Product] = [:]
     var date: Date = Date()
     var orderId: String = makeId(len: 9)
     var shipping: Double = 5.99
     var tax: Double = 2.85
     var cartOrderTotal: Double {
-        return items.reduce(0, { $0 + getTotal(for: $1) })
+        return items.reduce(0, { $0 + getTotal(for: $1.value) })
+    }
+
+    func addItems(items: [Product]){
+        for item in items {
+            self.items[item.title] = item
+        }
     }
 
     func addProduct(_ productName: String ) {
-        items.filter { $0.title == productName }.first?.quantity += 1
-    }
-    
-    func getProduct(_ productName: String ) -> Product? {
-        return items.filter { $0.title == productName }.first
+        items[productName]?.quantity += 1
     }
 
+    func getProduct(_ productName: String ) -> Product? {
+        return items[productName]
+    }
+
+    func getFilteredItems() -> [Product] {
+        return items
+            .filter{ $0.value.quantity > 0 }
+            .map{ $0.value }
+    }
+
+    func getNumberOfItems() -> Int{
+        return getFilteredItems().reduce(0, { $0 + $1.quantity })
+    }
+
+    func resetOrder() {
+        self.items.forEach{ $0.value.quantity = 0 }
+        self.orderId = makeId(len: 9)
+    }
+
+    // converting order to dictionary for FS events
     func orderSummary() -> [String: Any] {
-        let sortedItems: [Product] = items.filter { $0.quantity > 0 }
+        let filteredItems = getFilteredItems()
+        
         var orderDict: [String: Any] = [:]
 
-        for item in sortedItems {
+        for item in filteredItems {
             orderDict[item.title] = item.quantity
         }
         

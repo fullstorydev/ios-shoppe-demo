@@ -118,12 +118,12 @@ func fsCreateEvent(event: Event, with product: Product?) {
     guard let product = product else {
         return
     }
-    
+
     let productDict: [String : Any] = [
         "description_str": product.description,
         "displayName_str": product.title,
         "id_str": product.title,
-        "imgName_str": product.image,
+        "imgName_str": product.imageName,
         "price_raw_real": product.price,
         "price_real": product.price,
         "product_id_str": makeId(len: 9),
@@ -147,6 +147,6 @@ func fsCreateEvent(event: Event, with error: CheckoutError) {
         "order.order_id": error.order.orderId,
         "order.total_real": error.order.cartOrderTotal
     ]
-    
+
     fsCreateEvent(event: event, with: errDict)
 }
