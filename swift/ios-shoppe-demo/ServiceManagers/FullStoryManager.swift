@@ -102,15 +102,13 @@ func fsIdentify(id: String, userInfo: [String: Any]) {
 
 // below are functions for demostrating conversions: revenue attribution events
 func makeId(len: Int) -> String {
-    let letters : NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-    let length = UInt32(letters.length)
+    let characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 
     var randomString = ""
 
     for _ in 0 ..< len {
-        let rand = arc4random_uniform(length)
-        var nextChar = letters.character(at: Int(rand))
-        randomString += NSString(characters: &nextChar, length: 1) as String
+        let randomCharacter = characters.randomElement()!
+        randomString.append(randomCharacter)
     }
 
     return randomString
