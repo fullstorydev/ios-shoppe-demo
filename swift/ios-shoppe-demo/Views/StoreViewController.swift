@@ -102,7 +102,7 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
 
         order.addProduct(product)
         // MARK: - Product removed event for conversion: revenue attribution
-        fsCreateEvent(event: .addToCart, with: order.getProduct(product))
+        fsAddOrRemoveProductEvent(event: .addToCart, with: order.getProduct(product))
         updateCartNumber()
     }
 

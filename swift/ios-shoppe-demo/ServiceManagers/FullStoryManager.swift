@@ -99,13 +99,13 @@ func fsIdentify(id: String, userInfo: [String: Any]) {
     FS.identify(id, userVars: userInfo)
 }
 
-
-// below are functions for demostrating conversions: revenue attribution events
+/**
+Generate a unique alphanumeric ID with specified len
+    - Parameter len: Desired length of ID string
+*/
 func makeId(len: Int) -> String {
     let characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-
     var randomString = ""
-
     for _ in 0 ..< len {
         let randomCharacter = characters.randomElement()!
         randomString.append(randomCharacter)
@@ -114,11 +114,14 @@ func makeId(len: Int) -> String {
     return randomString
 }
 
-func fsCreateEvent(event: Event, with product: Product?) {
+// ------------------------
+// below are functions for demostrating conversions: revenue attribution events
+// ------------------------
+func fsAddOrRemoveProductEvent(event: Event, with product: Product?) {
     guard let product = product else {
         return
     }
-
+    // TODO: check for event type
     let productDict: [String : Any] = [
         "description_str": product.description,
         "displayName_str": product.title,
@@ -133,13 +136,18 @@ func fsCreateEvent(event: Event, with product: Product?) {
     fsCreateEvent(event: event, with: productDict)
 }
 
+func fsCheckoutSuccessEvent(event: Event, with order: Order) {
+    // TODO: check for event type
+    fsCreateEvent(event: event, with: order.orderSummary())
+}
+
 struct CheckoutError: Error {
     let errorCode: String
     let message: String
     let order: Order
 }
 
-func fsCreateEvent(event: Event, with error: CheckoutError) {
+func fsCheckoutErrorEvent(event: Event, with error: CheckoutError) {
     let errDict: [String : Any] = [
         "code_str": error.errorCode,
         "message_str": error.message,

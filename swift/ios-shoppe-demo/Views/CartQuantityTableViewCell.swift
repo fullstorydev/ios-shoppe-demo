@@ -18,7 +18,7 @@ class CartQuantityTableViewCell: ProductViewCell {
         tableViewController?.tableView.reloadData()
 
         //MARK: - Product removed event for conversion: revenue attribution
-        fsCreateEvent(event: .removeFromCart, with: product)
+        fsAddOrRemoveProductEvent(event: .removeFromCart, with: product)
         
         // MARK: - FullStory Logging Example
 
@@ -38,7 +38,7 @@ class CartQuantityTableViewCell: ProductViewCell {
         }
         
         // MARK: - Product removed event for conversion: revenue attribution
-        fsCreateEvent(event: .removeFromCart, with: product)
+        fsAddOrRemoveProductEvent(event: .removeFromCart, with: product)
 
         tableViewController?.tableView.reloadData()
 

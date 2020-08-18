@@ -47,7 +47,7 @@ class CheckoutTableViewController: UITableViewController {
             productView.checkoutTableViewController = self
 
             // MARK: - FullStory Example Custom Event "Order Completed" for conversions: revenue attribution
-            fsCreateEvent(event: .checkout, with: order.orderSummary())
+            fsCheckoutSuccessEvent(event: .checkout, with: order)
 
             present(productView, animated: true, completion: nil)
         }
@@ -56,7 +56,7 @@ class CheckoutTableViewController: UITableViewController {
             let err: CheckoutError = CheckoutError(errorCode: "AC10XY2", message: msg, order: order)
             // MARK: - FullStory Example logging
             fsLog(message: err.message, level: .error)
-            fsCreateEvent(event: .checkoutError, with: err)
+            fsCheckoutErrorEvent(event: .checkoutError, with: err)
         }
     }
 
