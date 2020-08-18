@@ -101,7 +101,7 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
         generator.impactOccurred()
 
         order.addProduct(product)
-        //MARK: - Product removed event for conversion: revenue attribution
+        // MARK: - Product removed event for conversion: revenue attribution
         fsCreateEvent(event: .addToCart, with: order.getProduct(product))
         updateCartNumber()
     }
