@@ -52,7 +52,7 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
                         else if let image = image {
                             item.image = image
                             DispatchQueue.main.async {
-                                order.addItems(items: self.products)
+                                order.setItems(items: self.products)
                                 self.collectionView.reloadData()
                             }
                         }

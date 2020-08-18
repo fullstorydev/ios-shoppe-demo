@@ -9,33 +9,31 @@
 import Foundation
 
 class Order {
-    var items: [String: Product] = [:]
+    var items: [Product] = []
     var date: Date = Date()
     var orderId: String = makeId(len: 9)
     var shipping: Double = 5.99
     var tax: Double = 2.85
     var cartOrderTotal: Double {
-        return items.reduce(0, { $0 + getTotal(for: $1.value) })
+        return items.reduce(0, { $0 + getTotal(for: $1) })
     }
 
-    func addItems(items: [Product]){
-        for item in items {
-            self.items[item.title] = item
-        }
-    }
-
-    func addProduct(_ productName: String ) {
-        items[productName]?.quantity += 1
+    func setItems(items: [Product]){
+        self.items.removeAll()
+        items.forEach{ self.items.append($0) }
     }
 
     func getProduct(_ productName: String ) -> Product? {
-        return items[productName]
+        return items.first(where: { $0.title == productName })
+    }
+
+    func addProduct(_ productName: String ) {
+        getProduct(productName)?.quantity += 1;
     }
 
     func getFilteredItems() -> [Product] {
         return items
-            .filter{ $0.value.quantity > 0 }
-            .map{ $0.value }
+            .filter{ $0.quantity > 0 }
     }
 
     func getNumberOfItems() -> Int{
@@ -43,7 +41,7 @@ class Order {
     }
 
     func resetOrder() {
-        self.items.forEach{ $0.value.quantity = 0 }
+        self.items.forEach{ $0.quantity = 0 }
         self.orderId = makeId(len: 9)
     }
 
