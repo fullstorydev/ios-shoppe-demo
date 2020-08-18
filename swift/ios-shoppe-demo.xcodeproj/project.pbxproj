@@ -199,8 +199,8 @@
 				F25400CE243CCF4D0091668D /* CartTableViewController.swift */,
 				F25400DD2440C92E0091668D /* CheckoutTableViewController.swift */,
 				F2D2A84B245B1A620000B4B4 /* ProductSummaryView.swift */,
-				F21E1452242BBBDE005D4C76 /* ViewCells */,
 				F217E46F24EC4D91007D5BAD /* LoginCollectionViewController.swift */,
+				F21E1452242BBBDE005D4C76 /* ViewCells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
