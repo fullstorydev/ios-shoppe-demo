@@ -38,7 +38,7 @@ class CartQuantityTableViewCell: ProductViewCell {
             tableViewController?.setOrderItemsForCart()
         }
         
-        //MARK: - Product removed event for conversion: revenue attribution
+        // MARK: - Product removed event for conversion: revenue attribution
         fsCreateEvent(event: .removeFromCart, with: product)
 
         tableViewController?.tableView.reloadData()
