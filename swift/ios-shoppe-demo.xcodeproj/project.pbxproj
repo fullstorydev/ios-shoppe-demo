@@ -26,6 +26,8 @@
 		F214B20224A0FDE70019DF92 /* CheckoutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F214B20124A0FDE70019DF92 /* CheckoutTableViewCell.xib */; };
 		F214B20924A1072B0019DF92 /* CheckBoxButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F214B20724A1072B0019DF92 /* CheckBoxButtonCell.swift */; };
 		F214B20A24A1072B0019DF92 /* CheckBoxButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = F214B20824A1072B0019DF92 /* CheckBoxButton.xib */; };
+		F217E47024EC4D91007D5BAD /* LoginCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F217E46F24EC4D91007D5BAD /* LoginCollectionViewController.swift */; };
+		F217E47224EC54F9007D5BAD /* LoginButtonViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F217E47124EC54F9007D5BAD /* LoginButtonViewCell.xib */; };
 		F21E144C2428DA82005D4C76 /* Products.json in Resources */ = {isa = PBXBuildFile; fileRef = F21E144B2428DA82005D4C76 /* Products.json */; };
 		F2433CA0246F00FE00094DCA /* FullStoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2433C9F246F00FE00094DCA /* FullStoryManager.swift */; };
 		F2441D7E24322B26006BEFF3 /* EX+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2441D7D24322B26006BEFF3 /* EX+UIView.swift */; };
@@ -102,6 +104,8 @@
 		F214B20124A0FDE70019DF92 /* CheckoutTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckoutTableViewCell.xib; sourceTree = "<group>"; };
 		F214B20724A1072B0019DF92 /* CheckBoxButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBoxButtonCell.swift; sourceTree = "<group>"; };
 		F214B20824A1072B0019DF92 /* CheckBoxButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckBoxButton.xib; sourceTree = "<group>"; };
+		F217E46F24EC4D91007D5BAD /* LoginCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCollectionViewController.swift; sourceTree = "<group>"; };
+		F217E47124EC54F9007D5BAD /* LoginButtonViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginButtonViewCell.xib; sourceTree = "<group>"; };
 		F21E144B2428DA82005D4C76 /* Products.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Products.json; sourceTree = "<group>"; };
 		F2433C9F246F00FE00094DCA /* FullStoryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullStoryManager.swift; sourceTree = "<group>"; };
 		F2441D7D24322B26006BEFF3 /* EX+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EX+UIView.swift"; sourceTree = "<group>"; };
@@ -196,6 +200,7 @@
 				F25400DD2440C92E0091668D /* CheckoutTableViewController.swift */,
 				F2D2A84B245B1A620000B4B4 /* ProductSummaryView.swift */,
 				F21E1452242BBBDE005D4C76 /* ViewCells */,
+				F217E46F24EC4D91007D5BAD /* LoginCollectionViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -241,6 +246,7 @@
 				F202DDB6246ED9DE00D32F89 /* ProductSummaryTopCell.xib */,
 				F202DDB8246ED9DF00D32F89 /* ProductSummaryTotalCost.xib */,
 				F202DDB5246ED9DE00D32F89 /* ProductSummaryUserDetailCell.xib */,
+				F217E47124EC54F9007D5BAD /* LoginButtonViewCell.xib */,
 			);
 			name = Nibs;
 			sourceTree = "<group>";
@@ -445,6 +451,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F202DDBC246ED9DF00D32F89 /* ProductSummaryCell.xib in Resources */,
+				F217E47224EC54F9007D5BAD /* LoginButtonViewCell.xib in Resources */,
 				F25D20A9240EB5A600CF89C3 /* LaunchScreen.storyboard in Resources */,
 				F25D20A6240EB5A600CF89C3 /* Assets.xcassets in Resources */,
 				F202DDBD246ED9DF00D32F89 /* ProductCollectionViewCell.xib in Resources */,
@@ -629,6 +636,7 @@
 				F2D2A84C245B1A620000B4B4 /* ProductSummaryView.swift in Sources */,
 				F202DDDB246EDA4F00D32F89 /* ProductSummaryCell.swift in Sources */,
 				F202DDD6246EDA4F00D32F89 /* ProductCollectionViewCell.swift in Sources */,
+				F217E47024EC4D91007D5BAD /* LoginCollectionViewController.swift in Sources */,
 				F202DDD2246EDA4F00D32F89 /* LargeLabelTableViewCell.swift in Sources */,
 				F2E5A51624193501005DFBFE /* Utilities.swift in Sources */,
 				F26DD85224175B7400504A3F /* Product.swift in Sources */,
