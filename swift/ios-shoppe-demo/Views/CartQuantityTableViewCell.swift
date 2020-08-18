@@ -31,7 +31,6 @@ class CartQuantityTableViewCell: ProductViewCell {
             tableViewController?.tableView.reloadData()
             return
         }
-        
         product.quantity -= 1
 
         if product.quantity <= 0 {
