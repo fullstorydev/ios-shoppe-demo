@@ -20,6 +20,7 @@ FullStory Manager provides common functions and artifacts that make it easier to
 
 /// The Event enum represents major events in an iOS app. These may differ based on your particular app.
 enum Event: String {
+    // TODO: add string values for all events
     case addToCart = "Product Added"
     case browsing
     case checkout = "Order Completed"

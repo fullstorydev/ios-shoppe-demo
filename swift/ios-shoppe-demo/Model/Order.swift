@@ -32,8 +32,7 @@ class Order {
     }
 
     func getFilteredItems() -> [Product] {
-        return items
-            .filter{ $0.quantity > 0 }
+        return items.filter{ $0.quantity > 0 }
     }
 
     func getNumberOfItems() -> Int{
@@ -48,13 +47,11 @@ class Order {
     // converting order to dictionary for FS events
     func orderSummary() -> [String: Any] {
         let filteredItems = getFilteredItems()
-        
         var orderDict: [String: Any] = [:]
 
         for item in filteredItems {
             orderDict[item.title] = item.quantity
         }
-        
         orderDict["order_id_str"] = orderId
         orderDict["revenue_real"] = cartOrderTotal
         orderDict["shipping_real"] = shipping
