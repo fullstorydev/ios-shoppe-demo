@@ -116,8 +116,8 @@ func makeId(len: Int) -> String {
 }
 
 // ------------------------
-// below are functions for demostrating conversions: revenue attribution events
-// ------------------------
+// MARK: - Conversions, revenue attribution events
+
 func fsAddOrRemoveProductEvent(event: Event, with product: Product?) {
     guard let product = product else {
         return
