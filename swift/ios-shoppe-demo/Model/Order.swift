@@ -11,21 +11,51 @@ import Foundation
 class Order {
     var items: [Product] = []
     var date: Date = Date()
+    var orderId: String = makeId(len: 9)
+    var shipping: Double = 5.99
+    var tax: Double = 2.85
     var cartOrderTotal: Double {
         return items.reduce(0, { $0 + getTotal(for: $1) })
     }
 
-    func addProduct(_ productName: String ) {
-        items.filter { $0.title == productName }.first?.quantity += 1
+    func setItems(items: [Product]){
+        self.items.removeAll()
+        items.forEach{ self.items.append($0) }
     }
 
+    func getProduct(_ productName: String ) -> Product? {
+        return items.first(where: { $0.title == productName })
+    }
+
+    func addProduct(_ productName: String ) {
+        getProduct(productName)?.quantity += 1;
+    }
+
+    func getFilteredItems() -> [Product] {
+        return items.filter{ $0.quantity > 0 }
+    }
+
+    func getNumberOfItems() -> Int{
+        return getFilteredItems().reduce(0, { $0 + $1.quantity })
+    }
+
+    func resetOrder() {
+        self.items.forEach{ $0.quantity = 0 }
+        self.orderId = makeId(len: 9)
+    }
+
+    // converting order to dictionary for FS events
     func orderSummary() -> [String: Any] {
-        let sortedItems: [Product] = items.filter { $0.quantity > 0 }
+        let filteredItems = getFilteredItems()
         var orderDict: [String: Any] = [:]
 
-        for item in sortedItems {
+        for item in filteredItems {
             orderDict[item.title] = item.quantity
         }
+        orderDict["order_id_str"] = orderId
+        orderDict["revenue_real"] = cartOrderTotal
+        orderDict["shipping_real"] = shipping
+        orderDict["tax_real"] = tax
 
         return orderDict
     }

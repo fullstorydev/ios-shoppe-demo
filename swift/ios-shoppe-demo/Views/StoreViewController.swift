@@ -52,7 +52,7 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
                         else if let image = image {
                             item.image = image
                             DispatchQueue.main.async {
-                                order.items = self.products
+                                order.setItems(items: self.products)
                                 self.collectionView.reloadData()
                             }
                         }
@@ -83,13 +83,13 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
     }
 
     func updateCartNumber() {
-        let numberOfItems = order.items.reduce(0, { $0 + $1.quantity })
+        let numberOfItems = order.getNumberOfItems()
 
         cartNumber = numberOfItems
     }
 
     func setCartUI() {
-        // MARK: - FullStory unmasking Example
+        // MARK: FullStory unmasking Example
         fsModifyPrivacy(setting: .unmask, views: cartNumberView.customView, barCartButton.customView)
 
         cartNumberView = UIBarButtonItem(title: "\(cartNumber)", style: .done, target: self, action: nil)
@@ -101,6 +101,8 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
         generator.impactOccurred()
 
         order.addProduct(product)
+        // MARK: Product removed event for conversion: revenue attribution
+        fsAddOrRemoveProductEvent(event: .addToCart, with: order.getProduct(product))
         updateCartNumber()
     }
 

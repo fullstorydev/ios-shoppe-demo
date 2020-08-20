@@ -20,13 +20,15 @@ FullStory Manager provides common functions and artifacts that make it easier to
 
 /// The Event enum represents major events in an iOS app. These may differ based on your particular app.
 enum Event: String {
-    case addToCart
+    // TODO: add string values for all events
+    case addToCart = "Product Added"
     case browsing
-    case checkout
+    case checkout = "Order Completed"
     case crash
     case itemSelected
-    case removeFromCart
+    case removeFromCart = "Product Removed"
     case viewCart
+    case checkoutError = "Checkout Error"
 }
 
 enum LogLevel {
@@ -96,4 +98,64 @@ func fsModifyPrivacy(setting: PrivacySetting, views: UIView?...) {
  */
 func fsIdentify(id: String, userInfo: [String: Any]) {
     FS.identify(id, userVars: userInfo)
+}
+
+/**
+Generate a unique alphanumeric ID with specified len
+    - Parameter len: Desired length of ID string
+*/
+func makeId(len: Int) -> String {
+    let characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+    var randomString = ""
+    for _ in 0 ..< len {
+        let randomCharacter = characters.randomElement()!
+        randomString.append(randomCharacter)
+    }
+
+    return randomString
+}
+
+// ------------------------
+// MARK: - Conversions, revenue attribution events
+
+func fsAddOrRemoveProductEvent(event: Event, with product: Product?) {
+    guard let product = product else {
+        return
+    }
+    // TODO: check for event type
+    let productDict: [String : Any] = [
+        "description_str": product.description,
+        "displayName_str": product.title,
+        "id_str": product.title,
+        "imgName_str": product.imageName,
+        "price_raw_real": product.price,
+        "price_real": product.price,
+        "product_id_str": makeId(len: 9),
+        "unit_str": product.unit
+    ]
+
+    fsCreateEvent(event: event, with: productDict)
+}
+
+func fsCheckoutSuccessEvent(event: Event, with order: Order) {
+    // TODO: check for event type
+    fsCreateEvent(event: event, with: order.orderSummary())
+}
+
+struct CheckoutError: Error {
+    let errorCode: String
+    let message: String
+    let order: Order
+}
+
+func fsCheckoutErrorEvent(event: Event, with error: CheckoutError) {
+    let errDict: [String : Any] = [
+        "code_str": error.errorCode,
+        "message_str": error.message,
+        "order.items_int": error.order.items.count,
+        "order.order_id": error.order.orderId,
+        "order.total_real": error.order.cartOrderTotal
+    ]
+
+    fsCreateEvent(event: event, with: errDict)
 }
