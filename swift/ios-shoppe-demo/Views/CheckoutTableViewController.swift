@@ -28,10 +28,7 @@ class CheckoutTableViewController: UITableViewController {
 
         navigationItem.title = "Complete Order"
 
-        tableView.register(UINib(nibName: "CheckoutTableViewCell", bundle: nil), forCellReuseIdentifier: "textField")
-        tableView.register(UINib(nibName: "LargeLabelTableViewCell", bundle: nil), forCellReuseIdentifier: "title")
-        tableView.register(UINib(nibName: "CartTableViewCell", bundle: nil), forCellReuseIdentifier: "checkout")
-        tableView.register(UINib(nibName: "CheckBoxButton", bundle: nil), forCellReuseIdentifier: "checkoutBox")
+        registerCells(tableView: tableView, registry: checkoutTableViewRegistry)
 
         tableView.separatorStyle = .none
         tableView.backgroundColor = UIColor().fsBackground()

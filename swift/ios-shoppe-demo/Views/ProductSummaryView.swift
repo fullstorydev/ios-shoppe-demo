@@ -22,10 +22,8 @@ class ProductSummaryView: UITableViewController {
         // MARK: - FullStory unmasking Example
         fsModifyPrivacy(setting: .unmask, views: tableView)
 
-        tableView.register(UINib(nibName: "ProductSummaryCell", bundle: nil), forCellReuseIdentifier: "quantity")
-        tableView.register(UINib(nibName: "ProductSummaryTopCell", bundle: nil), forCellReuseIdentifier: "thankYou")
-        tableView.register(UINib(nibName: "ProductSummaryUserDetailCell", bundle: nil), forCellReuseIdentifier: "userDetails")
-        tableView.register(UINib(nibName: "ProductSummaryTotalCost", bundle: nil), forCellReuseIdentifier: "totalCell")
+        registerCells(tableView: tableView, registry: productSummaryRegistry)
+
         tableView.separatorStyle = .none
         tableView.backgroundColor = UIColor().fsBackground()
     }

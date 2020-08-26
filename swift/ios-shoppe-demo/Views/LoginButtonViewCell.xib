@@ -8,7 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="checkout" rowHeight="93" id="Kdd-69-CBR" customClass="CartTableViewCell" customModule="ios_shoppe_demo" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="login" rowHeight="93" id="Kdd-69-CBR" customClass="LoginButtonTableViewCell" customModule="ios_shoppe_demo" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="93"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kdd-69-CBR" id="gHx-xO-P0F">
@@ -34,7 +34,7 @@
                             </attributedString>
                         </state>
                         <connections>
-                            <action selector="proceedToCheckout:" destination="Kdd-69-CBR" eventType="touchUpInside" id="i1W-df-Wwf"/>
+                            <action selector="login:" destination="Kdd-69-CBR" eventType="touchUpInside" id="9U7-kY-Try"/>
                         </connections>
                     </button>
                 </subviews>
@@ -46,9 +46,6 @@
                     <constraint firstItem="Pe6-uI-rWV" firstAttribute="leading" secondItem="gHx-xO-P0F" secondAttribute="leading" constant="20" id="Q6C-cX-Dc2"/>
                 </constraints>
             </tableViewCellContentView>
-            <connections>
-                <outlet property="checkoutButton" destination="Pe6-uI-rWV" id="7Ig-Bz-Ipb"/>
-            </connections>
             <point key="canvasLocation" x="211.59420289855075" y="72.65625"/>
         </tableViewCell>
     </objects>

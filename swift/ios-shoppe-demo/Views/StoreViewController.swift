@@ -15,7 +15,7 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
     // MARK: - NavigationBar Button Properties
 
     var barCartButton: UIBarButtonItem {
-        let button = UIBarButtonItem(image: UIImage(named: "shopping_cart"), style: .done, target: self, action: #selector(openCart))
+        let button = UIBarButtonItem(image: UIImage(named: K.Image.cartIcon), style: .done, target: self, action: #selector(openCart))
         button.tintColor = .white
         return button
     }
@@ -66,6 +66,10 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
         updateCartNumber()
     }
 
+    func loadLoginView() {
+        self.present(LoginCollectionViewController(), animated: true, completion: nil)
+    }
+
     // MARK: - UI Methods
 
     func setupNavigationBar() {
@@ -74,11 +78,11 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
         navigationController?.navigationBar.titleTextAttributes = textAttributes
         navigationController?.navigationBar.barTintColor = UIColor(displayP3Red: 206/255, green: 78/255, blue: 142/255, alpha: 1.0)
 
-        navigationItem.title = "iOS Shoppe"
+        navigationItem.title = K.Title.shoppe
 
         setCartUI()
 
-        collectionView.register(UINib(nibName: "ProductCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cell")
+        collectionView.register(UINib(nibName: nib.productCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: cellID.productView)
         collectionView.backgroundColor = UIColor().fsBackground()
     }
 
@@ -119,7 +123,7 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? ProductCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID.productView, for: indexPath) as? ProductCollectionViewCell
         cell?.product = products[indexPath.row]
         cell?.collectionView = self
 

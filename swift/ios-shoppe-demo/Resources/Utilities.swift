@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 func getPlist(withName name: String) -> [String: String]? {
     if let path = Bundle.main.path(forResource: name, ofType: "plist"),
@@ -15,4 +16,10 @@ func getPlist(withName name: String) -> [String: String]? {
     }
 
     return nil
+}
+
+func registerCells(tableView: UITableView, registry: Registry) {
+    for (index, nibName) in registry.0.enumerated() {
+        tableView.register(UINib(nibName: nibName, bundle: nil), forCellReuseIdentifier: registry.1[index])
+    }
 }
