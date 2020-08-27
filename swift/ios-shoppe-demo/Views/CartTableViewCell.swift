@@ -30,6 +30,9 @@ class CartTableViewCell: UITableViewCell {
 
     func setTextForPlacingOrder() {
         self.checkoutButton.setTitle("Place your order", for: .normal)
+        self.checkoutButton.restorationIdentifier = "place_your_order"
+        self.checkoutButton.accessibilityLabel = "place_your_order_label"
+        self.checkoutButton.accessibilityIdentifier = "place_your_order_id"
         self.checkoutButton.attributedTitle(for: .normal)
     }
 

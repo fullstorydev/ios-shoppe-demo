@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,8 +16,9 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="taV-Dq-LWf">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="product_image" translatesAutoresizingMaskIntoConstraints="NO" id="taV-Dq-LWf" userLabel="product_image">
                         <rect key="frame" x="10" y="16" width="355" height="164.5"/>
+                        <accessibility key="accessibilityConfiguration" identifier="product_image_id" label="product_image_label"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Decription" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmK-0l-BNx">
                         <rect key="frame" x="10" y="214" width="355" height="20.5"/>
@@ -25,9 +26,12 @@
                         <color key="textColor" red="0.03917218745" green="0.12158025059999999" blue="0.19604882600000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PQ9-9T-qfG">
+                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="add_to_cart" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PQ9-9T-qfG" userLabel="add_to_cart">
                         <rect key="frame" x="137.5" y="243" width="100" height="40"/>
                         <color key="backgroundColor" red="0.80784313725490198" green="0.30588235294117649" blue="0.55686274509803924" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <accessibility key="accessibilityConfiguration" identifier="add_to_cart_id" label="add_to_cart_label">
+                            <bool key="isElement" value="YES"/>
+                        </accessibility>
                         <constraints>
                             <constraint firstAttribute="width" constant="100" id="i7K-eq-sLb"/>
                             <constraint firstAttribute="height" constant="40" id="xJZ-WG-7Gk"/>
@@ -43,8 +47,9 @@
                     <stackView opaque="NO" contentMode="scaleAspectFill" distribution="fillEqually" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kon-Ku-i5n">
                         <rect key="frame" x="10" y="185.5" width="355" height="20"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="F9S-Zc-ZDq">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="product_title" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="F9S-Zc-ZDq" userLabel="product_title">
                                 <rect key="frame" x="0.0" y="0.0" width="177.5" height="20"/>
+                                <accessibility key="accessibilityConfiguration" identifier="product_title_id" label="product_title_label"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" red="0.03917218745" green="0.12158025059999999" blue="0.19604882600000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
