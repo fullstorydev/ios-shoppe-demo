@@ -15,7 +15,7 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
     // MARK: - NavigationBar Button Properties
 
     var barCartButton: UIBarButtonItem {
-        let button = UIBarButtonItem(image: UIImage(named: K.Image.cartIcon), style: .done, target: self, action: #selector(openCart))
+        let button = UIBarButtonItem(image: UIImage(named: Constants.Image.cartIcon), style: .done, target: self, action: #selector(openCart))
         button.tintColor = .white
         return button
     }
@@ -78,7 +78,7 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
         navigationController?.navigationBar.titleTextAttributes = textAttributes
         navigationController?.navigationBar.barTintColor = UIColor(displayP3Red: 206/255, green: 78/255, blue: 142/255, alpha: 1.0)
 
-        navigationItem.title = K.Title.shoppe
+        navigationItem.title = Constants.Title.shoppe
 
         setCartUI()
 

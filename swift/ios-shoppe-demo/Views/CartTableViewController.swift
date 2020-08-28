@@ -19,7 +19,7 @@ class CartTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = K.Title.orderCart
+        navigationItem.title = Constants.Title.orderCart
         navigationController?.navigationBar.tintColor = .white
         
         registerCells(tableView: tableView, registry: cartTableViewRegistry)

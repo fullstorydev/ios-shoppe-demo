@@ -9,14 +9,15 @@
 
 import Foundation
 
-typealias nib = K.Nib
-typealias cellID = K.CellID
+typealias nib = Constants.Nib
+typealias cellID = Constants.CellID
 
 /// Hard coded constants
-struct K {
+struct Constants {
     struct Title {
         static let orderCart = "Order Cart"
         static let shoppe = "iOS Shoppe"
+        static let login = "Login"
     }
 
     struct Nib {
