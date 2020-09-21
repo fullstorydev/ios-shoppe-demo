@@ -7,7 +7,8 @@
 //
 
 import Foundation
-import FullStory
+import UIKit
+//import FullStory
 
 /*
 FullStory Manager provides common functions and artifacts that make it easier to integrate FullStory into your iOS app.
@@ -51,7 +52,7 @@ enum PrivacySetting: String {
     - Parameter dict: Dictionary with valuable info gathered at the time of the event.
  */
 func fsCreateEvent(event: Event, with dict: [String: Any]) {
-    FS.event(event.rawValue, properties: dict)
+//    FS.event(event.rawValue, properties: dict)
 }
 
 /**
@@ -60,22 +61,22 @@ func fsCreateEvent(event: Event, with dict: [String: Any]) {
     - Parameter level: LogLevel type.
  */
 func fsLog(message: String, level: LogLevel = .info) {
-    var fsLogType: FSEventLogLevel
+//    var fsLogType: FSEventLogLevel
+//
+//    switch level {
+//    case .assert:
+//        fsLogType = FSLOG_ASSERT
+//    case .debug:
+//        fsLogType = FSLOG_DEBUG
+//    case .error:
+//        fsLogType = FSLOG_ERROR
+//    case .info:
+//        fsLogType = FSLOG_INFO
+//    case .warning:
+//        fsLogType = FSLOG_WARNING
+//    }
 
-    switch level {
-    case .assert:
-        fsLogType = FSLOG_ASSERT
-    case .debug:
-        fsLogType = FSLOG_DEBUG
-    case .error:
-        fsLogType = FSLOG_ERROR
-    case .info:
-        fsLogType = FSLOG_INFO
-    case .warning:
-        fsLogType = FSLOG_WARNING
-    }
-
-    FS.log(with: fsLogType, message: "\(Date())" + message)
+//    FS.log(with: fsLogType, message: "\(Date())" + message)
 }
 
 /**
@@ -85,9 +86,9 @@ func fsLog(message: String, level: LogLevel = .info) {
  */
 func fsModifyPrivacy(setting: PrivacySetting, views: UIView?...) {
     views.forEach { view in
-        if let view = view {
-            FS.addClass(view, className: setting.rawValue)
-        }
+//        if let view = view {
+//            FS.addClass(view, className: setting.rawValue)
+//        }
     }
 }
 
@@ -97,7 +98,7 @@ func fsModifyPrivacy(setting: PrivacySetting, views: UIView?...) {
     - Parameter userInfo: Dictionary with any "relavent info" related to the user.
  */
 func fsIdentify(id: String, userInfo: [String: Any]) {
-    FS.identify(id, userVars: userInfo)
+//    FS.identify(id, userVars: userInfo)
 }
 
 /**
