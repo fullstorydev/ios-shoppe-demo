@@ -1,0 +1,3 @@
+binary "FullStory.json"
+github "segmentio/analytics-ios"
+git "https://github.com/fullstorydev/fullstory-segment-middleware-ios.git" "sabrina/carthage-support"

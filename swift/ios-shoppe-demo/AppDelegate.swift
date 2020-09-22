@@ -7,14 +7,15 @@
 //
 
 import UIKit
-//import FullStory
+import FullStory
+import FullStorySegmentMiddleware
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {//, FSDelegate {
 
-//    func fullstoryDidStartSession(_ sessionUrl: String) {
-//        print(sessionUrl)
-//    }
+    func fullstoryDidStartSession(_ sessionUrl: String) {
+        print(sessionUrl)
+    }
 //
 //    func fullstoryDidStopSession() {
 //

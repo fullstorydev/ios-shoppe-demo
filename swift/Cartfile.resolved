@@ -1,0 +1,3 @@
+binary "FullStory.json" "1.7.0"
+github "fullstorydev/fullstory-segment-middleware-ios" "5c0214f9106b11242d9e65b6f4221f4f39e148c7"
+github "segmentio/analytics-ios" "4.0.5"
