@@ -7,27 +7,12 @@
 //
 
 import UIKit
-import FullStory
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, FSDelegate {
-
-    func fullstoryDidStartSession(_ sessionUrl: String) {
-        print(sessionUrl)
-    }
-
-    func fullstoryDidStopSession() {
-
-    }
-
-    func fullstoryDidTerminateWithError(_ error: Error) {
-
-    }
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-
-        FS.delegate = self
 
         return true
     }
