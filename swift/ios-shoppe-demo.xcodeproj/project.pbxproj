@@ -150,13 +150,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B54DBF6AD15CC976BF1A043C /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		F21E1451242A36D9005D4C76 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,7 +214,6 @@
 				F25D20B2240EB5A600CF89C3 /* ios-shoppe-demoTests */,
 				F25D20BD240EB5A600CF89C3 /* ios-shoppe-demoUITests */,
 				F25D209A240EB5A300CF89C3 /* Products */,
-				B54DBF6AD15CC976BF1A043C /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
