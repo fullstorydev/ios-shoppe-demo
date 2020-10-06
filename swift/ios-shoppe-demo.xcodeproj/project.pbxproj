@@ -592,7 +592,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PROJECT_DIR}/Pods/FullStory/tools/FullStoryCommandLine\" \"${CONFIGURATION_BUILD_DIR}/${WRAPPER_NAME}\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
