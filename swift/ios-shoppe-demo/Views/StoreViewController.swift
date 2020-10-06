@@ -39,8 +39,6 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
 
         setupNavigationBar()
 
-        fsIdentify(id: user.id.uuidString, userInfo: user.infoDict)
-
         APIService.sharedInstance.getProductsFromFile { (productsRecieved) in
             if !productsRecieved.isEmpty {
                 self.products = productsRecieved
@@ -89,8 +87,6 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
     }
 
     func setCartUI() {
-        // MARK: FullStory unmasking Example
-        fsModifyPrivacy(setting: .unmask, views: cartNumberView.customView, barCartButton.customView)
 
         cartNumberView = UIBarButtonItem(title: "\(cartNumber)", style: .done, target: self, action: nil)
         navigationItem.rightBarButtonItems = [cartNumberView, barCartButton]
@@ -101,8 +97,6 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
         generator.impactOccurred()
 
         order.addProduct(product)
-        // MARK: Product removed event for conversion: revenue attribution
-        fsAddOrRemoveProductEvent(event: .addToCart, with: order.getProduct(product))
         updateCartNumber()
     }
 

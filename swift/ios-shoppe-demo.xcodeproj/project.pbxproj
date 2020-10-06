@@ -25,7 +25,6 @@
 		F214B20924A1072B0019DF92 /* CheckBoxButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F214B20724A1072B0019DF92 /* CheckBoxButtonCell.swift */; };
 		F214B20A24A1072B0019DF92 /* CheckBoxButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = F214B20824A1072B0019DF92 /* CheckBoxButton.xib */; };
 		F21E144C2428DA82005D4C76 /* Products.json in Resources */ = {isa = PBXBuildFile; fileRef = F21E144B2428DA82005D4C76 /* Products.json */; };
-		F2433CA0246F00FE00094DCA /* FullStoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2433C9F246F00FE00094DCA /* FullStoryManager.swift */; };
 		F2441D7E24322B26006BEFF3 /* EX+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2441D7D24322B26006BEFF3 /* EX+UIView.swift */; };
 		F2441D872433900C006BEFF3 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2441D862433900C006BEFF3 /* Order.swift */; };
 		F25339C42472CFD50021BB7A /* EX+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25339C32472CFD50021BB7A /* EX+UIColor.swift */; };
@@ -91,7 +90,6 @@
 		F214B20724A1072B0019DF92 /* CheckBoxButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBoxButtonCell.swift; sourceTree = "<group>"; };
 		F214B20824A1072B0019DF92 /* CheckBoxButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckBoxButton.xib; sourceTree = "<group>"; };
 		F21E144B2428DA82005D4C76 /* Products.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Products.json; sourceTree = "<group>"; };
-		F2433C9F246F00FE00094DCA /* FullStoryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullStoryManager.swift; sourceTree = "<group>"; };
 		F2441D7D24322B26006BEFF3 /* EX+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EX+UIView.swift"; sourceTree = "<group>"; };
 		F2441D862433900C006BEFF3 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		F25339C32472CFD50021BB7A /* EX+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EX+UIColor.swift"; sourceTree = "<group>"; };
@@ -276,7 +274,6 @@
 			isa = PBXGroup;
 			children = (
 				F25D20CC24100B2700CF89C3 /* APIService.swift */,
-				F2433C9F246F00FE00094DCA /* FullStoryManager.swift */,
 			);
 			path = ServiceManagers;
 			sourceTree = "<group>";
@@ -459,7 +456,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2433CA0246F00FE00094DCA /* FullStoryManager.swift in Sources */,
 				F202DDD1246EDA4F00D32F89 /* ThankYouCell.swift in Sources */,
 				F28FDDDF249A5BB500EDEE61 /* ProductViewCell.swift in Sources */,
 				F25D20A1240EB5A300CF89C3 /* StoreViewController.swift in Sources */,

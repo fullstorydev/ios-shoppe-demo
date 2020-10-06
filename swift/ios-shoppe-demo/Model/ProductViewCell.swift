@@ -24,8 +24,4 @@ class ProductViewCell: UITableViewCell {
         quantityLabel.text = "x\(product.quantity)"
         totalLabel.text = getTotal(for: product).toCurrency()
     }
-
-    func setupMasking() {
-        fsModifyPrivacy(setting: .unmask, views: titleLabel, quantityLabel, totalLabel)
-    }
 }

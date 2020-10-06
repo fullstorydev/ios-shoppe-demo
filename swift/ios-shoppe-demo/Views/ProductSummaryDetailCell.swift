@@ -14,9 +14,4 @@ class ProductSummaryDetailCell: UITableViewCell {
     @IBOutlet weak var shippingLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var shippingAddress: UILabel!
-
-    func setupFSMaskingElements() {
-        // MARK: - FullStory masking Example
-        fsModifyPrivacy(setting: .mask, views: nameLabel, shippingAddress)
-    }
 }

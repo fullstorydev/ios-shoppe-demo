@@ -11,7 +11,6 @@ import Foundation
 class Order {
     var items: [Product] = []
     var date: Date = Date()
-    var orderId: String = makeId(len: 9)
     var shipping: Double = 5.99
     var tax: Double = 2.85
     var cartOrderTotal: Double {
@@ -41,7 +40,6 @@ class Order {
 
     func resetOrder() {
         self.items.forEach{ $0.quantity = 0 }
-        self.orderId = makeId(len: 9)
     }
 
     // converting order to dictionary for FS events
@@ -52,7 +50,6 @@ class Order {
         for item in filteredItems {
             orderDict[item.title] = item.quantity
         }
-        orderDict["order_id_str"] = orderId
         orderDict["revenue_real"] = cartOrderTotal
         orderDict["shipping_real"] = shipping
         orderDict["tax_real"] = tax
