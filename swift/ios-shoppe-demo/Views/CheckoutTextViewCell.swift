@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import FullStory
 
 class CheckoutTableViewCell: UITableViewCell, UITextFieldDelegate {
     @IBOutlet weak var addressDetailTextField: UITextField!
@@ -22,6 +23,7 @@ class CheckoutTableViewCell: UITableViewCell, UITextFieldDelegate {
 
     var cardDetail: CardDetail? {
         didSet {
+            FS.addClass(self, className: FSViewClass.exclude.rawValue)
             showTooltip()
         }
     }

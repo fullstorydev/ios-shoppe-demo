@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import FullStory
 
 class ProductCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var productImageView: UIImageView!
@@ -25,6 +26,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
     var collectionView: StoreViewController?
 
     func setup() {
+        FS.addClass(self.productImageView, className: FSViewClass.unmask.rawValue)
 
         DispatchQueue.main.async {
             self.curveViewCornersWithShadow()

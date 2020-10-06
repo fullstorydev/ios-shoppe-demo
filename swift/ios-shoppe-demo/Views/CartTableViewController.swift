@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import FullStory
 
 var order: Order = Order()
 var user: UserProfile = UserProfile(addressDetail: [.email:"user1@example.com"])
@@ -29,6 +30,8 @@ class CartTableViewController: UITableViewController {
         
         tableView.separatorStyle = .none
         tableView.backgroundColor = UIColor().fsBackground()
+        
+        FS.addClass(self.view, className: FSViewClass.unmask.rawValue)
     }
 
     func setOrderItemsForCart() {
