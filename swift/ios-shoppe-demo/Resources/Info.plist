@@ -18,6 +18,10 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>FSHost</key>
+	<string>staging.fullstory.com</string>
+	<key>FSOrgId</key>
+	<string>&lt;YOUR_ORG_ID&gt;</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>

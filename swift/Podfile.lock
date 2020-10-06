@@ -1,0 +1,20 @@
+PODS:
+  - FullStory (1.7.0)
+
+DEPENDENCIES:
+  - "FullStory (from `{:http=>\"https://ios-releases.fullstory.com/fullstory-1.7.0.tar.gz\"}`)"
+
+EXTERNAL SOURCES:
+  FullStory:
+    :http: https://ios-releases.fullstory.com/fullstory-1.7.0.tar.gz
+
+CHECKOUT OPTIONS:
+  FullStory:
+    :http: https://ios-releases.fullstory.com/fullstory-1.7.0.tar.gz
+
+SPEC CHECKSUMS:
+  FullStory: 3f0aeecb6edb80c4dcd10cb88c805d103f6e0ad5
+
+PODFILE CHECKSUM: 0e9c7ebf3a3b5a4236025cb2d9734d6d184544bb
+
+COCOAPODS: 1.9.1
