@@ -22,7 +22,7 @@ class CartTableViewController: UITableViewController {
         navigationItem.title = Constants.TitleStrings.orderCart
         navigationController?.navigationBar.tintColor = .white
         
-        registerCells(tableView: tableView, registry: Registry.cartTableView)
+            tableView.registerCells(registry: Registry.cartTableView)
 
         setOrderItemsForCart()
         

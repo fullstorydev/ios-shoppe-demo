@@ -28,7 +28,7 @@ class CheckoutTableViewController: UITableViewController {
 
         navigationItem.title = "Complete Order"
 
-        registerCells(tableView: tableView, registry: Registry.checkoutTableView)
+        tableView.registerCells(registry: Registry.checkoutTableView)
 
         tableView.separatorStyle = .none
         tableView.backgroundColor = UIColor().fsBackground()

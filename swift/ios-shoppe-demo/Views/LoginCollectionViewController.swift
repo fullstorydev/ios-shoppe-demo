@@ -25,7 +25,8 @@ class LoginCollectionViewController: UITableViewController {
     func registerCellsNibs() {
         navigationItem.title = Constants.TitleStrings.login
         navigationController?.navigationBar.tintColor = .white
-        registerCells(tableView: tableView, registry: Registry.loginViewController)
+        
+        tableView.registerCells(registry: Registry.loginViewController)
     }
 
     func login() {
