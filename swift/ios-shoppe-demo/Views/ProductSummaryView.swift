@@ -12,7 +12,7 @@ import UIKit
 class ProductSummaryView: UITableViewController {
     var checkoutTableViewController: CheckoutTableViewController!
     var purchasedItems: [Product] {
-        return order.items.filter { return $0.quantity > 0 }
+        return order.getFilteredItems()
     }
 
 
@@ -30,7 +30,7 @@ class ProductSummaryView: UITableViewController {
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        order.items.forEach { $0.quantity = 0 }
+        order.resetOrder()
         checkoutTableViewController.navigationController?.popToRootViewController(animated: true)
     }
 

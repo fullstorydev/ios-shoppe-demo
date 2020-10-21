@@ -31,7 +31,7 @@ class CartTableViewController: UITableViewController {
     }
 
     func setOrderItemsForCart() {
-        items = order.items.filter { $0.quantity > 0 }
+        items = order.getFilteredItems()
     }
 
     func presentCheckout() {
