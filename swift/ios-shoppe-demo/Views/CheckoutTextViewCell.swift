@@ -15,7 +15,6 @@ class CheckoutTableViewCell: UITableViewCell, UITextFieldDelegate {
     var checkoutTableViewController: CheckoutTableViewController?
     var loginTableViewController: LoginCollectionViewController?
 
-
     var addressDetail: AddressDetail? {
         didSet {
             showTooltip()
@@ -32,8 +31,7 @@ class CheckoutTableViewCell: UITableViewCell, UITextFieldDelegate {
      # showTooltip sets the placeholder text on the textfield based on the provided enum case's placeholder property.
      */
     func showTooltip() {
-        if checkoutTableViewController?.autoFillEnabled ?? false { }
-        else {
+        if !(checkoutTableViewController?.autoFillEnabled ?? false) { 
             addressDetailTextField.placeholder = (addressDetail != nil) ? addressDetail?.placeHolder : cardDetail?.placeHolder
         }
 
@@ -50,8 +48,7 @@ class CheckoutTableViewCell: UITableViewCell, UITextFieldDelegate {
         if let addressDetail = addressDetail {
             checkoutTableViewController?.addressDict[addressDetail] = addressDetailTextField.text
             checkoutTableViewController?.tableView.reloadData()
-        }
-        else {
+        } else {
             loginTableViewController?.tableView.reloadData()
 
         }

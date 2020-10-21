@@ -8,19 +8,20 @@
 
 
 import Foundation
+import UIKit
 
-typealias Nib = Constants.Nib
-typealias CellID = Constants.CellID
+typealias Nib = Constants.NibNames
+typealias CellID = Constants.CellIdentifiers
 
 /// Hard coded constants
 struct Constants {
-    struct Title {
+    struct TitleStrings {
         static let orderCart = "Order Cart"
         static let shoppe = "iOS Shoppe"
         static let login = "Login"
     }
 
-    struct Nib {
+    struct NibNames {
         static let productCollectionViewCell = "ProductCollectionViewCell"
         static let cartTableViewCell = "CartTableViewCell"
         static let cartQuant = "CartQuantityTableViewCell"
@@ -34,7 +35,7 @@ struct Constants {
         static let loginButtonCell = "LoginButtonViewCell"
     }
 
-    struct CellID {
+    struct CellIdentifiers {
         static let productView = "cell"
         static let checkout = "checkout"
         static let quantity = "quantity"
@@ -48,7 +49,7 @@ struct Constants {
     }
 
     struct Image {
-        static let cartIcon = "shopping_cart"
+        static let cartIcon = UIImage(named: "shopping_cart")
     }
 }
 
@@ -57,22 +58,22 @@ struct Registry {
     var cellID: [String]
 
     static let cartTableView = Registry(
-        nib: [Constants.Nib.cartTableViewCell, Constants.Nib.cartQuant, Constants.Nib.largeLabel],
-        cellID: [Constants.CellID.checkout, Constants.CellID.quantity, Constants.CellID.title]
+        nib: [Constants.NibNames.cartTableViewCell, Constants.NibNames.cartQuant, Constants.NibNames.largeLabel],
+        cellID: [Constants.CellIdentifiers.checkout, Constants.CellIdentifiers.quantity, Constants.CellIdentifiers.title]
     )
 
     static let checkoutTableView = Registry(
-        nib: [Constants.Nib.checkoutTableView, Constants.Nib.largeLabel, Constants.Nib.cartTableViewCell, Constants.Nib.checkBoxButton],
-        cellID: [Constants.CellID.textField, Constants.CellID.title, Constants.CellID.checkout, Constants.CellID.checkoutBox]
+        nib: [Constants.NibNames.checkoutTableView, Constants.NibNames.largeLabel, Constants.NibNames.cartTableViewCell, Constants.NibNames.checkBoxButton],
+        cellID: [Constants.CellIdentifiers.textField, Constants.CellIdentifiers.title, Constants.CellIdentifiers.checkout, Constants.CellIdentifiers.checkoutBox]
     )
 
     static let productSummary = Registry(
-        nib: [Constants.Nib.productSummaryCell, Constants.Nib.productSummaryTopCell, Constants.Nib.productSummaryUserDetailCell, Constants.Nib.productSummaryTotalCost],
-        cellID: [Constants.CellID.quantity, Constants.CellID.thankYou, Constants.CellID.userDetails, Constants.CellID.totalCell]
+        nib: [Constants.NibNames.productSummaryCell, Constants.NibNames.productSummaryTopCell, Constants.NibNames.productSummaryUserDetailCell, Constants.NibNames.productSummaryTotalCost],
+        cellID: [Constants.CellIdentifiers.quantity, Constants.CellIdentifiers.thankYou, Constants.CellIdentifiers.userDetails, Constants.CellIdentifiers.totalCell]
     )
 
     static let loginViewController = Registry(
-        nib: [Constants.Nib.loginButtonCell, Constants.Nib.checkoutTableView],
-        cellID: [Constants.CellID.login, Constants.CellID.textField]
+        nib: [Constants.NibNames.loginButtonCell, Constants.NibNames.checkoutTableView],
+        cellID: [Constants.CellIdentifiers.login, Constants.CellIdentifiers.textField]
     )
 }

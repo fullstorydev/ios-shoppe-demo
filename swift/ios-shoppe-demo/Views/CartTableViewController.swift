@@ -19,7 +19,7 @@ class CartTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = Constants.Title.orderCart
+        navigationItem.title = Constants.TitleStrings.orderCart
         navigationController?.navigationBar.tintColor = .white
         
         registerCells(tableView: tableView, registry: Registry.cartTableView)
@@ -63,8 +63,7 @@ class CartTableViewController: UITableViewController {
             cell?.largeTextLabel.textAlignment = .center
 
             return cell ?? UITableViewCell()
-        }
-        else {
+        } else {
             switch indexPath.section {
             case 0:
                 let cell =  tableView.dequeueReusableCell(withIdentifier: CellID.checkout) as? CartTableViewCell

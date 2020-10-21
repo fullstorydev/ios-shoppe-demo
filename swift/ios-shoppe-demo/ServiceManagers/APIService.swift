@@ -15,8 +15,7 @@ class APIService {
     var baseURL: String {
         if let url = getPreferencesArray()["baseURL"] {
             return url
-        }
-        else {
+        } else {
             print("No url found from Preferences file!")
             return ""
         }
@@ -25,8 +24,7 @@ class APIService {
     var baseImageURL: String {
         if let url = getPreferencesArray()["baseImageURL"] {
             return url
-        }
-        else {
+        } else {
             print("No url found from Preferences file!")
             return ""
         }
@@ -62,8 +60,7 @@ class APIService {
             URLSession.shared.dataTask(with: url) { data, response, error in
                 if let data = data {
                     completion(UIImage(data: data), nil)
-                }
-                else {
+                } else {
                     if let error = error {
                         completion(nil, error as NSError)
                     }

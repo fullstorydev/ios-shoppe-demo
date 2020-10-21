@@ -47,8 +47,7 @@ class CheckoutTableViewController: UITableViewController {
             fsCreateEvent(event: .checkout, with: order.orderSummary())
 
             present(productView, animated: true, completion: nil)
-        }
-        else {
+        } else {
             // MARK: - FullStory Example logging
             fsLog(message: "User tried to checkout without confirmation.", level: .error)
         }

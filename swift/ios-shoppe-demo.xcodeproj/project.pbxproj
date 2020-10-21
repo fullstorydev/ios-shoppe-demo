@@ -59,6 +59,7 @@
 		F2F59D29245736C7008B20AD /* CheckoutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25400DD2440C92E0091668D /* CheckoutTableViewController.swift */; };
 		F2F59D2A245736CC008B20AD /* AddressDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25400E12440D8910091668D /* AddressDetail.swift */; };
 		F2F59D2B245736CC008B20AD /* CardDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25401242444CDF30091668D /* CardDetail.swift */; };
+		F2FA4FDE2540971B00822F3A /* EX+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FA4FDD2540971B00822F3A /* EX+UITableView.swift */; };
 		F584FA6FCFF911FCE00C41B7 /* Pods_ios_shoppe_demo_ios_shoppe_demoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81439738BD777FCE9509559B /* Pods_ios_shoppe_demo_ios_shoppe_demoUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -143,6 +144,7 @@
 		F2E5A511241934B9005DFBFE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2E5A51524193501005DFBFE /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		F2E5A51724193637005DFBFE /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F2FA4FDD2540971B00822F3A /* EX+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EX+UITableView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +236,7 @@
 				F2441D7D24322B26006BEFF3 /* EX+UIView.swift */,
 				F25400D0243CD0520091668D /* EX+Double.swift */,
 				F25339C32472CFD50021BB7A /* EX+UIColor.swift */,
+				F2FA4FDD2540971B00822F3A /* EX+UITableView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -641,6 +644,7 @@
 				F202DDD8246EDA4F00D32F89 /* CartQuantityTableViewCell.swift in Sources */,
 				F202DDD7246EDA4F00D32F89 /* ProductSummaryTotalCell.swift in Sources */,
 				F2D2A84C245B1A620000B4B4 /* ProductSummaryView.swift in Sources */,
+				F2FA4FDE2540971B00822F3A /* EX+UITableView.swift in Sources */,
 				F2496C4624ED94470070D1E0 /* LoginButtonTableViewCell.swift in Sources */,
 				F202DDDB246EDA4F00D32F89 /* ProductSummaryCell.swift in Sources */,
 				F202DDD6246EDA4F00D32F89 /* ProductCollectionViewCell.swift in Sources */,

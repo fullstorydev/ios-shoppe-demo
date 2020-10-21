@@ -23,7 +23,7 @@ class LoginCollectionViewController: UITableViewController {
     // Register cell classes
 
     func registerCellsNibs() {
-        navigationItem.title = Constants.Title.login
+        navigationItem.title = Constants.TitleStrings.login
         navigationController?.navigationBar.tintColor = .white
         registerCells(tableView: tableView, registry: Registry.loginViewController)
     }
@@ -46,7 +46,6 @@ class LoginCollectionViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
         switch indexPath.row {
         case 0:
             let cell = UITableViewCell()
@@ -61,6 +60,5 @@ class LoginCollectionViewController: UITableViewController {
         default:
             return UITableViewCell()
         }
-
     }
 }
