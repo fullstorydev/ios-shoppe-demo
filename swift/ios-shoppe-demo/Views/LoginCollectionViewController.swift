@@ -25,14 +25,14 @@ class LoginCollectionViewController: UITableViewController {
     func registerCellsNibs() {
         navigationItem.title = Constants.Title.login
         navigationController?.navigationBar.tintColor = .white
-        registerCells(tableView: tableView, registry: loginViewControllerRegistry)
+        registerCells(tableView: tableView, registry: Registry.loginViewController)
     }
 
     func login() {
         guard let userName = userName, let userEmail = userEmail else {
             return
         }
-        user = UserProfile(addressDetail: [.name:userName, .email: userEmail])
+        user = UserProfile(addressDetail: [.name: userName, .email: userEmail])
     }
 
     // MARK: UITableViewDataSource

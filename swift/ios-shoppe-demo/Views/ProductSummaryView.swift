@@ -22,7 +22,7 @@ class ProductSummaryView: UITableViewController {
         // MARK: - FullStory unmasking Example
         fsModifyPrivacy(setting: .unmask, views: tableView)
 
-        registerCells(tableView: tableView, registry: productSummaryRegistry)
+        registerCells(tableView: tableView, registry: Registry.productSummary)
 
         tableView.separatorStyle = .none
         tableView.backgroundColor = UIColor().fsBackground()

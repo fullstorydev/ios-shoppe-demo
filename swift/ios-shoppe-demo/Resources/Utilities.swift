@@ -19,7 +19,7 @@ func getPlist(withName name: String) -> [String: String]? {
 }
 
 func registerCells(tableView: UITableView, registry: Registry) {
-    for (index, nibName) in registry.0.enumerated() {
-        tableView.register(UINib(nibName: nibName, bundle: nil), forCellReuseIdentifier: registry.1[index])
+    for (index, nibName) in registry.nib.enumerated() {
+        tableView.register(UINib(nibName: nibName, bundle: nil), forCellReuseIdentifier: registry.cellID[index])
     }
 }

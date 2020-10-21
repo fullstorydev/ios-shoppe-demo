@@ -9,8 +9,8 @@
 
 import Foundation
 
-typealias nib = Constants.Nib
-typealias cellID = Constants.CellID
+typealias Nib = Constants.Nib
+typealias CellID = Constants.CellID
 
 /// Hard coded constants
 struct Constants {
@@ -52,33 +52,27 @@ struct Constants {
     }
 }
 
-typealias Registry = ([String], [String])
+struct Registry {
+    var nib: [String]
+    var cellID: [String]
 
-let cartTableViewRegistry: Registry = (nibArr: [nib.cartTableViewCell,
-                                                            nib.cartQuant,
-                                                            nib.largeLabel],
-                                       cellIDArr: [cellID.checkout,
-                                                               cellID.quantity,
-                                                               cellID.title])
+    static let cartTableView = Registry(
+        nib: [Constants.Nib.cartTableViewCell, Constants.Nib.cartQuant, Constants.Nib.largeLabel],
+        cellID: [Constants.CellID.checkout, Constants.CellID.quantity, Constants.CellID.title]
+    )
 
-let checkoutTableViewRegistry: Registry = (nibArr: [nib.checkoutTableView,
-                                                                nib.largeLabel,
-                                                                nib.cartTableViewCell,
-                                                                nib.checkBoxButton],
-                                           cellIDArr: [cellID.textField,
-                                                                   cellID.title,
-                                                                   cellID.checkout,
-                                                                   cellID.checkoutBox])
+    static let checkoutTableView = Registry(
+        nib: [Constants.Nib.checkoutTableView, Constants.Nib.largeLabel, Constants.Nib.cartTableViewCell, Constants.Nib.checkBoxButton],
+        cellID: [Constants.CellID.textField, Constants.CellID.title, Constants.CellID.checkout, Constants.CellID.checkoutBox]
+    )
 
-let productSummaryRegistry: Registry = (nibArr: [nib.productSummaryCell,
-                                                     nib.productSummaryTopCell,
-                                                     nib.productSummaryUserDetailCell,
-                                                     nib.productSummaryTotalCost],
-                                        cellIDArr: [cellID.quantity,
-                                                        cellID.thankYou,
-                                                        cellID.userDetails,
-                                                        cellID.totalCell])
-let loginViewControllerRegistry: Registry = (nibArr: [nib.loginButtonCell,
-                                             nib.checkoutTableView],
-                                             cellID: [cellID.login,
-                                                      cellID.textField])
+    static let productSummary = Registry(
+        nib: [Constants.Nib.productSummaryCell, Constants.Nib.productSummaryTopCell, Constants.Nib.productSummaryUserDetailCell, Constants.Nib.productSummaryTotalCost],
+        cellID: [Constants.CellID.quantity, Constants.CellID.thankYou, Constants.CellID.userDetails, Constants.CellID.totalCell]
+    )
+
+    static let loginViewController = Registry(
+        nib: [Constants.Nib.loginButtonCell, Constants.Nib.checkoutTableView],
+        cellID: [Constants.CellID.login, Constants.CellID.textField]
+    )
+}
