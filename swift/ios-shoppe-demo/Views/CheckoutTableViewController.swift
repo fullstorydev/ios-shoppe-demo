@@ -28,10 +28,7 @@ class CheckoutTableViewController: UITableViewController {
 
         navigationItem.title = "Complete Order"
 
-        tableView.register(UINib(nibName: "CheckoutTableViewCell", bundle: nil), forCellReuseIdentifier: "textField")
-        tableView.register(UINib(nibName: "LargeLabelTableViewCell", bundle: nil), forCellReuseIdentifier: "title")
-        tableView.register(UINib(nibName: "CartTableViewCell", bundle: nil), forCellReuseIdentifier: "checkout")
-        tableView.register(UINib(nibName: "CheckBoxButton", bundle: nil), forCellReuseIdentifier: "checkoutBox")
+        tableView.registerCells(registry: Registry.checkoutTableView)
 
         tableView.separatorStyle = .none
         tableView.backgroundColor = UIColor().fsBackground()
@@ -50,8 +47,7 @@ class CheckoutTableViewController: UITableViewController {
             fsCheckoutSuccessEvent(event: .checkout, with: order)
 
             present(productView, animated: true, completion: nil)
-        }
-        else {
+        } else {
             let msg = "User tried to checkout without confirmation."
             let err: CheckoutError = CheckoutError(errorCode: "AC10XY2", message: msg, order: order)
             // MARK: FullStory Example logging

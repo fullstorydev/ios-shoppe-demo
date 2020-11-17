@@ -39,8 +39,7 @@ class CartTableViewCell: UITableViewCell {
     @IBAction func proceedToCheckout(_ sender: Any) {
         if cartTableViewController != nil {
             cartTableViewController?.presentCheckout()
-        }
-        else {
+        } else {
             checkoutTableViewController?.presentProductView()
         }
     }

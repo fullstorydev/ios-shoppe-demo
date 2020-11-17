@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 func getPlist(withName name: String) -> [String: String]? {
     if let path = Bundle.main.path(forResource: name, ofType: "plist"),
