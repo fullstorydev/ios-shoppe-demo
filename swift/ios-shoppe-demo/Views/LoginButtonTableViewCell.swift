@@ -11,7 +11,7 @@ import UIKit
 
 class LoginButtonTableViewCell: UITableViewCell {
 
-    var loginViewController: LoginCollectionViewController?
+    weak var loginViewController: LoginCollectionViewController?
 
     @IBAction func login(_ sender: Any) {
         loginViewController?.login()
