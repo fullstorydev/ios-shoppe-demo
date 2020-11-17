@@ -55,8 +55,6 @@ class LoginCollectionViewController: UITableViewController {
             return UITableViewCell(frame: CGRect())
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "textField", for: indexPath) as? CheckoutTableViewCell
-
-
             return cell ?? UITableViewCell()
         default:
             return UITableViewCell()
