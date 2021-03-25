@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0019F530089CB2B5C24FC344 /* Pods_ios_shoppe_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0F1CA512D658190A6D7A3AB /* Pods_ios_shoppe_demo.framework */; };
 		72A290BF723CE163DA2D4CAD /* Pods_ios_shoppe_demoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBA0A3569A524FA18FE78485 /* Pods_ios_shoppe_demoTests.framework */; };
 		F202DDBC246ED9DF00D32F89 /* ProductSummaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F202DDB3246ED9DE00D32F89 /* ProductSummaryCell.xib */; };
 		F202DDBD246ED9DF00D32F89 /* ProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F202DDB4246ED9DE00D32F89 /* ProductCollectionViewCell.xib */; };
@@ -142,7 +141,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0019F530089CB2B5C24FC344 /* Pods_ios_shoppe_demo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
