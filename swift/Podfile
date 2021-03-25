@@ -6,7 +6,7 @@ target 'ios-shoppe-demo' do
   use_frameworks!
 
   # Pods for ios-shoppe-demo
-  pod 'FullStory', :http => 'https://ios-releases.fullstory.com/fullstory-1.12.1.tar.gz'
+  pod 'FullStory', :http => 'https://ios-releases.fullstory.com/fullstory-1.13.0.tar.gz'
 
   target 'ios-shoppe-demoTests' do
     inherit! :search_paths
