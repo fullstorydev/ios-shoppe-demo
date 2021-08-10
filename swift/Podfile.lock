@@ -8,7 +8,7 @@ PODS:
 DEPENDENCIES:
   - Analytics (~> 4.1)
   - "FullStory (from `{:http=>\"https://ios-releases.fullstory.com/fullstory-1.4.0.tar.gz\"}`)"
-  - FullStorySegmentMiddleware (from `https://github.com/fullstorydev/fullstory-segment-middleware-ios.git`, branch `sabrina/dev`)
+  - FullStorySegmentMiddleware (from `https://github.com/fullstorydev/fullstory-segment-middleware-ios.git`, branch `master`)
 
 SPEC REPOS:
   trunk:
@@ -18,14 +18,14 @@ EXTERNAL SOURCES:
   FullStory:
     :http: https://ios-releases.fullstory.com/fullstory-1.4.0.tar.gz
   FullStorySegmentMiddleware:
-    :branch: sabrina/dev
+    :branch: master
     :git: https://github.com/fullstorydev/fullstory-segment-middleware-ios.git
 
 CHECKOUT OPTIONS:
   FullStory:
     :http: https://ios-releases.fullstory.com/fullstory-1.4.0.tar.gz
   FullStorySegmentMiddleware:
-    :commit: d9871a045c18364b8fd30d768bc8468262f514ad
+    :commit: 8eb4efa32acee215e8664f6694002e2b88a48be6
     :git: https://github.com/fullstorydev/fullstory-segment-middleware-ios.git
 
 SPEC CHECKSUMS:
@@ -33,6 +33,6 @@ SPEC CHECKSUMS:
   FullStory: 8fc449db8d94b344fc7387d084eae442e4b0e51b
   FullStorySegmentMiddleware: ec0fe978d4d2e3fc52bc68d5103764ec335cf0f5
 
-PODFILE CHECKSUM: 1e34942a1d7291c7413230cac3e075a2915093af
+PODFILE CHECKSUM: 123d4ad95b5f89f5471201b99da618c6300bb382
 
 COCOAPODS: 1.10.1
