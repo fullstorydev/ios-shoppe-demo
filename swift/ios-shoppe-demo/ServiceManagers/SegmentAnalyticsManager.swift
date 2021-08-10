@@ -7,11 +7,10 @@
 //
 
 import Foundation
-import Analytics
 
 func trackProductAddedEvent(product: Product?){
     if let product = product {
-        SEGAnalytics.shared()?.track("Product Added", properties: [
+        Analytics.shared().track("Product Added", properties: [
             "order_id":"2",
             "product_id": product.title,
             "description": product.description,
@@ -27,7 +26,7 @@ func trackProductAddedEvent(product: Product?){
 
 func trackProductRemovedEvent(product: Product?){
     if let product = product {
-        SEGAnalytics.shared()?.track("Product Removed", properties: [
+        Analytics.shared().track("Product Removed", properties: [
             "product_id": product.title,
             "description": product.description,
             "name": product.title,
@@ -38,14 +37,14 @@ func trackProductRemovedEvent(product: Product?){
 }
 
 func trackCartViewedEvent(order: Order){
-        SEGAnalytics.shared()?.track("Cart Viewed", properties: [
+    Analytics.shared().track("Cart Viewed", properties: [
             "cart_id": "d92jd29jd92jd29j92d92jd",
             "products":getPropsFromProductArray(products: order.items.filter { $0.quantity > 0 })
         ])
 }
 
 func trackCheckoutStartedEvent(order: Order){
-    SEGAnalytics.shared()?.track("Checkout Started", properties: [
+    Analytics.shared().track("Checkout Started", properties: [
         "order_id": "50314b8e9bcf000000000000",
         "value": order.cartOrderTotal(),
         "currency": "USD",
@@ -54,7 +53,7 @@ func trackCheckoutStartedEvent(order: Order){
 }
 
 func trackOrderCompletedEvent(order: Order){
-    SEGAnalytics.shared()?.track("Order Completed", properties: [
+    Analytics.shared().track("Order Completed", properties: [
         "checkout_id": "fksdjfsdjfisjf9sdfjsd9f",
         "order_id": "50314b8e9bcf000000000000",
         "subtotal": order.cartOrderTotal(),

@@ -7,8 +7,8 @@ target 'ios-shoppe-demo' do
 
   # Pods for ios-shoppe-demo
 pod 'FullStory', :http => 'https://ios-releases.fullstory.com/fullstory-1.4.0.tar.gz'
-pod 'Analytics', '~> 3.0'
-pod 'FullStorySegmentMiddleware', :git => 'https://github.com/fullstorydev/fullstory-segment-middleware-ios.git', :branch => 'dev-preview-1'
+pod 'Analytics', '~> 4.1'
+pod 'FullStorySegmentMiddleware', :git => 'https://github.com/fullstorydev/fullstory-segment-middleware-ios.git', :branch => 'sabrina/dev'
 
   target 'ios-shoppe-demoTests' do
     inherit! :search_paths

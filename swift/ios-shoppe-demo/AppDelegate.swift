@@ -7,10 +7,6 @@
 //
 
 import UIKit
-import FullStory
-import Analytics
-import FullStorySegmentMiddleware
-
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, FSDelegate {
@@ -32,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FSDelegate {
 
         FS.delegate = self
 
-        let configuration = SEGAnalyticsConfiguration.init(writeKey: "your_write_key")
+        let configuration = AnalyticsConfiguration.init(writeKey: "your_write_key")
         
         let fsm = FullStoryMiddleware.init()
         // allow all events to be tracked by FS, defualt to false
@@ -44,8 +40,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FSDelegate {
         // enable to send FS custom events on screen event, default to false
         fsm.enableSendScreenAsEvents = true
         
-        configuration.middlewares = [fsm]
-        SEGAnalytics.setup(with: configuration)
+        configuration.sourceMiddleware = [fsm]
+        Analytics.setup(with: configuration)
         
         return true
     }
