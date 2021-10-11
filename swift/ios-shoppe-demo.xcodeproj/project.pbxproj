@@ -3,11 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		282A0E7A2714D9DA0018386B /* FullStory in Frameworks */ = {isa = PBXBuildFile; productRef = 282A0E792714D9DA0018386B /* FullStory */; };
 		72A290BF723CE163DA2D4CAD /* Pods_ios_shoppe_demoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBA0A3569A524FA18FE78485 /* Pods_ios_shoppe_demoTests.framework */; };
+		B6DF1C4F5BD7CEC833029E2F /* Pods_ios_shoppe_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0F1CA512D658190A6D7A3AB /* Pods_ios_shoppe_demo.framework */; };
 		F202DDBC246ED9DF00D32F89 /* ProductSummaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F202DDB3246ED9DE00D32F89 /* ProductSummaryCell.xib */; };
 		F202DDBD246ED9DF00D32F89 /* ProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F202DDB4246ED9DE00D32F89 /* ProductCollectionViewCell.xib */; };
 		F202DDBE246ED9DF00D32F89 /* ProductSummaryUserDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F202DDB5246ED9DE00D32F89 /* ProductSummaryUserDetailCell.xib */; };
@@ -141,6 +143,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6DF1C4F5BD7CEC833029E2F /* Pods_ios_shoppe_demo.framework in Frameworks */,
+				282A0E7A2714D9DA0018386B /* FullStory in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,7 +347,6 @@
 				F25D2095240EB5A300CF89C3 /* Sources */,
 				F25D2096240EB5A300CF89C3 /* Frameworks */,
 				F25D2097240EB5A300CF89C3 /* Resources */,
-				1B221A27197A6189FE5C1C37 /* [CP] Embed Pods Frameworks */,
 				F2441D882433B091006BEFF3 /* ShellScript */,
 			);
 			buildRules = (
@@ -351,6 +354,9 @@
 			dependencies = (
 			);
 			name = "ios-shoppe-demo";
+			packageProductDependencies = (
+				282A0E792714D9DA0018386B /* FullStory */,
+			);
 			productName = "ios-shoppe-demo";
 			productReference = F25D2099240EB5A300CF89C3 /* ios-shoppe-demo.app */;
 			productType = "com.apple.product-type.application";
@@ -382,7 +388,6 @@
 				F25D20B6240EB5A600CF89C3 /* Sources */,
 				F25D20B7240EB5A600CF89C3 /* Frameworks */,
 				F25D20B8240EB5A600CF89C3 /* Resources */,
-				878378071AC600405CF22C2D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -426,6 +431,9 @@
 				Base,
 			);
 			mainGroup = F25D2090240EB5A300CF89C3;
+			packageReferences = (
+				282A0E782714D9DA0018386B /* XCRemoteSwiftPackageReference "fullstory-swift-package-ios" */,
+			);
 			productRefGroup = F25D209A240EB5A300CF89C3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -478,23 +486,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1B221A27197A6189FE5C1C37 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ios-shoppe-demo/Pods-ios-shoppe-demo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ios-shoppe-demo/Pods-ios-shoppe-demo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ios-shoppe-demo/Pods-ios-shoppe-demo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		75046991546A5D89165A768B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -515,23 +506,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		878378071AC600405CF22C2D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ios-shoppe-demo-ios-shoppe-demoUITests/Pods-ios-shoppe-demo-ios-shoppe-demoUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ios-shoppe-demo-ios-shoppe-demoUITests/Pods-ios-shoppe-demo-ios-shoppe-demoUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ios-shoppe-demo-ios-shoppe-demoUITests/Pods-ios-shoppe-demo-ios-shoppe-demoUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		92BDDD1F87A3DE3DD0099EAA /* [CP] Check Pods Manifest.lock */ = {
@@ -952,6 +926,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		282A0E782714D9DA0018386B /* XCRemoteSwiftPackageReference "fullstory-swift-package-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/fullstorydev/fullstory-swift-package-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.19.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		282A0E792714D9DA0018386B /* FullStory */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 282A0E782714D9DA0018386B /* XCRemoteSwiftPackageReference "fullstory-swift-package-ios" */;
+			productName = FullStory;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F25D2091240EB5A300CF89C3 /* Project object */;
 }
