@@ -7,8 +7,11 @@ target 'ios-shoppe-demo' do
 
   # Pods for ios-shoppe-demo
   # Project currently using SwiftPackageManager, but this was left as an example
-  # pod 'FullStory', :http => 'https://ios-releases.fullstory.com/fullstory-1.19.1.tar.gz'
-
+  # pod 'FullStory', :http => 'https://ios-releases.fullstory.com/fullstory-1.21.0.tar.gz'
+  
+  pod 'RxSwift', '6.2.0'
+  pod 'RxCocoa', '6.2.0'
+      
   target 'ios-shoppe-demoTests' do
     inherit! :search_paths
     # Pods for testing
