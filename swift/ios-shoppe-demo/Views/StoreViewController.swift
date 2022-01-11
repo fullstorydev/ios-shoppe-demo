@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+
 
 class StoreViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     var products: [Product] = []
-
+    private var disposeBag = DisposeBag()
+    
     // MARK: - NavigationBar Button Properties
 
     var barCartButton: UIBarButtonItem {
@@ -73,9 +77,20 @@ class StoreViewController: UICollectionViewController, UICollectionViewDelegateF
 
         navigationController?.navigationBar.titleTextAttributes = textAttributes
         navigationController?.navigationBar.barTintColor = UIColor(displayP3Red: 206/255, green: 78/255, blue: 142/255, alpha: 1.0)
+        
+        let navButton =  UIButton(type: .custom)
+        navButton.frame = CGRect(x: 0, y: 0, width: 100, height: 40)
+        navButton.setTitleColor(.white, for: .normal)
+        navButton.setTitle("iOS Shoppe", for: .normal)
+        navigationItem.titleView = navButton
 
-        navigationItem.title = "iOS Shoppe"
-
+        navButton.rx.tap
+            .buffer(timeSpan: .milliseconds(1000), count: 4, scheduler: MainScheduler.instance)
+            .filter{$0.count >= 4}
+            .subscribe(onNext: { value in
+                fatalError("Clicked On View 4 Times, Will Crash Now, Good Job!")
+            }).disposed(by: disposeBag)
+        
         setCartUI()
 
         collectionView.register(UINib(nibName: "ProductCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cell")
